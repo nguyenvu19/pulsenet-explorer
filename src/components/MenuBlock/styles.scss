@@ -1,0 +1,109 @@
+@import 'assets/css/variables.scss';
+
+.ant-layout-header.header-block {
+  height: fit-content;
+  box-shadow: 0 1px 10px rgb(151, 164, 175, 10%);
+  background-color: #fff;
+
+  .content-header-block {
+    padding-bottom: 8px;
+    position: relative;
+
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 8px;
+    z-index: 1;
+
+    @include media-up(md) {
+      flex-flow: row nowrap;
+      padding-bottom: 0px;
+    }
+
+    .header-left {
+      line-height: 3;
+      display: inline-block;
+
+      .header-slogan {
+        background: $background-slogan;
+        display: none;
+        @include media-up(md) {
+          display: block;
+        }
+        span:first-child {
+          color: $black-color;
+          font-size: 11.2px;
+        }
+
+        span:last-child {
+          color: $text-main;
+          font-size: 11.2px;
+
+          svg {
+            width: 10px;
+            margin: 0 4px;
+            height: 10px;
+
+            path {
+              fill: $text-main;
+            }
+          }
+        }
+
+        .header-slogan-red {
+          color: $red;
+          font-size: 11.2px;
+        }
+        .header-slogan-green {
+          color: green;
+          font-size: 11.2px;
+        }
+      }
+    }
+    .header-right {
+      display: flex;
+      padding-top: 8px;
+      @include media-up(md) {
+        width: 100%;
+        display: inline-block;
+      }
+      .menu-collapse {
+        display: block;
+        @include media-up(md) {
+          display: none;
+        }
+      }
+      .header-right-input {
+        display: none;
+        @include media-up(md) {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+    .header-bottom-mobile {
+      width: 100%;
+      // @include media-up(md) {
+      //   display: none;
+      // }
+
+      form {
+        margin-bottom: 0;
+        span:first-child {
+          line-height: normal;
+          .ant-select-selector {
+            height: 47px;
+            align-items: center;
+            border-right: none;
+          }
+        }
+        select {
+          border: 1px solid $border-color;
+        }
+
+        input {
+          border: 1px solid $border-color;
+        }
+      }
+    }
+  }
+}

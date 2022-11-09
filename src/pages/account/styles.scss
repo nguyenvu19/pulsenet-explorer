@@ -1,0 +1,177 @@
+@import 'assets/css/variables.scss';
+
+.account-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 150px - $MENU-HEIGHT);
+  position: relative;
+  background: #f8f9fa;
+  padding: 0 15px 52px;
+  .account-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    @include media-up(sm) {
+      padding: 0 30px;
+    }
+    .account__heading {
+      // @include media-up(sm){
+      //   padding: 0 45px;
+      // }
+      h1 {
+        padding: 12px 0;
+        color: $text-header;
+        font-size: 21px;
+      }
+    }
+
+    .account__bottom {
+      width: 100%;
+      margin: 0 auto;
+      // padding: 0 15px;
+      .card {
+        box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid #e7eaf3;
+        border-radius: 0.5rem;
+        .card-body {
+          flex: 1 1 auto;
+          min-height: 1px;
+          padding: 12px;
+          .card-body-header {
+            position: relative;
+            // margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            @include media-up(md) {
+              height: 50px;
+              margin-bottom: 20px;
+            }
+            p {
+              font-size: 14px;
+              color: $text-main;
+              display: block;
+              @include media-up(md) {
+                width: 50%;
+              }
+              a {
+                color: $primary-color;
+                margin-right: 4px;
+              }
+              span {
+                margin-left: 4px;
+                font-size: 11.2px;
+              }
+            }
+          }
+          .ant-table-pagination:first-child {
+            @include media-up(md) {
+              position: absolute;
+              top: -75px;
+              right: 0;
+            }
+            .ant-pagination-item-link {
+              background: rgba(130, 71, 229, 0.1);
+            }
+            .ant-pagination-item-active {
+              background: rgba(130, 71, 229, 0.1);
+              color: $text-main;
+            }
+            .ant-pagination-item {
+              background: rgba(130, 71, 229, 0.1);
+              a {
+                color: $text-main;
+              }
+            }
+            .ant-pagination-item-active {
+              border: none;
+              a {
+                color: $primary-color;
+              }
+            }
+          }
+          .ant-table-pagination:last-child {
+            @include media-up(md) {
+              position: absolute;
+              bottom: -55px;
+              right: 0;
+            }
+            .ant-pagination-item-link {
+              background: rgba(130, 71, 229, 0.1);
+            }
+            .ant-pagination-item-active {
+              background: rgba(130, 71, 229, 0.1);
+              color: $text-main;
+            }
+            .ant-pagination-item {
+              background: rgba(130, 71, 229, 0.1);
+              a {
+                color: $text-main;
+              }
+            }
+            .ant-pagination-item-active {
+              border: none;
+              a {
+                color: $primary-color;
+              }
+            }
+          }
+          .card-body-center {
+            .ant-table-content {
+              overflow: hidden;
+              .ant-table-thead {
+                .ant-table-cell {
+                  color: $text-main;
+                  font-weight: 700;
+                  &::before {
+                    display: none;
+                  }
+                  .balance-title {
+                    .balance-title-icon svg {
+                      width: 11px;
+                      align-items: center;
+                      margin-right: 4px;
+                      path {
+                        fill: $text-main;
+                      }
+                    }
+                  }
+                }
+              }
+              .data-address-account {
+                color: $primary-color;
+              }
+            }
+          }
+          .card-body-footer {
+            .ant-pagination-item {
+              display: none;
+            }
+            .ant-pagination-prev {
+              display: none;
+            }
+            .ant-pagination-jump-next {
+              display: none;
+            }
+            .ant-pagination-next {
+              display: none;
+            }
+            .ant-pagination-item-link {
+              display: none;
+            }
+            .ant-pagination-item-ellipsis {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@import 'assets/css/variables.scss';
+
+.row-body {
+  width: 100%;
+  min-height: 175px;
+  padding: 0 20px 20px;
+
+  background: $secondary-color;
+  background-clip: border-box;
+  border: 1px solid #e7eaf3;
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1.2rem $color-shadow;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .col-md-col-6 {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 24px;
+
+    @include media-up(md) {
+      max-width: 50%;
+      width: 100%;
+      border-right: 0.3px solid $border-color;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .col-left-1 {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 24px 0;
+      border-bottom: 1px solid $border-color;
+      @include media-up(lg) {
+        border: none;
+      }
+
+      .body-img {
+        max-width: 28px;
+        max-height: 28px;
+        margin-right: 8px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .body-content {
+        max-height: 40px;
+        height: 100%;
+
+        > h2 {
+          font-size: 12.25px;
+          color: $text-main;
+          font-weight: 200;
+          margin-bottom: 0;
+        }
+
+        a {
+          font-size: 15px;
+          color: $black-color;
+          .small-black {
+            font-size: 12px;
+          }
+          span {
+            color: $text-main;
+            font-weight: 200;
+            font-family: Arial, Helvetica, sans-serif;
+
+            &.small {
+              color: green;
+              font-size: 80%;
+            }
+            span {
+              font-size: 11px;
+            }
+          }
+          .text-secondary-11 {
+            font-size: 10px;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+
+    .col-center-1 {
+      justify-content: space-between;
+
+      .col-center-left-container {
+        display: flex;
+        width: 60%;
+      }
+
+      .body-right {
+        text-align: right;
+        max-width: 40%;
+
+        h2 {
+          font-size: 12.5px;
+          color: $text-main;
+        }
+
+        a {
+          color: $black-color;
+          font-weight: 200;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+
+        span {
+          color: $text-main;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+    }
+
+    .col-left-2 {
+      display: flex;
+      align-items: center;
+
+      .body-img {
+        max-width: 28px;
+        max-height: 28px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .col-md-col-12 {
+    width: 100%;
+    // border-top: 0.3px solid $background-card;
+
+    @include media-up(lg) {
+      border: none;
+    }
+    h2 {
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .row {
+      padding: 0 14px;
+      border: none;
+      .mixed-chart {
+        .mixed-chart-item {
+          min-height: 100px;
+          @include media-up(xm) {
+            max-width: 350px;
+          }
+          @media only screen and (min-width: 576px) {
+            max-width: 500px;
+            width: 500px;
+          }
+          @include media-up(md) {
+            max-width: 700px;
+            width: 700px;
+          }
+          @include media-up(lg) {
+            width: 250px;
+          }
+          @include media-up(xl) {
+            width: 350px;
+          }
+          .apexcharts-toolbar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .col-lg-4 {
+    @include media-up(lg) {
+      max-width: 33.33%;
+      width: 100%;
+    }
+  }
+}

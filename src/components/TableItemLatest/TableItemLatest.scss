@@ -1,0 +1,179 @@
+@import 'assets/css/variables.scss';
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-bottom: 1px solid $border-color;
+  @include media-up(sm) {
+    flex-wrap: nowrap;
+  }
+  // margin-right: -7.5px;
+  // margin-left: -7.5px;
+  .col-sm-4 {
+    // display: none;
+    @include media-up(sm) {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+    max-width: 100%;
+    .col-sm-4-content {
+      margin-right: 20px;
+      display: flex;
+      .display-none {
+        // margin-right: 4px;
+        display: flex;
+        .non-outside {
+          position: relative;
+          font-size: 0.875rem;
+          width: 44px;
+          height: 44px;
+          padding: 0;
+          color: $text-span;
+          background: $background-color-badge;
+          border-color: transparent;
+          border-radius: 4px;
+          display: none;
+          @include media-up(sm) {
+            display: block;
+          }
+          .non-inside {
+            position: absolute;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $black-color;
+          }
+        }
+      }
+      .display-block {
+        flex: 1;
+
+        display: flex;
+        @include media-up(sm) {
+          display: block;
+        }
+        .col-sm-4-content-block {
+          display: block;
+          color: $black-color;
+          @include media-up(sm) {
+            display: none;
+          }
+        }
+        a {
+          color: $primary-color;
+          margin-left: 4px;
+        }
+        .block-small {
+          font-size: 11.2px;
+          line-height: 2;
+          margin: 0 0 0 4px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+    }
+  }
+  .col-sm-8 {
+    @include media-up(sm) {
+      display: flex;
+      justify-content: space-between;
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+      white-space: nowrap;
+    }
+    .content {
+      background: none;
+      // display: flex;
+      .show-content {
+        span {
+          display: flex;
+          &:first-child {
+            color: $black-color;
+          }
+        }
+        .content-hasktag {
+          margin-left: 4px;
+          color: $primary-color;
+          max-width: 171px;
+          display: inline-block;
+          vertical-align: bottom;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        a {
+          color: $primary-color;
+        }
+
+        div {
+          display: flex;
+          span {
+            color: $text-main;
+            font-size: 11px;
+            line-height: 2;
+            margin-left: 4px;
+          }
+          .show-content-hide {
+            display: inline-block;
+            @include media-up(sm) {
+              display: none;
+            }
+            .content-text {
+              position: relative;
+              margin: 1px;
+              overflow: hidden;
+              color: $text-main;
+              font-size: 10.5px;
+              padding: 3px 7px 3.2px 18px;
+              letter-spacing: 0.8px;
+              border-top-right-radius: 0.25rem;
+              border-bottom-right-radius: 0.25rem;
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+              background: $background-color-badge;
+              &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: '';
+                border-top: 1rem solid transparent;
+                border-bottom: 1.7rem solid transparent;
+                border-left: 0.7rem solid $secondary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .hide-content {
+      display: none;
+      @include media-up(sm) {
+        display: inline-block;
+      }
+      .content-text {
+        position: relative;
+        margin: 1px;
+        overflow: hidden;
+        color: $text-main;
+        font-size: 10.5px;
+        padding: 3px 8px 3.2px 18px;
+        letter-spacing: 0.8px;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background: $background-color-badge;
+        &::after {
+          position: absolute;
+          left: 0;
+          top: 0;
+          content: '';
+          border-top: 1rem solid transparent;
+          border-bottom: 1.7rem solid transparent;
+          border-left: 0.7rem solid $secondary-color;
+        }
+      }
+    }
+  }
+}

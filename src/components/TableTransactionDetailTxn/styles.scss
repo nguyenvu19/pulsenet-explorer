@@ -1,0 +1,149 @@
+@import 'assets/css/variables.scss';
+
+.ant-table {
+  padding: 0 15px;
+
+  .ant-table-filter-column {
+    font-weight: 700;
+    color: $text-main;
+
+    .ant-table-column-sorter {
+      display: none;
+    }
+  }
+
+  th.ant-table-cell {
+    font-weight: 700;
+    color: $text-main;
+  }
+
+  .ant-table-cell {
+    padding: 10px;
+    .data-txnHash {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      div {
+        // color: $black-color;
+        padding: 4px;
+        background: $background-color-badge;
+        border-color: transparent;
+        margin-right: 4px;
+        width: 28px;
+        height: 28px;
+        position: relative;
+        border-radius: 4px;
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &:hover {
+          // color: $secondary-color;
+          background: $secondary-color;
+          svg {
+            path {
+              fill: $text-span;
+            }
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        color: $primary-color;
+        width: 170px;
+        overflow: hidden;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .data-method {
+      font-size: 10.5px;
+      padding: 6px 10px;
+      color: $black-color;
+      background: $background-color-padding-light;
+      border-color: transparent;
+      border-radius: 4px;
+    }
+
+    .data-block {
+      color: $primary-color;
+    }
+
+    .data-age {
+      width: 90px;
+    }
+
+    .data-from {
+      align-items: center;
+      display: flex;
+
+      .data-from-link {
+        display: inline-block;
+        color: $primary-color;
+        width: 170px;
+        overflow: hidden;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .data-from-div {
+        color: $orange;
+        font-weight: 700;
+        font-size: 10.5px;
+        border-radius: 4px;
+        padding: 3.2px 8px;
+        background: $orange-bg;
+      }
+    }
+
+    .data-to {
+      display: flex;
+
+      div {
+        margin-right: 4px;
+      }
+
+      .data-to-link {
+        display: inline-block;
+        color: $primary-color;
+        width: 170px;
+        overflow: hidden;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .data-value {
+      width: 90px;
+    }
+
+    .data-txnfee {
+      color: $text-main;
+      img {
+        width: 11px;
+      }
+
+      .data-txnfee-link {
+        font-size: 14px;
+        display: inline-block;
+        color: $primary-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-left: 4px;
+      }
+
+      div {
+        color: $green;
+      }
+    }
+  }
+}

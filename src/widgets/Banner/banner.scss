@@ -1,0 +1,48 @@
+@import 'assets/css/variables.scss';
+
+.banner-container {
+  position: relative;
+  display: none;
+
+  span {
+    position: absolute;
+    right: 30px;
+    top: -50px;
+    color: $text-main;
+    padding: 4px;
+    background: white;
+    border-radius: 6px;
+    @include media-up(xm) {
+      top: -30px;
+    }
+    @include media-up(xm) {
+      top: -50px;
+    }
+    @media only screen and (min-width: 576px) {
+      top: -90px;
+    }
+    @include media-up(md) {
+      top: -50px;
+    }
+  }
+  img {
+    border-radius: 8px;
+
+    min-width: 80%;
+    width: 80%;
+
+    @include media-up(xs) {
+      width: 100%;
+    }
+    @include media-up(xm) {
+      width: 80%;
+    }
+    @media only screen and (min-width: 576px) {
+      width: 100%;
+    }
+    @include media-up(md) {
+      width: 100%;
+      height: 90px;
+    }
+  }
+}

@@ -1,0 +1,463 @@
+@import 'assets/css/variables.scss';
+
+.blocks-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 150px - $MENU-HEIGHT);
+  padding-bottom: 55px;
+  background: $background-wrapper;
+  position: relative;
+  .blocks-heading {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    h1 {
+      color: $text-header;
+      font-size: 21px;
+      margin: 0;
+    }
+    div {
+      .heading-network {
+        color: $black-color;
+        padding: 4px 12px;
+        font-size: 12.25px;
+        background: $background-span;
+        border: 4px;
+        margin-right: 4px;
+        flex-wrap: wrap;
+      }
+      a {
+        font-size: 11.2px;
+        color: $black-color;
+        background: $orange-bg;
+        padding: 6px 11px;
+        word-break: break-word;
+      }
+    }
+  }
+  .blocks-bottom {
+    max-width: 100%;
+    background: $secondary-color;
+    background-clip: border-box;
+    border: 1px solid #e7eaf3;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1.2rem $color-shadow;
+    overflow: hidden;
+    .blocks-card {
+      padding: 12px;
+      .card-body-header {
+        margin-bottom: 20px;
+        p {
+          font-size: 14px;
+          color: $text-main;
+        }
+      }
+      .card-body-center {
+        .ant-table {
+          padding: 0;
+        }
+        .ant-table-thead {
+          .ant-table-cell {
+            padding: 10px;
+            white-space: nowrap;
+            .title-age {
+              color: $primary-color;
+            }
+          }
+        }
+        .ant-table-tbody {
+          .ant-table-cell {
+            padding: 10px;
+            vertical-align: text-bottom;
+            white-space: nowrap;
+          }
+          .data-block {
+            color: $primary-color;
+          }
+          .data-txn {
+            width: 50px;
+            color: $primary-color;
+          }
+          .data-validator {
+            color: $primary-color;
+            max-width: 171px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+            vertical-align: bottom;
+          }
+          .data-gasUse {
+            font-size: 14px;
+
+            .gas-process {
+              width: 100%;
+              height: 2px;
+              background-color: #e7eaf3;
+              border-radius: 0.35rem;
+              & > div {
+                width: 100%;
+                height: 2px;
+                background-color: $primary-color;
+                border-radius: 0.35rem;
+              }
+            }
+          }
+          .data-burntfees {
+            .data-burntfees-span {
+              font-size: 11px;
+              color: $text-main;
+            }
+            .ant-progress-line {
+              .ant-progress-bg {
+                height: 2px !important;
+                background-color: $primary-color;
+              }
+              .ant-progress-text {
+                display: none;
+              }
+            }
+          }
+        }
+        .ant-table-pagination-right {
+          justify-content: flex-start;
+          @include media-up(md) {
+            justify-content: flex-end;
+          }
+        }
+
+        .ant-pagination-item:not(.ant-pagination-item-active),
+        .ant-pagination-item-link {
+          border: none;
+        }
+        .ant-pagination-item a {
+          color: $text-main;
+          background: $background-color-padding;
+        }
+        .ant-pagination-item:hover {
+          background: $primary-color;
+          a {
+            color: $secondary-color;
+          }
+        }
+        .ant-pagination-item-active {
+          background: $primary-color;
+          border-color: $primary-color;
+          a {
+            color: #fff;
+          }
+        }
+
+        .ant-pagination-item-link {
+          background: $background-color-padding;
+          .ant-pagination-item-container {
+            .ant-pagination-item-link-icon {
+              path {
+                fill: $primary-color;
+              }
+            }
+          }
+        }
+        .ant-pagination-prev {
+          &:hover {
+            border: none;
+            background: $primary-color;
+            .ant-pagination-item-link {
+              color: $secondary-color;
+            }
+          }
+        }
+        .ant-pagination-next {
+          &:hover {
+            border: none;
+            background: $primary-color;
+            .ant-pagination-item-link {
+              color: $secondary-color;
+              border: none;
+            }
+          }
+        }
+        .ant-pagination-options-size-changer {
+          .ant-select-selector {
+            border: none;
+            background: $background-color-padding;
+            &:hover {
+              background-color: $primary-color;
+              color: $secondary-color;
+              // font-weight: 700;
+            }
+          }
+          &:hover {
+            path {
+              fill: $secondary-color;
+              // font-weight: 700;
+            }
+          }
+          &:focus {
+            border: none;
+          }
+        }
+        .ant-pagination-options {
+          .ant-pagination-options-quick-jumper {
+            input {
+              &:hover,
+              &:focus {
+                box-shadow: unset;
+                border-color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.blocks-wrapper {
+  .block-container-heading {
+    padding: 12px 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include media-up(sm) {
+      padding: 12px 45px;
+    }
+
+    @include media-up(lg) {
+      padding: 12px 45px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 21px;
+      color: $text-header;
+
+      span {
+        font-size: 16.8px;
+        color: $text-span;
+      }
+    }
+  }
+
+  .block-container-bottom {
+    padding: 0 0px 52px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include media-up(sm) {
+      padding: 0 45px 52px;
+    }
+
+    @include media-up(lg) {
+      padding: 0 15px 52px;
+    }
+
+    .block-card {
+      box-shadow: $color-shadow;
+      word-wrap: break-word;
+      @include media-up(lg) {
+        padding: 0 15px;
+      }
+      .block-card-header {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        .ant-menu-horizontal {
+          .ant-menu-item {
+            font-weight: 700;
+            &:hover {
+              color: $primary-color;
+              &::after {
+                border-bottom: 2px solid $primary-color;
+              }
+            }
+            .overview {
+              font-weight: 700;
+              color: $primary-color;
+              border-bottom: 2px solid $primary-color;
+            }
+
+            a {
+              font-weight: 700;
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+          .ant-menu-item-selected {
+            color: $primary-color;
+            &::after {
+              border-bottom: 2px solid $primary-color;
+            }
+            a {
+              color: $primary-color;
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+
+      .card-content {
+        padding: 0 14px 14px;
+        background: $secondary-color;
+        border-radius: 8px;
+        box-shadow: 0 0.5rem 1.2rem $color-shadow;
+
+        .card-content-show {
+          // transition: all ease 1s;
+
+          .card-content-item {
+            // padding: 0 14px;
+            // margin-bottom: 10px;
+            transition: all ease 1s;
+
+            .ant-row {
+              display: flex;
+              flex-wrap: wrap;
+
+              .ant-col-md-6 {
+                color: $black-color;
+                height: 30px;
+                font-weight: 600;
+
+                @include media-up(sm) {
+                  font-weight: 400;
+                }
+
+                .ant-space {
+                  color: $text-main;
+                  margin-right: 4px;
+                }
+              }
+
+              .ant-col-md-18 {
+                // @include media-up(sm) {
+                //     display: flex;
+                // }
+
+                .item-hash {
+                  padding: 4px;
+                  color: $black-color;
+                  font-weight: 600;
+                }
+
+                .item-leftRight {
+                  background: $background-item;
+                  border-color: transparent;
+                  margin-right: 4px;
+                  border-radius: 4px;
+                  padding: 4px;
+                  // width: 21px;
+                  // height: 21px;
+                  &:hover {
+                    background: $background-item-hover;
+                    box-shadow: 0 4px 11px rgb(52 152 219 / 35%);
+                    svg {
+                      path {
+                        fill: $secondary-color;
+                      }
+                    }
+                  }
+                  span {
+                    width: 16px;
+                    height: 21px;
+
+                    svg {
+                      path {
+                        fill: $background-item-hover;
+                        font-weight: 900;
+                      }
+                    }
+                  }
+                }
+
+                .item-clock {
+                  font-weight: 400;
+                  color: $black-color;
+                }
+
+                .item-clock-icons {
+                  background: none;
+                  color: $text-main;
+                  font-weight: 200;
+                  margin-right: 4px;
+                }
+
+                .transaction-link {
+                  padding: 4.8px 8px;
+                  margin: 4px 0;
+                  font-size: 12px;
+                  font-weight: 500;
+                  border-radius: 4px;
+                  color: $primary-color;
+                  background: $background-color-padding;
+                  transition: 0.2s ease-in-out;
+                }
+
+                .transaction-text {
+                  color: $black-color;
+                  margin: 0 4px;
+                }
+
+                .validated-link {
+                  background: none;
+                  color: $primary-color;
+                  margin: 0 4px;
+                  word-wrap: break-word;
+                }
+
+                .reward-text {
+                  color: $black-color;
+                  font-size: 14px;
+                }
+
+                .reward-text-right {
+                  display: flex;
+                  align-items: center;
+                  color: $green;
+                }
+
+                .parent-hash-text {
+                  color: $primary-color;
+                }
+
+                textarea {
+                  margin-top: 4px;
+                  width: 100%;
+                  height: 149px;
+                  padding: 12px;
+                  color: $text-main;
+                  border-radius: 4px;
+                  box-shadow: $color-shadow;
+                  line-height: 1.8;
+
+                  &:focus {
+                    border-color: $primary-color;
+                  }
+                }
+              }
+            }
+          }
+          .card-content-item_show {
+            transition: all ease 1s;
+          }
+
+          .collapse-click {
+            color: $primary-color;
+
+            span {
+              margin: 16px 4px;
+            }
+          }
+        }
+        .card-content-comment {
+          color: $black-color;
+          padding: 12px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
