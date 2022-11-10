@@ -1,8 +1,163 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
+import {  Button, Checkbox, Form, Input } from 'antd'
+
+// const { Option } = Select
+// const residences = [
+//   {
+//     value: 'zhejiang',
+//     label: 'Zhejiang',
+//     children: [
+//       {
+//         value: 'hangzhou',
+//         label: 'Hangzhou',
+//         children: [
+//           {
+//             value: 'xihu',
+//             label: 'West Lake',
+//           },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     value: 'jiangsu',
+//     label: 'Jiangsu',
+//     children: [
+//       {
+//         value: 'nanjing',
+//         label: 'Nanjing',
+//         children: [
+//           {
+//             value: 'zhonghuamen',
+//             label: 'Zhong Hua Men',
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// ]
+const formItemLayout = {
+  labelCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 8,
+    },
+  },
+  wrapperCol: {
+    xs: {
+      span: 24,
+    },
+    sm: {
+      span: 16,
+    },
+  },
+}
+const tailFormItemLayout = {
+  wrapperCol: {
+    xs: {
+      span: 24,
+      offset: 0,
+    },
+    sm: {
+      span: 0
+      // offset: 2,
+    },
+  },
+}
 
 const LoginPage = () => {
-  return <div className="login-page">Login Page</div>
+  const [form] = Form.useForm()
+
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values)
+  }
+
+  return (
+    <div className="login-page">
+      <div className='login-page_header'>
+        <h1>Welcome back</h1>
+        <p>Login to your account</p>
+      </div>
+      <div></div>
+      <Form
+        {...formItemLayout}
+        form={form}
+        name="register"
+        onFinish={onFinish}
+        scrollToFirstError
+        layout="vertical"
+        requiredMark="optional"
+        className="login-page_form"
+      >
+        <div className='form_header'>
+          <Form.Item
+            name="username"
+            label="Username"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your username!',
+                whitespace: true,
+              },
+            ]}
+            className="login-page_form_item"
+            style={{
+              width: '500px',
+            }}
+          >
+            <Input placeholder="Username" className="login-page_form_item_input"/>
+          </Form.Item>
+          <Form.Item
+            name="password"
+            label="Password"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]}
+            hasFeedback
+          >
+            <Input.Password placeholder="A confirmation code will be sent to this address" className="login-page_form_item_input" />
+          </Form.Item>
+        </div>
+       
+
+        <Form.Item
+          // style={{marginLeft: '-50%'}}
+          name="agreement"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
+            },
+          ]}
+          {...tailFormItemLayout}
+        >
+          <Checkbox>
+            Remember & Auto Login
+          </Checkbox>
+          
+        </Form.Item>
+        
+      
+        <Form.Item {...tailFormItemLayout} style={{textAlign:'center'}}>
+          <Button type="primary" htmlType="submit" className='btn_login'>
+            Login
+          </Button>
+          <div className='question'>
+          <p>Don't have an account? <span><a href='#'>Click to sign up</a></span> </p>
+        </div>
+        </Form.Item>
+        
+      </Form>
+      
+    </div>
+  )
 }
 
 LoginPage.Layout = PublicLayoutBlock
