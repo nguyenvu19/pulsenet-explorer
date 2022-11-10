@@ -12,9 +12,6 @@ const WrapSearchInput = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  ${({ theme }) => theme.mediaQueries.md} {
-    max-width: 55%;
-  }
   .ant-select {
     display: none;
     outline: none;

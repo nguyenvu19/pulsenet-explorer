@@ -1,15 +1,17 @@
 @import 'assets/css/variables.scss';
 
-.ant-layout-header {
+$color-nav-fill: red;
+
+.nav-default {
   padding: 0;
   background: $secondary-color;
   border-bottom: 0.5px solid #3c3a3a;
 
-  .menu-container {
+  .nav-container {
     width: 100%;
     height: 100%;
 
-    .content-header {
+    .nav-content {
       width: 100%;
       height: 100%;
       display: flex;
@@ -17,11 +19,11 @@
       justify-content: space-between;
       flex: 1 auto;
 
-      .header-left {
+      .nav-left {
         flex-direction: row;
         flex-flow: nowrap;
 
-        .header-logo {
+        .nav-logo {
           margin-right: 20px;
           display: flex;
           flex-direction: row;
@@ -39,7 +41,7 @@
         }
       }
 
-      .header-right {
+      .nav-right {
         color: $primary-color;
         align-items: center;
         flex-flow: row nowrap;
@@ -50,7 +52,7 @@
             display: none;
           }
         }
-        .header-right-desktop {
+        .nav-right-desktop {
           display: none;
           @include media-up(md) {
             display: block;
@@ -121,7 +123,7 @@
                   width: 10px;
                   height: 10px;
                   path {
-                    fill: $color-header-fill;
+                    fill: $color-nav-fill;
                   }
                 }
               }
@@ -142,13 +144,13 @@
                 border-top: 3px solid $primary-color;
                 box-shadow: 0 8px 20px rgb(130 71 229 / 8%);
               }
-              &.header-r-separator {
+              &.nav-r-separator {
                 border-right: 1px solid $text-main;
                 width: 1px;
                 height: 20px;
                 padding: 0;
               }
-              &.header-l-separator {
+              &.nav-l-separator {
                 border-left: 1px solid $text-main;
                 width: 1px;
                 height: 20px;
@@ -247,7 +249,7 @@
       }
 
       // Content Mobile
-      .header-right-mobile-active {
+      .nav-right-mobile-active {
         display: none;
         left: 0;
         width: 100%;
@@ -307,13 +309,13 @@
               box-shadow: $color-shadow-header-li;
             }
 
-            // &.header-r-separator {
+            // &.nav-r-separator {
             //     border-right: 1px solid $text-main;
             //     width: 1px;
             //     height: 20px;
             //     padding: 0;
             // }
-            // &.header-l-separator {
+            // &.nav-l-separator {
             //     border-left: 1px solid $text-main;
             //     width: 1px;
             //     height: 20px;
@@ -442,7 +444,7 @@
                   height: 10px;
 
                   path {
-                    fill: $color-header-fill;
+                    fill: $color-nav-fill;
                   }
                 }
               }
@@ -511,7 +513,7 @@
           padding: 16px 30px;
 
           a {
-            color: $color-header-fill;
+            color: $color-nav-fill;
 
             font-weight: 600;
             font-size: 16px;
