@@ -153,7 +153,7 @@ Spin
 Size Spin
 Spin With Background
 Spin With Background description
-Loading State
+ State
 Alert message title
 Further details about the context of this alert.
 Input
@@ -552,5 +552,5 @@ Logout
 View All
 View Cart
 Total Price
-`;
-export default txt;
+`
+export default txt

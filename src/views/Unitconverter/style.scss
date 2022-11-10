@@ -1,8 +1,97 @@
 .unitconverter-page {
   color: black;
   min-height: 80vh;
-
   display: flex;
-  justify-content: center;
+  max-width: 1417px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 59.6px 128px;
+  flex-direction: column;
+}
+
+h1 {
+  width: 99%;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 1px solid #000;
+}
+
+.container {
+  padding: 0;
+}
+.container p {
+  padding-top: 6px;
+  font-size: 14px;
+  font-weight: medium;
+  color: #000;
+  display: inline-block;
+}
+
+.container p > p {
+  color: rgb(34, 192, 105);
+}
+
+.block {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.block a {
+  color: rgb(13, 163, 58);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.block-content {
+  width: 100%;
+  height: 38px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000;
+  border-radius: 4px;
+  margin-top: 24px;
+}
+
+.block-content .left {
+  max-width: 1084px;
+  width: 100%;
+  display: flex;
+}
+
+.block-content .icon {
+  font-size: 20px;
+  width: 68px;
+  height: 38px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  border-right: 1px solid #000;
+}
+
+.block-content .code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #000;
+  padding: 0 0 0 10px;
+}
+
+.block-content .right {
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-left: 1px solid #000;
+}
+
+.block-content p {
+  font-size: 14px;
 }
