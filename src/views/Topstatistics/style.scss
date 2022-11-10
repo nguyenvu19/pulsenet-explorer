@@ -1,0 +1,29 @@
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+}
+
+.topstatistics-page {
+  color: black;
+  min-height: 80vh;
+  display: flex;
+  width: 100%;
+  padding: 0 59.6px 128px;
+  flex-direction: column;
+}
+
+.topstatistics-top h1 {
+  width: 100%;
+}
+
+.topstatistics-nav li:not(:first-child) {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.topstatistics-nav li:first-child {
+  margin-right: 16px;
+  color: rgb(34, 192, 105);
+}

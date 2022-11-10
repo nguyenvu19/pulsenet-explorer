@@ -1,27 +1,28 @@
 import React from 'react'
+import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 
 const Topstatistics = () => {
   return (
-    <div className="container">
-      <div className="top">
+    <div className="topstatistics-page">
+      <div className="topstatistics-top">
         <h1>Top Statistics</h1>
       </div>
 
-      <ul className="nav">
+      <ul className="topstatistics-nav">
         <li>Overview</li>
         <li>Transaction</li>
         <li>Tokens</li>
         <li>Network</li>
       </ul>
 
-      <ul className="time">
+      <ul className="topstatistics-time">
         <li>24 hours</li>
         <li>3 Days</li>
         <li>7 Days</li>
       </ul>
 
-      <div className="content">
-        <table className="transaction">
+      <div className="topstatistics-content">
+        <table className="topstatistics-transaction">
           <tr>
             <th>Transactions</th>
             <th>View top 10</th>
@@ -36,7 +37,7 @@ const Topstatistics = () => {
           </tr>
         </table>
 
-        <table className="tokens">
+        <table className="topstatistics-tokens">
           <tr>
             <th>Tokens</th>
             <th>View top 10</th>
@@ -51,7 +52,7 @@ const Topstatistics = () => {
           </tr>
         </table>
 
-        <table className="network">
+        <table className="topstatistics-network">
           <tr>
             <th>Network</th>
             <th>View top 10</th>
@@ -69,5 +70,6 @@ const Topstatistics = () => {
     </div>
   )
 }
+Topstatistics.Layout = PublicLayoutBlock
 
 export default Topstatistics
