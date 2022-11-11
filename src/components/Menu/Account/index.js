@@ -16,6 +16,9 @@ const WrapAccount = styled(Link)`
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    svg {
+      fill: ${({ theme }) => theme.colors.text};
+    }
   }
 `
 
