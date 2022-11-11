@@ -1,5 +1,7 @@
 import React from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
+import tether from '../../../public/images/icon/tethericon.png'
+import crypto from '../../../public/images/icon/cryptocurrency_eth.png'
 
 const Topstatistics = () => {
   return (
@@ -33,7 +35,33 @@ const Topstatistics = () => {
           </tr>
           <tr>
             <td>FTX Exchange 2</td>
-            <td>(icon) 147,096.946643999</td>
+            <td>
+              {' '}
+              <img src={crypto} /> 147,096.946643999
+            </td>
+          </tr>
+
+          <tr>
+            <td>Top ETH Sender</td>
+            <td>Total ETH</td>
+          </tr>
+          <tr>
+            <td>FTX Exchange 2</td>
+            <td>
+              <img src={crypto} /> 147,096.946643999
+            </td>
+          </tr>
+
+          <tr>
+            <td>Top ETH Sender</td>
+            <td>Total ETH</td>
+          </tr>
+          <tr>
+            <td>FTX Exchange 2</td>
+            <td>
+              {' '}
+              <img src={crypto} /> 147,096.946643999
+            </td>
           </tr>
         </table>
 
@@ -47,7 +75,32 @@ const Topstatistics = () => {
             <td>Total ETH</td>
           </tr>
           <tr>
-            <td>(icon) FTX Exchange 2</td>
+            <td>
+              {' '}
+              <img src={tether} /> FTX Exchange 2
+            </td>
+            <td>201.459</td>
+          </tr>
+
+          <tr>
+            <td>Top Unique Sender</td>
+            <td>Total ETH</td>
+          </tr>
+          <tr>
+            <td>
+              <img src={tether} /> FTX Exchange 2
+            </td>
+            <td>201.459</td>
+          </tr>
+
+          <tr>
+            <td>Top Unique Sender</td>
+            <td>Total ETH</td>
+          </tr>
+          <tr>
+            <td>
+              <img src={tether} /> FTX Exchange 2
+            </td>
             <td>201.459</td>
           </tr>
         </table>
@@ -57,6 +110,24 @@ const Topstatistics = () => {
             <th>Network</th>
             <th>View top 10</th>
           </tr>
+          <tr>
+            <td>Top Gas Used</td>
+            <td>Gas Used</td>
+          </tr>
+          <tr>
+            <td>Optimism: Sequencer</td>
+            <td>147,096.946643999</td>
+          </tr>
+
+          <tr>
+            <td>Top Gas Used</td>
+            <td>Gas Used</td>
+          </tr>
+          <tr>
+            <td>Optimism: Sequencer</td>
+            <td>147,096.946643999</td>
+          </tr>
+
           <tr>
             <td>Top Gas Used</td>
             <td>Gas Used</td>
