@@ -160,7 +160,7 @@ const Header = ({ showMenu, toggleMenu }) => {
               </ul>
             </div>
           </div>
-          {showMenu && <ContentMobile login={login} />}
+          {showMenu && <ContentMobile login={login} links={config} />}
         </div>
       </div>
     </HeaderContainer>
