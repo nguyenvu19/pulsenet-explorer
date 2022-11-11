@@ -15,13 +15,13 @@
         color: $black-color;
 
         &:hover {
-          color: $text-main;
+          color: $text;
           border: 0.5px solid $border-color;
         }
 
         &:focus {
           border: 0.5px solid $border-color;
-          color: $text-main;
+          color: $text;
         }
 
         svg {
