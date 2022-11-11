@@ -3,10 +3,10 @@ import { useRouter } from 'next/dist/client/router'
 import Link from 'components/NextLink/NextLink'
 import SearchInput from 'components/SearchInput'
 import MenuCollapseIcon from 'widgets/MenuCollapseIcon'
-import config from '../Menu/config'
-import ContentMobile from '../Menu/ContentMobile/ContentMobile'
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
-import Account from '../Menu/Account'
+import config from '../config'
+import ContentMobile from '../ContentMobile/ContentMobile'
+import Account from '../Account'
 
 const HeaderBlock = ({ showMenu, toggleMenu }) => {
   const router = useRouter()
