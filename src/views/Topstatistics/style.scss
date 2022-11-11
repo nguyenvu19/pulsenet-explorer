@@ -10,8 +10,9 @@ ul {
   color: black;
   min-height: 80vh;
   display: flex;
+  max-width: 1320px;
+  margin: 0 auto;
   width: 100%;
-  padding: 0 59.6px 128px;
   flex-direction: column;
 }
 
@@ -26,4 +27,43 @@ ul {
 .topstatistics-nav li:first-child {
   margin-right: 16px;
   color: rgb(34, 192, 105);
+}
+
+.topstatistics-nav {
+  padding-top: 7px;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+
+.topstatistics-time li {
+  width: 80px;
+  height: 29px;
+  background-color: #eeeeee;
+  color: #3c3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.topstatistics-time li:first-child {
+  width: 80px;
+  height: 29px;
+  background-color: #3c3a3a;
+  color: #ffffff;
+}
+
+.topstatistics-time li:nth-child(2) {
+  margin: 0 24px;
+}
+
+.topstatistics-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.topstatistics-transaction .topstatistics-tokens .topstatistics-network {
+  width: 50%;
 }

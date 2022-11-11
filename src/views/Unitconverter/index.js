@@ -1,6 +1,6 @@
 import React from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import { BsFolder } from 'react-icons/bs'
+import BlockContent from './components/block-content'
 
 const Unitconverter = () => {
   return (
@@ -14,187 +14,14 @@ const Unitconverter = () => {
         </p>
         <div className="block">
           <a href="#">[Reset]</a>
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
 
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
-
-          <div className="block-content">
-            <div className="left">
-              <div className="icon">
-                <BsFolder />
-              </div>
-              <p className="code">100000000000000000</p>
-            </div>
-            <div className="price right">
-              <p>
-                Wei (10<sup>-18</sup>)
-              </p>
-            </div>
-          </div>
+          <BlockContent />
+          <BlockContent />
+          <BlockContent />
+          <BlockContent />
+          <BlockContent />
+          <BlockContent />
+          <BlockContent />
         </div>
       </div>
     </div>
