@@ -5,7 +5,7 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 27px;
-    color: $secondary-color;
+    color: $secondary;
     margin-bottom: 8px;
   }
 
@@ -28,7 +28,7 @@
       background: rgba(47, 50, 65, 0.5);
       border: 1px solid #34384c;
       box-sizing: border-box;
-      color: $secondary-color;
+      color: $secondary;
       font-family: 'Graphik';
       font-style: normal;
       font-weight: 400;
@@ -39,7 +39,7 @@
     }
 
     .ant-select-arrow {
-      color: $secondary-color;
+      color: $secondary;
       right: 32px;
     }
   }

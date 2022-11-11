@@ -27,7 +27,7 @@
       }
 
       span {
-        color: $text-main;
+        color: $text;
         font-size: 16.8px;
         margin-left: 4px;
       }
@@ -37,18 +37,18 @@
       margin-bottom: 0;
 
       button {
-        color: $secondary-color;
+        color: $secondary;
         border-radius: 6px;
         font-size: 11.2px;
         font-weight: 700;
         padding: 4.8px 9.6px;
-        background: $primary-color;
+        background: $primary;
         &:hover {
-          background-color: $primary-color;
-          border-color: $primary-color;
+          background-color: $primary;
+          border-color: $primary;
         }
         &:focus {
-          border-color: $primary-color;
+          border-color: $primary;
           box-shadow: 0 4px 11px $color-shadow-account;
         }
         &:active {
@@ -127,7 +127,7 @@
           .header-right {
             .anticon-meh {
               margin: 0 4px;
-              color: $primary-color;
+              color: $primary;
               background: $background-color-padding;
               border-color: transparent;
               width: 21px;
@@ -142,8 +142,8 @@
               }
 
               &:hover {
-                color: $secondary-color;
-                background: $primary-color;
+                color: $secondary;
+                background: $primary;
                 box-shadow: 0 4px 11px $color-shadow-account;
               }
             }
@@ -165,14 +165,14 @@
               }
 
               &:hover {
-                color: $secondary-color;
+                color: $secondary;
                 background: $color-padding;
                 box-shadow: 0 4px 11px $background-item;
               }
             }
 
             .anticon-more {
-              color: $text-main;
+              color: $text;
               background: $background-color-badge;
               border-color: transparent;
               cursor: pointer;
@@ -187,7 +187,7 @@
               }
 
               &:hover {
-                color: $secondary-color;
+                color: $secondary;
                 background: $text-span;
                 box-shadow: 0 4px 11px rgb(119 131 143 / 35%);
               }
@@ -230,7 +230,7 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 text-decoration: none;
-                color: $primary-color;
+                color: $primary;
                 background-color: transparent;
               }
               .contract-link {
@@ -238,18 +238,18 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 margin-right: 4px;
-                color: $primary-color;
+                color: $primary;
                 word-wrap: break-word;
                 display: inline-block;
                 vertical-align: bottom;
               }
               .contract-link-copy {
                 display: none;
-                color: $primary-color;
+                color: $primary;
 
                 svg {
                   path {
-                    fill: $text-main;
+                    fill: $text;
                   }
                 }
               }
@@ -259,7 +259,7 @@
               }
             }
             .contract-update {
-              color: $primary-color;
+              color: $primary;
             }
           }
         }
@@ -280,7 +280,7 @@
 
     .token-main-under {
       // margin: 0 15px;
-      background: $secondary-color;
+      background: $secondary;
       border: 0.5px solid $border-color;
       border-radius: 4px;
       box-shadow: $color-shadow;
@@ -294,17 +294,17 @@
       .ant-tabs-tab-active {
         .ant-tabs-tab-btn {
           font-weight: 700;
-          color: $primary-color;
+          color: $primary;
         }
       }
       .ant-tabs-tab {
         font-weight: 700;
         &:hover {
-          color: $primary-color;
+          color: $primary;
         }
       }
       .ant-tabs-ink-bar {
-        background: $primary-color;
+        background: $primary;
       }
       // .ant-tabs-nav {
       //   margin-bottom: 0;
@@ -313,7 +313,7 @@
       //   .ant-tabs-tab {
       //     .ant-tabs-tab-btn {
       //       font-weight: 700;
-      //       color: $text-main;
+      //       color: $text;
       //       margin-left: 4px;
 
       //       &:active {
@@ -331,8 +331,8 @@
             box-shadow: none;
 
             span {
-              background-color: $primary-color;
-              border-color: $primary-color;
+              background-color: $primary;
+              border-color: $primary;
               cursor: pointer;
               width: 28px;
               height: 28px;
@@ -344,7 +344,7 @@
                 box-shadow: 0 4px 11px rgb(130 71 229 / 35%);
 
                 path {
-                  fill: $secondary-color;
+                  fill: $secondary;
                 }
               }
 
@@ -357,7 +357,7 @@
                 transform: translate(-50%, -50%);
 
                 path {
-                  fill: $secondary-color;
+                  fill: $secondary;
                   stroke-width: 12px;
                 }
               }
@@ -375,7 +375,7 @@
         .card-content-text {
           display: flex;
           justify-content: space-between;
-          color: $text-main;
+          color: $text;
           padding: 10px 15px;
 
           .card-content-text-text {
@@ -390,7 +390,7 @@
           padding: 15px;
 
           a {
-            color: $primary-color;
+            color: $primary;
             font-size: 11px;
             padding: 5px 10px;
             background: rgba(130, 71, 229, 0.1);
@@ -410,7 +410,7 @@
           .card-content-text-holder-span {
             display: block;
             margin-top: 8px;
-            color: $text-main;
+            color: $text;
           }
         }
 
@@ -430,16 +430,16 @@
           }
 
           .data-txnHash {
-            color: $primary-color;
+            color: $primary;
           }
 
           .data-block {
-            color: $primary-color;
+            color: $primary;
           }
 
           .data-txn {
             width: 50px;
-            color: $primary-color;
+            color: $primary;
           }
 
           .data-to {
@@ -468,7 +468,7 @@
           }
 
           .data-validator {
-            color: $primary-color;
+            color: $primary;
             max-width: 171px;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -481,7 +481,7 @@
             .ant-progress-line {
               .ant-progress-bg {
                 height: 2px !important;
-                background-color: $primary-color;
+                background-color: $primary;
               }
 
               .ant-progress-text {
@@ -491,11 +491,11 @@
           }
 
           .data-tokenId {
-            color: $primary-color;
+            color: $primary;
           }
 
           .data-owner {
-            color: $primary-color;
+            color: $primary;
           }
 
           // .data-gasUse {
@@ -503,12 +503,12 @@
 
           //   .data-gasUse-span {
           //     font-size: 11px;
-          //     color: $text-main;
+          //     color: $text;
           //   }
           // .ant-progress-line {
           //   .ant-progress-bg {
           //     height: 2px !important;
-          //     background-color: $primary-color;
+          //     background-color: $primary;
           //   }
 
           //   .ant-progress-text {
@@ -520,13 +520,13 @@
           .data-burntfees {
             .data-burntfees-span {
               font-size: 11px;
-              color: $text-main;
+              color: $text;
             }
 
             .ant-progress-line {
               .ant-progress-bg {
                 height: 2px !important;
-                background-color: $primary-color;
+                background-color: $primary;
               }
 
               .ant-progress-text {
@@ -545,7 +545,7 @@
               .ant-pagination-item-container {
                 .ant-pagination-item-link-icon {
                   path {
-                    fill: $primary-color;
+                    fill: $primary;
                   }
                 }
               }
@@ -556,14 +556,14 @@
 
               a {
                 background: rgba(130, 71, 229, 0.1);
-                color: $text-main;
+                color: $text;
               }
 
               &:hover {
-                background: $primary-color;
+                background: $primary;
 
                 a {
-                  color: $secondary-color;
+                  color: $secondary;
                 }
               }
             }
@@ -571,10 +571,10 @@
             .ant-pagination-prev {
               &:hover {
                 border: none;
-                background: $primary-color;
+                background: $primary;
 
                 .ant-pagination-item-link {
-                  color: $secondary-color;
+                  color: $secondary;
                 }
               }
             }
@@ -585,10 +585,10 @@
 
               &:hover {
                 border: none;
-                background: $primary-color;
+                background: $primary;
 
                 .ant-pagination-item-link {
-                  color: $secondary-color;
+                  color: $secondary;
                   border: none;
                 }
               }
@@ -600,15 +600,15 @@
                 background: rgba(130, 71, 229, 0.1);
 
                 &:hover {
-                  background-color: $primary-color;
-                  color: $secondary-color;
+                  background-color: $primary;
+                  color: $secondary;
                   // font-weight: 700;
                 }
               }
 
               &:hover {
                 path {
-                  fill: $secondary-color;
+                  fill: $secondary;
                   // font-weight: 700;
                 }
               }
@@ -624,7 +624,7 @@
           padding: 15px;
 
           .info-update-link {
-            color: $primary-color;
+            color: $primary;
           }
         }
 
@@ -637,7 +637,7 @@
               font-size: 11.2px;
 
               a {
-                color: $primary-color;
+                color: $primary;
                 margin-left: 4px;
                 font-weight: 600;
               }
@@ -683,16 +683,16 @@
               font-weight: 200;
               padding: 4px 8px;
               border-radius: 4px;
-              color: $text-main;
-              background: $secondary-color;
+              color: $text;
+              background: $secondary;
 
               // border: 1px solid $border-color;
               &:hover {
-                color: $primary-color;
+                color: $primary;
               }
 
               &:active {
-                color: $secondary-color !important;
+                color: $secondary !important;
                 background: $text-span !important;
               }
             }
@@ -746,12 +746,12 @@
         align-items: center;
         font-size: 12.25px;
         // padding: 6px 24px;
-        color: $text-main;
+        color: $text;
 
         sup {
           margin-left: 4px;
-          color: $secondary-color;
-          background: $text-main;
+          color: $secondary;
+          background: $text;
           padding: 2px 4px;
           border-radius: 4px;
         }
@@ -770,7 +770,7 @@
         // align-items: center;
         font-size: 12.25px;
         // padding: 6px 24px;
-        color: $text-main;
+        color: $text;
 
         svg {
           width: 12px;
@@ -778,12 +778,12 @@
           margin-right: 4px !important;
 
           path {
-            fill: $text-main;
+            fill: $text;
           }
         }
 
         &:hover {
-          color: $primary-color;
+          color: $primary;
 
           svg {
             width: 12px;
@@ -791,7 +791,7 @@
             margin-right: 4px !important;
 
             path {
-              fill: $primary-color;
+              fill: $primary;
             }
           }
         }
@@ -801,7 +801,7 @@
 
   .modal-search-event {
     padding: 10px;
-    background: $secondary-color;
+    background: $secondary;
     border-radius: 4px;
   }
 }
@@ -814,13 +814,13 @@
       padding: 0px !important;
 
       .ant-dropdown-menu-button {
-        background: $primary-color;
-        border-color: $primary-color;
+        background: $primary;
+        border-color: $primary;
         box-shadow: 0 4px 11px rgb(130 71 229 / 35%);
       }
       .ant-btn-primary {
-        background: $primary-color;
-        border-color: $primary-color;
+        background: $primary;
+        border-color: $primary;
         box-shadow: 0 4px 11px rgb(130 71 229 / 35%);
       }
     }
@@ -846,13 +846,13 @@
       padding: 0px !important;
 
       .ant-dropdown-menu-button {
-        background: $primary-color;
-        border-color: $primary-color;
+        background: $primary;
+        border-color: $primary;
         box-shadow: 0 4px 11px rgb(130 71 229 / 35%);
       }
       .ant-btn-primary {
-        background: $primary-color;
-        border-color: $primary-color;
+        background: $primary;
+        border-color: $primary;
         box-shadow: 0 4px 11px rgb(130 71 229 / 35%);
       }
     }

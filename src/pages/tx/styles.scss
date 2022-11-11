@@ -16,19 +16,19 @@
       align-items: center;
     }
     & > h1 {
-      color: $text-main;
+      color: $text;
       font-size: 21px;
       margin: 0;
     }
     & > div {
       margin-bottom: 0;
       button {
-        color: $secondary-color;
+        color: $secondary;
         border-radius: 6px;
         font-size: 11.2px;
         font-weight: 700;
         padding: 4.8px 9.6px;
-        background: $primary-color;
+        background: $primary;
 
         svg {
           font-weight: bold;
@@ -39,12 +39,12 @@
     .ant-dropdown-trigger {
       &:hover {
         // border: none;
-        color: $secondary-color;
-        background-color: $primary-color;
-        border-color: $primary-color;
+        color: $secondary;
+        background-color: $primary;
+        border-color: $primary;
       }
       &:active {
-        color: $secondary-color;
+        color: $secondary;
         background-color: $primary-bg-hover;
         border-color: $primary-border-hover;
       }
@@ -63,7 +63,7 @@
     padding-bottom: 20px;
     b {
       font-size: 14px;
-      color: $text-main;
+      color: $text;
     }
     .transaction-space-text {
       color: $black-color;
@@ -82,7 +82,7 @@
         position: relative;
         background: rgba(119, 131, 143, 0.1);
         &:hover {
-          color: $secondary-color;
+          color: $secondary;
           background: $text-span;
           box-shadow: 0 4px 11px rgb(119 131 143 / 35%);
         }
@@ -103,29 +103,29 @@
           .ant-tabs-tab-active {
             .ant-tabs-tab-btn {
               font-weight: 700;
-              color: $primary-color;
+              color: $primary;
             }
           }
           .ant-tabs-tab {
             font-weight: 700;
             &:hover {
-              color: $primary-color;
+              color: $primary;
             }
           }
           .ant-tabs-ink-bar {
-            background: $primary-color;
+            background: $primary;
           }
           // .ant-tabs-tab-btn {
-          //   color: $text-main;
+          //   color: $text;
           //   font-weight: 700;
 
           //   &:active {
-          //     color: $primary-color;
+          //     color: $primary;
           //   }
 
           //   .ant-tabs-tab-remove {
           //     &:active {
-          //       color: $primary-color;
+          //       color: $primary;
           //     }
           //   }
           // }
@@ -140,7 +140,7 @@
 
               .non-position-item-span {
                 position: relative;
-                color: $text-main;
+                color: $text;
                 margin-left: 4px;
                 padding: 0px 8px;
                 border-radius: 4px;
@@ -174,7 +174,7 @@
               }
 
               .item-clock {
-                color: $primary-color;
+                color: $primary;
               }
 
               .item-block-stickers {
@@ -202,7 +202,7 @@
                   top: 0;
                   border-top: 17px solid transparent;
                   border-bottom: 12px solid transparent;
-                  border-left: 0.7rem solid $secondary-color;
+                  border-left: 0.7rem solid $secondary;
                 }
               }
 
@@ -223,11 +223,11 @@
               }
 
               // .item-from {
-              //   color: $primary-color;
+              //   color: $primary;
               // }
 
               .item-hash-contract {
-                color: $primary-color;
+                color: $primary;
                 margin-left: 4px;
               }
 
@@ -265,7 +265,7 @@
               }
 
               .non-position-item-span {
-                color: $text-main;
+                color: $text;
                 margin-left: 4px;
                 padding: 0px 8px;
                 border-radius: 4px;
@@ -282,18 +282,18 @@
                 width: 100%;
                 // height: 149px;
                 padding: 12px;
-                color: $text-main;
+                color: $text;
                 border-radius: 4px;
                 box-shadow: $color-shadow;
                 line-height: 1.8;
 
                 &:focus {
-                  border-color: $primary-color;
+                  border-color: $primary;
                 }
               }
 
               Button {
-                color: $secondary-color;
+                color: $secondary;
                 background-color: $text-span;
                 border-color: $text-span;
                 border-radius: 4px;
@@ -319,12 +319,12 @@
 
                     a {
                       span:first-child {
-                        color: $primary-color;
+                        color: $primary;
                         cursor: pointer;
                       }
 
                       span:last-child {
-                        color: $primary-color;
+                        color: $primary;
                         cursor: pointer;
                       }
                     }
@@ -335,7 +335,7 @@
                     }
 
                     a:last-child {
-                      color: $primary-color;
+                      color: $primary;
                       cursor: pointer;
                     }
                   }
@@ -352,11 +352,11 @@
 
                   span:nth-child(3) {
                     margin-right: 4px;
-                    color: $text-main;
+                    color: $text;
                   }
 
                   a {
-                    color: $primary-color;
+                    color: $primary;
                   }
                 }
               }
@@ -374,7 +374,7 @@
 
             .text-private {
               font-size: 11.2px;
-              color: $text-main;
+              color: $text;
             }
           }
 
@@ -383,7 +383,7 @@
             font-weight: 700;
           }
           .collapse-click {
-            color: $primary-color;
+            color: $primary;
             span {
               span {
                 margin: 0 4px;
@@ -435,7 +435,7 @@
             margin-left: 4px;
             font-size: 14px;
             font-weight: 600;
-            color: $primary-color;
+            color: $primary;
           }
           .title-mini {
             font-size: 9px;
@@ -444,7 +444,7 @@
             align-items: center;
             padding: 2px;
             border-radius: 4px;
-            color: $secondary-color;
+            color: $secondary;
             font-weight: 700;
           }
         }
@@ -475,7 +475,7 @@
     border-radius: 4px;
     .success-modal-conent {
       font-size: 11px;
-      color: $secondary-color;
+      color: $secondary;
     }
     &::before {
       content: '';
@@ -505,7 +505,7 @@
     border-radius: 4px;
     .Block-modal-conent {
       font-size: 11px;
-      color: $secondary-color;
+      color: $secondary;
     }
 
     &::before {
@@ -536,10 +536,10 @@
     border-radius: 4px;
     .nonce-modal-conent {
       font-size: 11px;
-      color: $secondary-color;
+      color: $secondary;
       text-decoration: none;
       &:hover {
-        color: $secondary-color;
+        color: $secondary;
       }
     }
     &::before {
@@ -570,10 +570,10 @@
     border-radius: 4px;
     .noncedata-modal-conent {
       font-size: 11px;
-      color: $secondary-color;
+      color: $secondary;
       text-decoration: none;
       &:hover {
-        color: $secondary-color;
+        color: $secondary;
       }
     }
     &::before {

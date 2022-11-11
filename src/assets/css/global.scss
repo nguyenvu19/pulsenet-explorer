@@ -20,7 +20,7 @@
   width: 3px;
 }
 ::-webkit-scrollbar-thumb {
-  background: $text-main;
+  background: $text;
 }
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px #5e6588;
@@ -39,14 +39,16 @@ article, aside, details, figcaption, figure,
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+
 body {
   color: $text;
+  font-weight: 500;
 }
 
 #root {
   width: 100%;
   min-height: 100%;
-  background-color: $secondary-color;
+  background-color: $secondary;
 }
 
 p {
