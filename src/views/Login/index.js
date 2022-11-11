@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import {  Button, Checkbox, Form, Input } from 'antd'
 
-// const { Option } = Select
-// const residences = [
 //   {
 //     value: 'zhejiang',
 //     label: 'Zhejiang',
@@ -43,7 +41,7 @@ const formItemLayout = {
       span: 24,
     },
     sm: {
-      span: 8,
+      span: 24,
     },
   },
   wrapperCol: {
@@ -51,7 +49,7 @@ const formItemLayout = {
       span: 24,
     },
     sm: {
-      span: 16,
+      span: 24,
     },
   },
 }
@@ -62,8 +60,8 @@ const tailFormItemLayout = {
       offset: 0,
     },
     sm: {
-      span: 0
-      // offset: 2,
+      span: 24,
+      offset: 0,
     },
   },
 }
@@ -81,8 +79,9 @@ const LoginPage = () => {
         <h1>Welcome back</h1>
         <p>Login to your account</p>
       </div>
-      <div></div>
-      <Form
+
+      <div >
+        <Form
         {...formItemLayout}
         form={form}
         name="register"
@@ -104,9 +103,9 @@ const LoginPage = () => {
               },
             ]}
             className="login-page_form_item"
-            style={{
-              width: '500px',
-            }}
+            // style={{
+            //   width: '500px',
+            // }}
           >
             <Input placeholder="Username" className="login-page_form_item_input"/>
           </Form.Item>
@@ -119,15 +118,18 @@ const LoginPage = () => {
                 message: 'Please input your password!',
               },
             ]}
-            hasFeedback
+            className="login-page_form_item"
+            // hasFeedback
           >
-            <Input.Password placeholder="A confirmation code will be sent to this address" className="login-page_form_item_input" />
+            <Input.Password 
+             placeholder="A confirmation code will be sent to this address" className="login-page_form_item_input" />
           </Form.Item>
         </div>
        
 
         <Form.Item
           // style={{marginLeft: '-50%'}}
+          
           name="agreement"
           valuePropName="checked"
           rules={[
@@ -155,6 +157,8 @@ const LoginPage = () => {
         </Form.Item>
         
       </Form>
+      </div>
+      
       
     </div>
   )

@@ -4,17 +4,18 @@
 }
 .login-page {
   color: black;
-  // min-height: 80vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
   //login-page_header
   &_header {
     margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     padding: 0px;
     
     height: 60px;
@@ -33,30 +34,46 @@
     }
   }
   //form
+ 
   &_form{
+    
     margin-top: 32px;
     margin-bottom: 144px;
+    
+
     .form_header{
       margin-bottom: 32px;
+      
     }
+
     &_item {
-      font-weight: 500;
+      font-weight: bold;
       font-size: 16px;
       line-height: 20.75px;
       color: #3C3A3A;
-      width: 600px;
+      max-width: 600px;
+      margin: 0 auto;
+      
 
       &_input {
-       width: 600px;
+       
+       width: 100%;
        outline: none;
        border: 1px solid #3C3A3A;
        color: #3C3A3A;
+       border-radius: 5px;
 
        
       }
      
       
       
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
     }
     input::placeholder{
       font-weight: 400;
@@ -72,6 +89,7 @@
       background-color: #418143;
       padding: 5px 50px;
       margin-bottom:24px ;
+      border: none;
     }
     //checked
     .ant-checkbox-checked .ant-checkbox-inner {
@@ -95,4 +113,37 @@
   }
   
 }
+//ipad
+// @media(max-width: 768px) {
+//   .form_header{
+//     width: 300px;
+//     margin: 0 auto;
+//   }
+//   .login-page_form_item_input{
+//     width: 300px;
+    
+//   }
+// }
 
+//pc
+@media(min-width: 768px) {
+  .form_header{
+    width: 600px;
+    margin: 0 auto;
+  }
+  .login-page_form_item_input{
+    width: 100%;
+    
+  }
+}
+//ipad
+@media(min-width: 500px) and (max-width: 768px) {
+  .form_header{
+    width: 400px;
+    margin: 0 auto;
+  }
+  .login-page_form_item_input{
+    width: 100%;
+    
+  }
+}
