@@ -15,7 +15,7 @@
 
     .tx-detail-address {
       font-size: 18px;
-      color: $text-main;
+      color: $text;
 
       display: flex;
       flex-flow: row wrap;
@@ -36,7 +36,7 @@
         margin-right: 10px;
       }
       .tx-address {
-        color: $text-main;
+        color: $text;
         font-size: 13px;
         margin-right: 10px;
         align-self: flex-end;
@@ -49,7 +49,7 @@
         display: inline-flex;
         align-items: center;
         .tx-icon {
-          color: $text-main;
+          color: $text;
           font-size: 17px;
           width: 28px;
           height: 28px;
@@ -85,7 +85,7 @@
         font-size: 11.2px;
         font-weight: 700;
         padding: 4.8px 9.6px;
-        background: $primary-color;
+        background: $primary;
 
         svg {
           font-weight: bold;
@@ -106,7 +106,7 @@
 
           svg {
             path {
-              fill: $secondary-color;
+              fill: $secondary;
             }
           }
         }
@@ -120,11 +120,11 @@
 
     b {
       font-size: 14px;
-      color: $text-main;
+      color: $text;
     }
 
     a {
-      color: $primary-color;
+      color: $primary;
       font-weight: bold;
       margin: 0 4px;
     }
@@ -152,24 +152,24 @@
     }
     .main-under {
       padding: 0 15px;
-      background: $secondary-color;
+      background: $secondary;
       border: 0.5px solid $border-color;
       border-radius: 8px;
       box-shadow: $color-shadow;
       .ant-tabs-tab-active {
         .ant-tabs-tab-btn {
           font-weight: 700;
-          color: $primary-color;
+          color: $primary;
         }
       }
       .ant-tabs-tab {
         font-weight: 700;
         &:hover {
-          color: $primary-color;
+          color: $primary;
         }
       }
       .ant-tabs-ink-bar {
-        background: $primary-color;
+        background: $primary;
       }
       .ant-tabs-content-holder {
         overflow-x: auto;
@@ -183,13 +183,13 @@
           .card-content-text {
             display: flex;
             justify-content: space-between;
-            color: $text-main;
+            color: $text;
             padding: 10px 15px;
 
             span {
               margin-left: 4px;
               .card-content-text-transactions {
-                color: $primary-color;
+                color: $primary;
                 margin: 0 4px;
               }
             }
@@ -203,7 +203,7 @@
               border-radius: 4px;
 
               .ant-dropdown-trigger {
-                color: $text-main;
+                color: $text;
 
                 svg {
                   width: 11px;
@@ -213,7 +213,7 @@
               }
 
               &:hover {
-                color: $secondary-color;
+                color: $secondary;
                 background: #77838f;
                 box-shadow: 0 4px 11px rgb(119 131 143 / 35%);
 
@@ -241,7 +241,7 @@
                 font-size: 11.2px;
 
                 a {
-                  color: $primary-color;
+                  color: $primary;
                   margin-left: 4px;
                   font-weight: 600;
                 }
@@ -261,14 +261,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: $text-main;
+            color: $text;
 
             .card-content-text-event-text-span {
               font-size: 11px;
-              color: $text-main;
+              color: $text;
 
               a {
-                color: $primary-color;
+                color: $primary;
               }
             }
           }
@@ -278,7 +278,7 @@
             height: 28px;
             cursor: pointer;
             border-radius: 4px;
-            background: $primary-color;
+            background: $primary;
             position: relative;
 
             svg {
@@ -290,7 +290,7 @@
               transform: translate(-50%, -50%);
 
               path {
-                fill: $secondary-color;
+                fill: $secondary;
               }
             }
           }
@@ -320,12 +320,12 @@
       align-items: center;
       font-size: 12.25px;
       // padding: 6px 24px;
-      color: $text-main;
+      color: $text;
 
       sup {
         margin-left: 4px;
-        color: $secondary-color;
-        background: $text-main;
+        color: $secondary;
+        background: $text;
         padding: 2px 4px;
         border-radius: 4px;
       }
@@ -344,7 +344,7 @@
       // align-items: center;
       font-size: 12.25px;
       // padding: 6px 24px;
-      color: $text-main;
+      color: $text;
 
       svg {
         width: 12px;
@@ -352,12 +352,12 @@
         margin-right: 4px !important;
 
         path {
-          fill: $text-main;
+          fill: $text;
         }
       }
 
       &:hover {
-        color: $primary-color;
+        color: $primary;
 
         svg {
           width: 12px;
@@ -365,7 +365,7 @@
           margin-right: 4px !important;
 
           path {
-            fill: $primary-color;
+            fill: $primary;
           }
         }
       }
@@ -427,12 +427,12 @@
       }
 
       &:hover {
-        color: $secondary-color;
-        background-color: $primary-color;
+        color: $secondary;
+        background-color: $primary;
         border-radius: 0.25rem;
 
         .detailt-token-table {
-          color: $secondary-color;
+          color: $secondary;
         }
       }
     }
@@ -446,7 +446,7 @@
     }
 
     .detailt-token-table {
-      color: $text-main;
+      color: $text;
       display: block;
     }
 
@@ -458,7 +458,7 @@
 
 .modal-search-event {
   padding: 10px;
-  background: $secondary-color;
+  background: $secondary;
   border-radius: 4px;
 }
 
@@ -478,11 +478,11 @@
 
     .nonce-modal-conent {
       font-size: 11px;
-      color: $secondary-color;
+      color: $secondary;
       text-decoration: none;
 
       &:hover {
-        color: $secondary-color;
+        color: $secondary;
       }
     }
 

@@ -1,247 +1,124 @@
 import React from 'react'
-// import ProfileAccount from 'components/ProfileAccount'
 import Link from 'components/NextLink/NextLink'
+import styled from 'styled-components'
 
-const ContentMobile = () => (
-  <div className="header-right-mobile-active" style={{ display: 'block' }}>
+const DrawMenuContent = styled.div`
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  ul {
+    list-style: none;
+    li {
+      .active-a {
+        color: ${({ theme }) => theme.colors.text};
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+
+        &:hover {
+          color: ${({ theme }) => theme.colors.primary};
+        }
+
+        span {
+          color: ${({ theme }) => theme.colors.text};
+
+          &:hover {
+            color: ${({ theme }) => theme.colors.primary};
+          }
+
+          &:last-child {
+            svg {
+              width: 10px;
+              height: 10px;
+
+              path {
+                fill: $color-header-fill;
+              }
+            }
+          }
+        }
+      }
+
+      .active-a-account {
+        span {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .submenu-mobile {
+        height: 0;
+        display: block;
+        transition: 0.5s;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        background-color: ${({ theme }) => theme.colors.primary};
+        border-left: 3px solid ${({ theme }) => theme.colors.primary};
+        box-shadow: 0 8px 20px rgba(130, 71, 229, 8%);
+        overflow: hidden;
+        .px-3 {
+          width: 100%;
+          display: block;
+          padding: 10px;
+          text-align: center;
+
+          .px-3-a {
+            color: ${({ theme }) => theme.colors.primary};
+            background: $background-rgba;
+            padding: 0 75px;
+          }
+        }
+        &.active {
+          height: fit-content;
+        }
+      }
+    }
+  }
+`
+
+const ContentMobile = ({ links, active }) => (
+  <DrawMenuContent className="container">
     <ul>
-      <li className="active-li-mobile">
-        <a className="active-a">Home</a>
-      </li>
-      <li className="active-li-mobile">
-        <a className="active-a">
-          <span>Blockchain</span>
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-              <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
-            </svg>
-          </span>
-        </a>
-        <ul className="submenu-mobile">
-          <li className="li-acount">
-            <a className="navlink-submenu">Top Accounts</a>
-          </li>
-          <li className="dropdown-divider" />
-          <li className="li-acount">
-            <Link to="/txs" className="navlink-submenu">
-              View Txns
-            </Link>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">View Pending Txns</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">View Contract Internal Txns</a>
-          </li>
-          <li className="dropdown-divider" />
-
-          <li className="li-acount">
-            <a className="navlink-submenu">View Plasma Deposit Txns</a>
-          </li>
-          <li className="dropdown-divider" />
-
-          <li className="li-acount">
-            <a className="navlink-submenu">View Blocks</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">Forked Blocks (Reorgs)</a>
-          </li>
-          <li className="dropdown-divider" />
-
-          <li className="li-acount">
-            <a className="navlink-submenu">View Uncles</a>
-          </li>
-
-          <li className="li-acount">
-            <a className="navlink-submenu">Verified Contracts</a>
-          </li>
-        </ul>
-      </li>
-      <li className="active-li-mobile">
-        <a className="active-a">
-          <span>Tokens </span>
-          <span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
-              </svg>
-            </span>
-          </span>
-        </a>
-        <ul className="submenu-mobile">
-          <li className="li-acount">
-            <a className="navlink-submenu">ERC-20 Tokens By MarketCap</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">View ERC-20 Transfers</a>
-          </li>
-          <li className="dropdown-divider" />
-          <li className="li-acount">
-            <a className="navlink-submenu">ERC721 Top Tokens</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">View ERC721 Transfers</a>
-          </li>
-          <li className="dropdown-divider" />
-
-          <li className="li-acount">
-            <a className="navlink-submenu">ERC-1155 Top Tokens</a>
-          </li>
-
-          <li className="li-acount">
-            <a className="navlink-submenu">View ERC-1155 Transfers </a>
-          </li>
-        </ul>
-      </li>
-      <li className="active-li-mobile">
-        <a className="active-a">
-          <span>Resources </span>
-          <span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
-              </svg>
-            </span>
-          </span>
-        </a>
-        <ul className="submenu-mobile">
-          <li className="li-acount">
-            <a className="navlink-submenu">APIs</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">Verify Contract</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">Byte to Opcode</a>
-          </li>
-        </ul>
-      </li>
-      <li className="active-li-mobile">
-        <a className="active-a">
-          <span>Misc </span>
-          <span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
-              </svg>
-            </span>
-          </span>
-        </a>
-        <ul className="submenu-mobile">
-          <li className="li-acount">
-            <a className="navlink-submenu">APIs</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">Verify Contract</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">Byte to Opcode</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">Broadcast TXN</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">Vyper Online Compiler</a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">
-              Token Approvals
-              <sup>
-                <span className="navlink-submenu-gray">Beta</span>
-              </sup>
+      {links.map(({ label, href, target, items }) => {
+        if (items.length > 0) {
+          return (
+            <li key={label}>
+              <a {...(href && { href })} className="active-a">
+                <span>{label}</span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
+                  </svg>
+                </span>
+              </a>
+              <ul className={`submenu-mobile ${true ? 'active' : ''}`}>
+                {links.map((submenu) => {
+                  return (
+                    <li className="li-account" key={submenu.label}>
+                      <a className="navlink-submenu">{submenu.label}</a>
+                    </li>
+                    // <li className="dropdown-divider" />
+                    // <li className="li-account">
+                    //   <Link to="/txs" className="navlink-submenu">
+                    //     View Txns
+                    //   </Link>
+                    //   </li>
+                  )
+                })}
+              </ul>
+            </li>
+          )
+        }
+        return (
+          <li key={label}>
+            <a href={href} target={target} className="active-a">
+              {label}
             </a>
           </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">
-              Unit Converter
-              <sup>
-                <span className="navlink-submenu-green">New</span>
-              </sup>
-            </a>
-          </li>
-          <li className="li-acount">
-            <a className="navlink-submenu">
-              Gas Tracker
-              <sup>
-                <span className="navlink-submenu-green">New</span>
-              </sup>
-            </a>
-          </li>
-        </ul>
-      </li>
-      {/* <li className="active-li-mobile">
-        <a className="active-a active-a-acount"> 
-          <span>
-            <UserOutlined className="user-icon" theme="outlined" />
-            <ProfileAccount className="custom-account" isMobile={false} />
-          </span>
-          {login && (
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
-              </svg>
-            </span>
-          )}
-        </a>
-        {login && (
-          <ul className="submenu-mobile">
-            <li className="li-acount">
-              <a className="navlink-submenu">My Profile</a>
-            </li>
-            <li className="dropdown-divider" />
-            <li className="li-acount">
-              <a className="navlink-submenu">Watch List</a>
-            </li>
-            <li className="li-acount">
-              <a className="navlink-submenu">Txn Private Notes</a>
-            </li>
-            <li className="li-acount">
-              <a className="navlink-submenu">Address Private Notes</a>
-            </li>
-
-            <li className="li-acount">
-              <a className="navlink-submenu">Token Ignore List</a>
-            </li>
-            <li className="dropdown-divider" />
-
-            <li className="li-acount">
-              <a className="navlink-submenu">API Keys </a>
-            </li>
-            <li className="li-acount">
-              <a className="navlink-submenu">Verified Address </a>
-            </li>
-            <li className="li-acount">
-              <a className="navlink-submenu">Custom ABI </a>
-            </li>
-            <li className="dropdown-divider" />
-            <li className="li-acount px-3">
-              <a className="navlink-submenu px-3-a">Sign Out </a>
-            </li>
-          </ul>
-        )}
-      </li> */}
-      <li className="active-li-mobile">
-        <a className="active-a">
-          <span>Explorers </span>
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-              <path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
-            </svg>
-          </span>
-        </a>
-        <ul className="submenu-mobile">
-          <li className="li-acount">
-            <a className="navlink-submenu">Top Accounts</a>
-          </li>
-          <li className="li-acount">
-            <Link to="/txs" className="navlink-submenu">
-              View Txns
-            </Link>
-          </li>
-        </ul>
-      </li>
+        )
+      })}
     </ul>
-  </div>
+  </DrawMenuContent>
 )
 
 export default ContentMobile

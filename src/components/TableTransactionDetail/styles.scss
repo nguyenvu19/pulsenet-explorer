@@ -6,7 +6,7 @@
 
     .ant-table-filter-column {
       font-weight: 700;
-      color: $text-main;
+      color: $text;
 
       .ant-table-column-sorter {
         display: none;
@@ -15,7 +15,7 @@
 
     th.ant-table-cell {
       font-weight: 700;
-      color: $text-main;
+      color: $text;
     }
 
     .ant-table-cell {
@@ -34,7 +34,7 @@
 
         a {
           display: inline-block;
-          color: $primary-color;
+          color: $primary;
           width: 170px;
           overflow: hidden;
           overflow: hidden;
@@ -54,7 +54,7 @@
       }
 
       .data-block {
-        color: $primary-color;
+        color: $primary;
       }
 
       .data-age {
@@ -67,7 +67,7 @@
 
         .data-from-link {
           display: inline-block;
-          color: $primary-color;
+          color: $primary;
           width: 170px;
           overflow: hidden;
           overflow: hidden;
@@ -89,7 +89,7 @@
         display: flex;
         svg {
           path {
-            fill: $text-main;
+            fill: $text;
             margin-right: 4px;
           }
         }
@@ -99,7 +99,7 @@
 
         .data-to-link {
           display: inline-block;
-          color: $primary-color;
+          color: $primary;
           width: 170px;
           overflow: hidden;
           overflow: hidden;
@@ -119,7 +119,7 @@
         .data-txnfee-link {
           font-size: 10px;
           display: inline-block;
-          color: $text-main;
+          color: $text;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -129,7 +129,7 @@
         .data-txnfee-link-txs {
           font-size: 10px;
           display: inline-block;
-          color: $text-main;
+          color: $text;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
