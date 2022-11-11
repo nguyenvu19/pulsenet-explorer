@@ -12,7 +12,7 @@ const WrapAddressOverview = styled.div`
   color: ${({ theme }) => theme.colors.blackColor};
 
   .main-top-left-header {
-    color: $text-main;
+    color: $text;
     font-weight: 700;
     padding: 12px;
     border-bottom: 0.5px solid ${({ theme }) => theme.colors.borderColor};

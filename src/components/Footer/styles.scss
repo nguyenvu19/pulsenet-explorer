@@ -54,7 +54,7 @@
 
           &:hover {
             color: $black-color;
-            background: $secondary-color;
+            background: $secondary;
             box-shadow: $color-shadow2;
           }
           img {
@@ -64,7 +64,7 @@
         }
         a {
           font-size: 10px;
-          color: $secondary-color;
+          color: $secondary;
           background: $background-rgba;
           border: none;
           padding: 5.8px 9.6px;
@@ -75,12 +75,12 @@
             width: 13.3px;
             margin-right: 4px;
             path {
-              fill: $secondary-color;
+              fill: $secondary;
             }
           }
           &:hover {
             color: $black-color;
-            background: $secondary-color;
+            background: $secondary;
             box-shadow: $color-shadow2;
             svg {
               path {
@@ -114,12 +114,12 @@
             border: none;
             box-shadow: $color-shadow2;
             path {
-              fill: $secondary-color;
+              fill: $secondary;
               background: $background-button-dark;
             }
           }
           &:hover {
-            background: $secondary-color;
+            background: $secondary;
             svg:last-child {
               path {
                 fill: $black-color;
@@ -143,13 +143,13 @@
         margin-bottom: 10px;
         display: flex;
         p {
-          color: $secondary-color;
+          color: $secondary;
           font-size: 12.25px;
           .mx-1 {
             margin: 0 4px;
           }
           .under-left-primary {
-            color: $primary-color;
+            color: $primary;
             font-size: 12px;
             font-weight: bold;
             margin-left: 4px;
@@ -158,7 +158,7 @@
             margin: 0 4px;
           }
           .donate {
-            color: $text-main;
+            color: $text;
           }
           svg {
             width: 13px;
@@ -177,7 +177,7 @@
           padding-left: 0;
           li {
             a {
-              color: $primary-color;
+              color: $primary;
               margin-right: 8px;
               font-size: 12.25px;
             }
@@ -185,17 +185,17 @@
           .under-right-svg {
             width: 28px;
             height: 28px;
-            color: $secondary-color;
+            color: $secondary;
             background: $background-rgba;
             margin: auto;
             margin-left: 4px;
             border-radius: 50%;
             position: relative;
             &:hover {
-              background: $secondary-color;
+              background: $secondary;
               svg {
                 path {
-                  fill: $text-main;
+                  fill: $text;
                 }
               }
             }
@@ -207,7 +207,7 @@
               transform: translate(-50%, -50%);
               position: absolute;
               path {
-                fill: $secondary-color;
+                fill: $secondary;
               }
             }
           }
@@ -224,8 +224,8 @@
     width: 40px;
     line-height: 40px;
     border-radius: 4px;
-    background-color: $primary-color;
-    color: $secondary-color;
+    background-color: $primary;
+    color: $secondary;
     text-align: center;
     font-size: 14px;
     z-index: 99999;

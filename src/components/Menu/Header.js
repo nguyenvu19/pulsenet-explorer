@@ -15,31 +15,31 @@ const Header = ({ showMenu, toggleMenu }) => {
   const [login, setLogin] = useState(true)
 
   return (
-    <HeaderContainer>
-      <div className="container menu-container">
-        <div className="content-header">
-          <div className="header-left">
+    <HeaderContainer className="nav-default">
+      <div className="nav-container container">
+        <div className="nav-content">
+          <div className="nav-left">
             <Link href="/">
-              <div className="header-logo">
+              <div className="nav-logo">
                 <img src="/logo-text.png" alt="" />
               </div>
             </Link>
           </div>
-          <div className="header-right">
+          <div className="nav-right">
             <MenuCollapseIcon className="menu-collapse" showMenu={showMenu} toggleMenu={toggleMenu} />
-            {/* <div className="header-right-mobile">
+            {/* <div className="nav-right-mobile">
               <input type="checkbox" id="menu" checked={showMenu} onChange={toggleMenu} />
               <label htmlFor="menu" className="icon">
                 <div className="menu" /> 
               </label>
             </div> */}
-            <div className="header-right-desktop">
+            <div className="nav-right-desktop">
               <ul>
                 {config.map((entry) => {
                   if (entry.items) {
                     return (
                       <li key={entry.label}>
-                        <Link href="/" className="header-blockchain">
+                        <Link href="/" className="nav-blockchain">
                           {entry.label}
                           <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -71,7 +71,7 @@ const Header = ({ showMenu, toggleMenu }) => {
                   )
                 })}
 
-                {/* <li className="header-r-separator" />
+                {/* <li className="nav-r-separator" />
                 <li>
                   <Link href="/">
                     <UserOutlined className="user-icon" theme="outlined" />
@@ -139,7 +139,7 @@ const Header = ({ showMenu, toggleMenu }) => {
                     </ul>
                   )}
                 </li> */}
-                <li className="header-l-separator" />
+                <li className="nav-l-separator" />
                 <li className="li-last_child">
                   <Link className="right-destop-logo">
                     <img src="/logo.png" alt="" />

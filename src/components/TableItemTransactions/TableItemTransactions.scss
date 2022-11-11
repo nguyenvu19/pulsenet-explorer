@@ -74,7 +74,7 @@
         }
 
         a {
-          color: $primary-color;
+          color: $primary;
           margin-left: 4px;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -136,7 +136,7 @@
 
           .content-hasktag {
             margin-left: 4px;
-            color: $primary-color;
+            color: $primary;
             max-width: 171px;
             display: inline-block;
             vertical-align: bottom;
@@ -146,7 +146,7 @@
           }
           a {
             margin-left: 4px;
-            color: $primary-color;
+            color: $primary;
             max-width: 171px;
             display: inline-block;
             vertical-align: bottom;
@@ -163,7 +163,7 @@
             }
 
             > span {
-              // color: $primary-color;
+              // color: $primary;
               max-width: 171px;
               display: inline-block;
               vertical-align: bottom;
@@ -182,7 +182,7 @@
               position: relative;
               margin: 1px;
               overflow: hidden;
-              color: $text-main;
+              color: $text;
               font-size: 10.5px;
               padding: 3px 7px 3.2px 18px;
               letter-spacing: 0.8px;
@@ -199,7 +199,7 @@
                 content: '';
                 border-top: 1rem solid transparent;
                 border-bottom: 1.7rem solid transparent;
-                border-left: 0.7rem solid $secondary-color;
+                border-left: 0.7rem solid $secondary;
               }
             }
           }
@@ -218,7 +218,7 @@
           position: relative;
           margin: 1px;
           overflow: hidden;
-          color: $text-main;
+          color: $text;
           font-size: 10.5px;
           padding: 3px 7px 3.2px 18px;
           letter-spacing: 0.8px;
@@ -235,7 +235,7 @@
             content: '';
             border-top: 1rem solid transparent;
             border-bottom: 1.7rem solid transparent;
-            border-left: 0.7rem solid $secondary-color;
+            border-left: 0.7rem solid $secondary;
           }
         }
       }

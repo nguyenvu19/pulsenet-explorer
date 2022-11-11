@@ -56,13 +56,13 @@
             }
             p {
               font-size: 14px;
-              color: $text-main;
+              color: $text;
               display: block;
               @include media-up(md) {
                 width: 50%;
               }
               a {
-                color: $primary-color;
+                color: $primary;
                 margin-right: 4px;
               }
               span {
@@ -82,18 +82,18 @@
             }
             .ant-pagination-item-active {
               background: rgba(130, 71, 229, 0.1);
-              color: $text-main;
+              color: $text;
             }
             .ant-pagination-item {
               background: rgba(130, 71, 229, 0.1);
               a {
-                color: $text-main;
+                color: $text;
               }
             }
             .ant-pagination-item-active {
               border: none;
               a {
-                color: $primary-color;
+                color: $primary;
               }
             }
           }
@@ -108,18 +108,18 @@
             }
             .ant-pagination-item-active {
               background: rgba(130, 71, 229, 0.1);
-              color: $text-main;
+              color: $text;
             }
             .ant-pagination-item {
               background: rgba(130, 71, 229, 0.1);
               a {
-                color: $text-main;
+                color: $text;
               }
             }
             .ant-pagination-item-active {
               border: none;
               a {
-                color: $primary-color;
+                color: $primary;
               }
             }
           }
@@ -128,7 +128,7 @@
               overflow: hidden;
               .ant-table-thead {
                 .ant-table-cell {
-                  color: $text-main;
+                  color: $text;
                   font-weight: 700;
                   &::before {
                     display: none;
@@ -139,14 +139,14 @@
                       align-items: center;
                       margin-right: 4px;
                       path {
-                        fill: $text-main;
+                        fill: $text;
                       }
                     }
                   }
                 }
               }
               .data-address-account {
-                color: $primary-color;
+                color: $primary;
               }
             }
           }
