@@ -63,6 +63,10 @@
           }
         }
         .nav-search-input {
+          display: none;
+          @include media-up(md) {
+            display: block;
+          }
           width: 100%;
           max-width: 748px;
           margin-left: auto;
@@ -71,6 +75,10 @@
     }
 
     .nav-search-input-mobile {
+      display: block;
+      @include media-up(md) {
+        display: none;
+      }
       width: 100%;
       padding: 8px;
       display: block;
@@ -78,160 +86,161 @@
         display: none;
       }
     }
+  }
 
-    .nav-bottom {
+  .nav-bottom {
+    display: none;
+    @include media-up(md) {
       display: flex;
-      justify-content: space-between;
-      flex-direction: row;
+    }
+
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    .nav-bottom-left {
+      padding: 4px 8px;
+      background: #eeeeee;
+      border-radius: 4px;
+    }
+    .nav-bottom-right {
+      display: flex;
       align-items: center;
-
-      .nav-bottom-left {
-        padding: 4px 8px;
-        background: #eeeeee;
-        border-radius: 4px;
-      }
-      .nav-bottom-right {
-        display: flex;
-        align-items: center;
-        ul {
+      ul {
+        list-style: none;
+        margin-bottom: 0;
+        @include media-up(md) {
           list-style: none;
-          margin-bottom: 0;
-          @include media-up(md) {
-            list-style: none;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            justify-content: flex-end;
-          }
-          li {
-            white-space: nowrap;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-end;
+        }
+        li {
+          white-space: nowrap;
+          height: 100%;
+          padding: 16px 14px;
+          display: block;
+
+          a {
+            color: $text;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 160%;
             height: 100%;
-            padding: 16px 14px;
-            display: block;
+            display: flex;
+            align-items: center;
 
-            a {
-              color: $text;
-              font-size: 14px;
-              font-weight: 400;
-              line-height: 160%;
-              height: 100%;
-              display: flex;
-              align-items: center;
+            .user-icon {
+              transform: rotate(0deg);
+            }
 
-              .user-icon {
-                transform: rotate(0deg);
+            > span {
+              font-size: 18px;
+              margin-left: 9px;
+            }
+            &.right-destop-logo {
+              width: 28px;
+              height: 28px;
+              background: $background-color-padding;
+              border-color: transparent;
+              border-radius: 4px;
+            }
+
+            span {
+              svg {
+                width: 10px;
+                height: 10px;
+                fill: $color-header-fill;
               }
+            }
+          }
+          a:hover {
+            color: $primary;
+            font-weight: 400;
+            svg {
+              fill: $primary;
+            }
+          }
+          .active {
+            color: $primary;
+          }
 
-              > span {
-                font-size: 18px;
-                margin-left: 9px;
-              }
-              &.right-destop-logo {
-                width: 28px;
-                height: 28px;
-                background: $background-color-padding;
+          .submenu {
+            display: none;
+            position: absolute;
+            margin-top: 16px;
+            z-index: 199;
+            min-width: 160px;
+            min-height: fit-content;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            background-color: $secondary;
+            border-top: 3px solid $primary;
+            box-shadow: 0 8px 20px rgb(130 71 229 / 8%);
+            .li-account {
+              font-size: 12.95px;
+              padding: 8px 28px;
+
+              &.px-3 {
                 border-color: transparent;
-                border-radius: 4px;
+                text-align: center;
+                margin: auto;
+                padding: 10px;
+
+                a {
+                  color: $text;
+                  background: $background-color-padding;
+                  justify-content: center;
+                  display: block;
+                  padding: 4px 100px;
+                  border-radius: 4px;
+                  transition: all 0.2s ease-in-out;
+
+                  &:hover {
+                    color: $secondary;
+                    background: $primary;
+                    box-shadow: $color-shadow-account;
+                  }
+                }
+              }
+
+              .span-beta {
+                padding: 2px 4px;
+                background: $text-span;
+                color: $secondary;
+                margin-left: 4px;
+                border-radius: 5px;
               }
 
               span {
-                svg {
-                  width: 10px;
-                  height: 10px;
-                  fill: $color-header-fill;
-                }
+                padding: 2px 4px;
+                background: $green-stick;
+                color: $secondary;
+                margin-left: 4px;
+                border-radius: 5px;
               }
             }
-            a:hover {
-              color: $primary;
-              font-weight: 400;
-              svg {
-                fill: $primary;
-              }
+
+            .dropdown-divider {
+              border-top: 0.2px solid $border-color;
+              padding: 0;
             }
-            .active {
-              color: $primary;
-            }
-
-            .submenu {
-              position: absolute;
-              // display: none;
-              padding: 16px 0;
-
-              .li-account {
-                font-size: 12.95px;
-                padding: 8px 28px;
-
-                &.px-3 {
-                  border-color: transparent;
-                  text-align: center;
-                  margin: auto;
-                  padding: 10px;
-
-                  a {
-                    color: $text;
-                    background: $background-color-padding;
-                    justify-content: center;
-                    display: block;
-                    padding: 4px 100px;
-                    border-radius: 4px;
-                    transition: all 0.2s ease-in-out;
-
-                    &:hover {
-                      color: $secondary;
-                      background: $primary;
-                      box-shadow: $color-shadow-account;
-                    }
-                  }
-                }
-
-                .span-beta {
-                  padding: 2px 4px;
-                  background: $text-span;
-                  color: $secondary;
-                  margin-left: 4px;
-                  border-radius: 5px;
-                }
-
-                span {
-                  padding: 2px 4px;
-                  background: $green-stick;
-                  color: $secondary;
-                  margin-left: 4px;
-                  border-radius: 5px;
-                }
-              }
-
-              .dropdown-divider {
-                border-top: 0.2px solid $border-color;
-                padding: 0;
-              }
-            }
-          }
-          li:hover {
-            .submenu {
-              display: block;
-              position: absolute;
-              margin-top: 16px;
-              z-index: 199;
-              min-width: 160px;
-              min-height: fit-content;
-              border-bottom-right-radius: 4px;
-              border-bottom-left-radius: 4px;
-              background-color: $secondary;
-              border-top: 3px solid $primary;
-              box-shadow: 0 8px 20px rgb(130 71 229 / 8%);
-            }
-          }
-
-          .li-last_child {
-            padding-right: 0;
-            position: relative;
           }
         }
-        .nav-account {
-          margin-left: 14px;
+        li:hover {
+          .submenu {
+            display: block;
+          }
         }
+
+        .li-last_child {
+          padding-right: 0;
+          position: relative;
+        }
+      }
+      .nav-account {
+        margin-left: 14px;
       }
     }
   }
