@@ -7,7 +7,7 @@
   padding: 0 10px;
 
   .account-name {
-    color: $text-main;
+    color: $text;
 
     font-weight: 200;
     font-size: 14px;
@@ -15,12 +15,11 @@
     // margin-right: 10px;
     padding-top: 3px;
     cursor: pointer;
-  
-     span:last-child{
+
+    span:last-child {
       //  transform: rotate(45deg);
       font-size: 14px;
       margin-left: 11px;
     }
-    
   }
 }

@@ -5,67 +5,65 @@ import styled from 'styled-components'
 import { useRouter } from 'next/dist/client/router'
 import Input from 'widgets/Input'
 import { isAddress, isTxhash } from 'utils'
+import { SearchIcon } from 'widgets/Svg'
 
 const { Option } = Select
 
 const WrapSearchInput = styled.div`
   width: 100%;
+  height: 48px;
   display: flex;
   justify-content: flex-end;
-  ${({ theme }) => theme.mediaQueries.md} {
-    max-width: 55%;
-  }
+  border: 1px solid ${({ theme }) => theme.colors.borderColor};
+  border-radius: 8px;
+
   .ant-select {
+    height: 100% !important;
     display: none;
     outline: none;
-    border: none;
 
     ${({ theme }) => theme.mediaQueries.md} {
       color: ${({ theme }) => theme.colors.backgroundCard};
       display: block;
-      width: 121px;
+      width: 122px;
       height: 40px;
-      background: ${({ theme }) => theme.colors.secondaryColor};
-      border: 1px solid ${({ theme }) => theme.colors.borderColor};
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border-right: none;
+      background: transparent;
+      border-right: 1px solid ${({ theme }) => theme.colors.tertiary};
       outline: none;
     }
     .ant-select-selector {
+      color: ${({ theme }) => theme.colors.tertiary};
+      height: 100% !important;
+      align-items: center;
       border: none;
       outline: none;
-      height: 40px !important;
-      align-items: center;
+    }
+    .ant-select-arrow {
+      color: ${({ theme }) => theme.colors.tertiary};
     }
   }
 
   > input {
     font-size: 14px;
-    color: ${({ theme }) => theme.colors.backgroundCard};
+    color: ${({ theme }) => theme.colors.tertiary};
 
     width: 100%;
-    max-width: 593px;
-    height: 40px;
+    height: 100%;
     padding: 12px 16px;
-    background: ${({ theme }) => theme.colors.secondaryColor};
-    border: 1px solid ${({ theme }) => theme.colors.borderColor};
+    background: transparent;
     outline: none;
+    border: unset;
   }
 
   > .form-button {
-    min-width: 47px;
-    height: 40px;
+    min-width: 62px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: ${({ theme }) => theme.colors.primaryColor};
+    background: transparent;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-    &:hover {
-      box-shadow: 0 4px 11px rgb(130 71 229 / 35%);
-      cursor: pointer;
-    }
+    cursor: pointer;
     &.form-button-icon {
       width: 14px;
       height: 14px;
@@ -120,7 +118,7 @@ function SearchInput({ ...props }) {
         {...props}
       />
       <div type="button" className="form-button">
-        <SearchOutlined className="form-button-icon" style={{ color: 'white', fontSize: 14, fontWeight: 'bold' }} />
+        <SearchIcon className="form-button-icon" fill="transparent" width="28px" height="28px" />
       </div>
     </WrapSearchInput>
   )

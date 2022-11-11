@@ -32,7 +32,7 @@ export default class CustomDocument extends Document {
         <Head>
           <link rel="icon" href="/favicon.ico" type="image/png" sizes="16x16" />
 
-          <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" async />
+          <link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700" rel="stylesheet" async />
         </Head>
         <body>
           <Main />
