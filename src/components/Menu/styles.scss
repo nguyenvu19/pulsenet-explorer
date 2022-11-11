@@ -1,25 +1,30 @@
 @import 'assets/css/variables.scss';
 
-$color-nav-fill: red;
-
 .nav-default {
   padding: 0;
   background: $secondary;
   border-bottom: 0.5px solid #3c3a3a;
 
-  .nav-container {
+  .nav-content {
     width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-    .nav-content {
+    .nav-top {
       width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex: 1 auto;
+      background: #262525;
+      .nav-top-content {
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        @include media-down(md) {
+          height: 72px;
+        }
+      }
 
-      .nav-left {
+      .nav-top-left {
         flex-direction: row;
         flex-flow: nowrap;
 
@@ -33,72 +38,67 @@ $color-nav-fill: red;
 
           img {
             width: auto;
-            height: 50px;
-            max-height: 50px;
+            height: 45px;
             object-fit: contain;
-            margin-right: 10px;
+            @include media-down(md) {
+              height: 32px;
+            }
           }
         }
       }
 
-      .nav-right {
+      .nav-top-right {
         color: $primary;
+        width: 100%;
         align-items: center;
         flex-flow: row nowrap;
         justify-content: flex-end;
+        @include media-down(sm) {
+          width: fit-content;
+        }
         .menu-collapse {
           display: block;
           @include media-up(md) {
             display: none;
           }
         }
-        .nav-right-desktop {
-          display: none;
-          @include media-up(md) {
-            display: block;
-          }
 
+        .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          @include media-down(sm) {
+            display: none;
+          }
           ul {
             list-style: none;
-            margin: 0;
-
+            margin-bottom: 0;
             @include media-up(md) {
               list-style: none;
-              margin: 0;
               display: flex;
               flex-flow: row nowrap;
               align-items: center;
               justify-content: flex-end;
             }
-
             li {
               white-space: nowrap;
               height: 100%;
-              padding: 4px;
+              padding: 16px 14px;
               display: block;
-              @include media-up(md) {
-                padding: 6px;
-              }
-              @include media-up(lg) {
-                padding: 10px 14px;
-              }
 
               a {
-                font-family: Arial, Helvetica, sans-serif;
-                color: $text;
+                color: $tertiary;
                 font-size: 14px;
-                font-weight: 200;
+                font-weight: 400;
                 line-height: 160%;
                 height: 100%;
                 display: flex;
                 align-items: center;
+
                 .user-icon {
                   transform: rotate(0deg);
                 }
-                &:hover {
-                  color: $primary;
-                  font-weight: 400;
-                }
+
                 > span {
                   font-size: 18px;
                   margin-left: 9px;
@@ -111,455 +111,88 @@ $color-nav-fill: red;
                   border-radius: 4px;
                 }
 
-                img {
-                  width: 19.25px;
-                  height: 19.25px;
-                  margin: auto;
+                span {
+                  svg {
+                    width: 10px;
+                    height: 10px;
+                    fill: $tertiary;
+                  }
                 }
               }
-
-              span {
+              a:hover {
+                color: $primary;
+                font-weight: 400;
                 svg {
-                  width: 10px;
-                  height: 10px;
-                  path {
-                    fill: $color-nav-fill;
-                  }
+                  fill: $primary;
                 }
               }
               .active {
                 color: $primary;
               }
 
-              &:hover .submenu {
-                display: block;
-                position: absolute;
-                margin-top: 10px;
-                z-index: 199;
-                min-width: 160px;
-                min-height: fit-content;
-                border-bottom-right-radius: 4px;
-                border-bottom-left-radius: 4px;
-                background-color: $secondary;
-                border-top: 3px solid $primary;
-                box-shadow: 0 8px 20px rgb(130 71 229 / 8%);
-              }
-              &.nav-r-separator {
-                border-right: 1px solid $text;
-                width: 1px;
-                height: 20px;
-                padding: 0;
-              }
-              &.nav-l-separator {
-                border-left: 1px solid $text;
-                width: 1px;
-                height: 20px;
-                padding: 0;
-              }
               .submenu {
-                position: absolute;
                 display: none;
-                padding: 16px 0;
-                animation-duration: 500ms;
-                animation-name: example;
+                position: absolute;
+                padding: 30px 0 16px;
+                min-width: 160px;
+                z-index: 10;
 
-                @keyframes example {
-                  0% {
-                    opacity: 0;
-                  }
+                ul {
+                  display: flex;
+                  flex-direction: column;
+                  background-color: $secondary;
+                  border-bottom-right-radius: 4px;
+                  border-bottom-left-radius: 4px;
+                  border-top: 3px solid $primary;
+                  box-shadow: 0 8px 20px rgb(130 71 229 / 8%);
 
-                  100% {
-                    opacity: 1;
-                  }
-                }
-
-                .li-account {
-                  font-size: 12.95px;
-                  padding: 8px 28px;
-
-                  &.px-3 {
-                    border-color: transparent;
-                    text-align: center;
-                    margin: auto;
-                    padding: 10px;
-
+                  li {
+                    width: 100%;
                     a {
-                      background: $background-color-padding;
-                      justify-content: center;
-                      color: $primary;
-                      display: block;
-                      padding: 4px 100px;
-                      border-radius: 4px;
-                      transition: all 0.2s ease-in-out;
-
+                      color: $text;
                       &:hover {
-                        color: $secondary;
-                        background: $primary;
-                        box-shadow: $color-shadow-account;
+                        color: $primary;
                       }
                     }
                   }
-
-                  .span-beta {
-                    padding: 2px 4px;
-                    background: $text-span;
-                    color: $secondary;
-                    margin-left: 4px;
-                    border-radius: 5px;
-                  }
-
-                  span {
-                    padding: 2px 4px;
-                    background: $green-stick;
-                    color: $secondary;
-                    margin-left: 4px;
-                    border-radius: 5px;
-                  }
                 }
-
                 .dropdown-divider {
                   border-top: 0.2px solid $border-color;
                   padding: 0;
                 }
               }
             }
+            & > li:hover {
+              .submenu {
+                display: block;
+              }
+            }
 
             .li-last_child {
-              position: relative;
               padding-right: 0;
-
-              ul {
-                min-width: 170px;
-
-                @include media-up(md) {
-                  right: 20px;
-                }
-
-                @include media-up(lg) {
-                  right: 46px;
-                }
-
-                @include media-up(xl) {
-                  right: 10%;
-                }
-              }
+              position: relative;
             }
           }
-        }
-      }
-
-      // Content Mobile
-      .nav-right-mobile-active {
-        display: none;
-        left: 0;
-        width: 100%;
-        height: auto;
-        z-index: 9999;
-        background: $secondary;
-        padding: 0 15px;
-
-        @include media-up(md) {
-          display: block;
-        }
-
-        ul {
-          list-style: none;
-          @include media-up(md) {
-            list-style: none;
-            margin: 0;
+          .nav-account {
+            margin-left: 14px;
             display: flex;
-            flex-flow: row nowrap;
             align-items: center;
-          }
-
-          @include media-up(lg) {
-            display: flex;
-          }
-
-          li {
-            white-space: nowrap;
-            width: 100%;
-            height: 100%;
-            padding: 0 14px;
-            display: block;
-
-            @include media-up(md) {
-              padding: 6px;
+            cursor: pointer;
+            .username {
+              color: $tertiary;
+              margin-right: 8px;
             }
-
-            @include media-up(lg) {
-              padding: 16px;
-            }
-
-            .active {
-              color: $primary;
-            }
-
-            &:hover .submenu-mobile {
-              display: block;
-              margin-top: 10px;
-              z-index: 199;
-              min-width: 230px;
-              height: fit-content;
-              transition: 0.5s;
-              border-bottom-right-radius: 4px;
-              border-bottom-left-radius: 4px;
-              background-color: $secondary;
-              border-left: 3px solid $primary;
-              box-shadow: $color-shadow-header-li;
-            }
-
-            // &.nav-r-separator {
-            //     border-right: 1px solid $text;
-            //     width: 1px;
-            //     height: 20px;
-            //     padding: 0;
-            // }
-            // &.nav-l-separator {
-            //     border-left: 1px solid $text;
-            //     width: 1px;
-            //     height: 20px;
-            //     padding: 0;
-            // }
-            .submenu-mobile {
-              display: none;
-              animation-duration: 300ms;
-              padding: 8px 0;
-
-              .li-account {
-                font-size: 12.95px;
-                padding: 0px 28px;
-                line-height: 45px;
-
-                a {
-                  color: $text;
-
-                  &:hover {
-                    color: $primary;
-                  }
-
-                  sup {
-                    top: -5px;
-                    position: relative;
-                    font-size: 75%;
-                    line-height: 0;
-                    vertical-align: baseline;
-
-                    .navlink-submenu-gray {
-                      margin-left: 4px;
-                      color: $secondary;
-                      background: $text-span;
-                      display: inline-block;
-                      padding: 2px 3px;
-                      font-size: 9px;
-                      font-weight: 100;
-                      line-height: 1;
-                      text-align: center;
-                      white-space: nowrap;
-                      vertical-align: baseline;
-                      border-radius: 30px;
-                      transition: all 0.2s ease-in-out;
-                    }
-
-                    .navlink-submenu-green {
-                      margin-left: 4px;
-                      color: $secondary;
-                      background: $green-stick;
-                      display: inline-block;
-                      padding: 2px 3px;
-                      font-size: 10px;
-                      font-weight: 100;
-                      line-height: 1;
-                      text-align: center;
-                      white-space: nowrap;
-                      vertical-align: baseline;
-                      border-radius: 0.25rem;
-                      transition: all 0.2s ease-in-out;
-                    }
-                  }
-                }
-
-                &.px-3 {
-                  padding: 10px;
-
-                  .px-3-a {
-                    background: $background-color-padding;
-                    justify-content: center;
-                    color: $primary;
-                    display: inline-block;
-                    // padding: 4px 0;
-                    border-radius: 4px;
-                    transition: all 0.2s ease-in-out;
-
-                    &:hover {
-                      box-shadow: 0 4px 11px $color-shadow-account;
-                    }
-                  }
-                }
-              }
-            }
-
-            .dropdown-divider {
-              border-top: 0.2px solid $border-color;
-              padding: 0;
-            }
-
-            &.px-3 {
-              width: 100%;
-              display: block;
-              padding: 10px;
-              text-align: center;
-
-              .px-3-a {
-                color: $primary;
-                background: $background-rgba;
+            .avatar {
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              object-fit: cover;
+              object-position: center;
+              svg {
+                fill: $tertiary;
               }
             }
           }
-        }
-
-        .active-li-mobile {
-          // padding: 16px;
-          // margin: 0 10px;
-          .active-a {
-            color: $text;
-            height: 40px;
-            display: flex;
-            justify-content: space-between;
-
-            &:hover {
-              color: $primary;
-            }
-
-            span {
-              color: $text;
-
-              &:hover {
-                color: $primary;
-              }
-
-              &:last-child {
-                svg {
-                  width: 10px;
-                  height: 10px;
-
-                  path {
-                    fill: $color-nav-fill;
-                  }
-                }
-              }
-            }
-          }
-
-          .active-a-acount {
-            span {
-              display: flex;
-              align-items: center;
-            }
-          }
-
-          .submenu-mobile {
-            .px-3 {
-              width: 100%;
-              display: block;
-              padding: 10px;
-              text-align: center;
-
-              .px-3-a {
-                color: $primary;
-                background: $background-rgba;
-                padding: 0 75px;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    /*
-    * Menu content mobile
-    */
-    .menu-mobile-container {
-      position: fixed;
-      top: 80px;
-      left: 0;
-      bottom: 0;
-      right: 0;
-
-      width: 100%;
-      height: 0px;
-      background: $background-color-dark;
-      z-index: 10;
-      transition: ease-in-out 0.4s;
-      overflow: hidden;
-
-      visibility: hidden;
-
-      &[data-visible='true'] {
-        visibility: unset;
-        height: 100%;
-      }
-
-      /*
-* Menu mobile Container 
-*/
-      ul.menu-link {
-        list-style: none;
-        margin: 16px 0 0;
-        flex-flow: column nowrap;
-
-        li {
-          white-space: nowrap;
-          padding: 16px 30px;
-
-          a {
-            color: $color-nav-fill;
-
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 160%;
-
-            width: 100%;
-            display: block;
-            align-items: center;
-          }
-        }
-
-        li.active {
-          position: relative;
-
-          &:before {
-            content: '';
-            position: absolute;
-            top: 49%;
-            left: 0;
-
-            width: 12px;
-            height: 12px;
-            background: linear-gradient(to right, $green-stick, $black-color);
-            z-index: 1;
-          }
-
-          a {
-            color: $secondary;
-          }
-        }
-      }
-
-      .menu-actions-mobile {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        padding: 30px 24px;
-
-        a {
-          width: 100%;
-          max-width: 127px;
-          display: block;
-        }
-
-        & > a:first-child {
-          margin-right: 16px;
         }
       }
     }

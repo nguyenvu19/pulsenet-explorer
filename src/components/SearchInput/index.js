@@ -124,8 +124,4 @@ function SearchInput({ ...props }) {
   )
 }
 
-Input.defaultProps = {
-  onSelect: () => null,
-}
-
 export default SearchInput
