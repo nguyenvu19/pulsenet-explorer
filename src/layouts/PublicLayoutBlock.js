@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuBlock from 'components/MenuBlock'
+import MenuBlock from 'components/Menu/MenuBlock'
 
 const PublicLayoutBlock = ({ children }) => <MenuBlock>{children}</MenuBlock>
 
