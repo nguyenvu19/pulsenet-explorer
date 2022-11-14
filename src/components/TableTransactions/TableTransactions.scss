@@ -4,7 +4,8 @@
   height: 400px;
   position: relative;
   overflow: visible;
-  padding: 12px;
+  padding: 20px;
+
   .table-body-left {
     overflow: auto;
     position: relative;
@@ -20,7 +21,8 @@
     }
 
     .card-body {
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid $border-table-color;
+
       .card-body-outside {
         overflow: hidden;
         width: auto;
