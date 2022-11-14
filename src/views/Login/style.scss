@@ -12,12 +12,7 @@
   
   //login-page_header
   &_header {
-    margin-top: 0px;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    padding: 0px;
-    
+    text-align: center;
     height: 60px;
 
     h1{
@@ -47,12 +42,12 @@
     }
 
     &_item {
-      font-weight: bold;
+      font-weight: 500;
       font-size: 16px;
       line-height: 20.75px;
       color: #3C3A3A;
       max-width: 600px;
-      margin: 0 auto;
+      
       
 
       &_input {
@@ -83,18 +78,22 @@
     .btn_login{
       font-weight: 700;
       font-size: 16px;
-      line-height: 20.75px;
+      line-height: 21px;
       color: #FFFFFF;
-      border-radius: 5px;
+      border-radius: 4px;
       background-color: #418143;
-      padding: 5px 50px;
-      margin-bottom:24px ;
+      padding: 8px 10px;
+      width: 156px;
+      height: 37px; 
+      margin-bottom:16px ;
       border: none;
     }
     //checked
     .ant-checkbox-checked .ant-checkbox-inner {
       background-color: #418143;
       border-color: #418143;
+      border-radius: 6px;
+      width: 20px;
     }
     .question{
       text-align: center;
