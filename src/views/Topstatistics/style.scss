@@ -19,7 +19,8 @@
   img {
     width: 16px;
     height: 16px;
-    vertical-align: none;
+    vertical-align: baseline;
+    margin-right: 13px;
   }
 
   img:nth-child(n + 2):nth-last-child(-n + 2) {
@@ -152,5 +153,9 @@
 
   .topstatistics-network {
     width: calc(50% - 15px);
+  }
+
+  .green {
+    color: #418143;
   }
 }

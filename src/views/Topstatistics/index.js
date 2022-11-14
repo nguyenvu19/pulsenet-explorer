@@ -34,10 +34,10 @@ const Topstatistics = () => {
             <td>Total ETH</td>
           </tr>
           <tr>
-            <td>FTX Exchange 2</td>
+            <td className="green">FTX Exchange 2</td>
             <td>
               {' '}
-              <img src={crypto} /> 147,096.946643999
+              <img src={crypto} className="crypto" /> 147,096.946643999
             </td>
           </tr>
 
@@ -46,9 +46,9 @@ const Topstatistics = () => {
             <td>Total ETH</td>
           </tr>
           <tr>
-            <td>FTX Exchange 2</td>
+            <td className="green">FTX Exchange 2</td>
             <td>
-              <img src={crypto} /> 147,096.946643999
+              <img src={crypto} className="crypto" /> 147,096.946643999
             </td>
           </tr>
 
@@ -57,10 +57,10 @@ const Topstatistics = () => {
             <td>Total ETH</td>
           </tr>
           <tr>
-            <td>FTX Exchange 2</td>
+            <td className="green">FTX Exchange 2</td>
             <td>
               {' '}
-              <img src={crypto} /> 147,096.946643999
+              <img src={crypto} className="crypto" /> 147,096.946643999
             </td>
           </tr>
         </table>
@@ -75,9 +75,9 @@ const Topstatistics = () => {
             <td>Total ETH</td>
           </tr>
           <tr>
-            <td>
-              {' '}
-              <img src={tether} /> FTX Exchange 2
+            <td className="green">
+              <img src={tether} className="tether" />
+              Tether USD(USDT)
             </td>
             <td>201.459</td>
           </tr>
@@ -87,8 +87,9 @@ const Topstatistics = () => {
             <td>Total ETH</td>
           </tr>
           <tr>
-            <td>
-              <img src={tether} /> FTX Exchange 2
+            <td className="green">
+              <img src={tether} className="tether" />
+              Tether USD(USDT)
             </td>
             <td>201.459</td>
           </tr>
@@ -98,8 +99,8 @@ const Topstatistics = () => {
             <td>Total ETH</td>
           </tr>
           <tr>
-            <td>
-              <img src={tether} /> FTX Exchange 2
+            <td className="green">
+              <img src={tether} className="tether" /> Tether USD(USDT)
             </td>
             <td>201.459</td>
           </tr>
@@ -115,7 +116,7 @@ const Topstatistics = () => {
             <td>Gas Used</td>
           </tr>
           <tr>
-            <td>Optimism: Sequencer</td>
+            <td className="green">Optimism: Sequencer</td>
             <td>147,096.946643999</td>
           </tr>
 
@@ -124,7 +125,7 @@ const Topstatistics = () => {
             <td>Gas Used</td>
           </tr>
           <tr>
-            <td>Optimism: Sequencer</td>
+            <td className="green">Optimism: Sequencer</td>
             <td>147,096.946643999</td>
           </tr>
 
@@ -133,7 +134,7 @@ const Topstatistics = () => {
             <td>Gas Used</td>
           </tr>
           <tr>
-            <td>Optimism: Sequencer</td>
+            <td className="green">Optimism: Sequencer</td>
             <td>147,096.946643999</td>
           </tr>
         </table>
