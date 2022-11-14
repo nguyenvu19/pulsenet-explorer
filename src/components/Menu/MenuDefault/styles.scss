@@ -179,8 +179,10 @@
             align-items: center;
             cursor: pointer;
             .username {
-              color: $tertiary;
               margin-right: 8px;
+              a {
+                color: $tertiary;
+              }
             }
             .avatar {
               width: 24px;

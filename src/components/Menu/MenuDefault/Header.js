@@ -3,10 +3,11 @@ import { UserOutlined } from '@ant-design/icons'
 import { Layout } from 'antd'
 import { useRouter } from 'next/dist/client/router'
 import Link from 'components/NextLink/NextLink'
-import config from './config'
-import ContentMobile from './ContentMobile/ContentMobile'
+import config from '../config'
+import ContentMobile from '../ContentMobile/ContentMobile'
 import MenuCollapseIcon from 'widgets/MenuCollapseIcon'
 import { UserIcon } from 'widgets/Svg'
+import NextLink from 'components/NextLink/NextLink'
 
 const Header = ({ showMenu, toggleMenu }) => {
   const router = useRouter()
@@ -65,7 +66,9 @@ const Header = ({ showMenu, toggleMenu }) => {
                   })}
                 </ul>
                 <div className="nav-account">
-                  <div className="username">Sign In</div>
+                  <div className="username">
+                    <NextLink href="/login">Sign In</NextLink>
+                  </div>
                   <div className="avatar">
                     <UserIcon width="24px" height="24px" />
                   </div>
