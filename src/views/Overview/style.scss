@@ -1,0 +1,24 @@
+*{
+    font-family: 'Yantramanav','regular';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.overview-page {
+    color: black;
+    min-height: 80vh;
+    //  
+    // flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    
+    &_header {
+      display: flex;
+      justify-content: space-between;
+
+      .btn-sign_out {
+        background-color: #DA2419;
+      }
+    }
+}
