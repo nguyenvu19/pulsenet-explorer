@@ -2,39 +2,7 @@ import React, { useState } from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import {  Button, Checkbox, Form, Input } from 'antd'
 
-//   {
-//     value: 'zhejiang',
-//     label: 'Zhejiang',
-//     children: [
-//       {
-//         value: 'hangzhou',
-//         label: 'Hangzhou',
-//         children: [
-//           {
-//             value: 'xihu',
-//             label: 'West Lake',
-//           },
-//         ],
-//       },
-//     ],
-//   },
-//   {
-//     value: 'jiangsu',
-//     label: 'Jiangsu',
-//     children: [
-//       {
-//         value: 'nanjing',
-//         label: 'Nanjing',
-//         children: [
-//           {
-//             value: 'zhonghuamen',
-//             label: 'Zhong Hua Men',
-//           },
-//         ],
-//       },
-//     ],
-//   },
-// ]
+
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -53,6 +21,7 @@ const formItemLayout = {
     },
   },
 }
+
 const tailFormItemLayout = {
   wrapperCol: {
     xs: {
@@ -103,9 +72,9 @@ const LoginPage = () => {
               },
             ]}
             className="login-page_form_item"
-            // style={{
-            //   width: '500px',
-            // }}
+            style={{
+              marginBottom: '28px',
+            }}
           >
             <Input placeholder="Username" className="login-page_form_item_input"/>
           </Form.Item>
@@ -139,8 +108,9 @@ const LoginPage = () => {
             },
           ]}
           {...tailFormItemLayout}
+          style={{marginBottom:'32px'}}
         >
-          <Checkbox>
+          <Checkbox style={{fontSize: '14px', fontWeight: 400}}>
             Remember & Auto Login
           </Checkbox>
           
