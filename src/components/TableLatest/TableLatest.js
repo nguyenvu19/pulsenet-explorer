@@ -62,7 +62,7 @@ const TableLatestBlock = () => {
           </div>
         </div>
       </div>
-      <div className="table-body-right">body right</div>
+      {/* <div className="table-body-right">body right</div> */}
     </div>
   )
 }
