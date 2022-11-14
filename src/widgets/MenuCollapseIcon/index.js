@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
+const width = 24
+const height = 24
+const lineWidth = 3
+
 const WrapCollapseIcon = styled.div`
-  width: 24px;
-  height: 24px;
+  width: ${width}px;
+  height: ${height}px;
 
   display: block;
   align-items: center;
@@ -24,26 +28,26 @@ const WrapCollapseIcon = styled.div`
   .icon .menu,
   .icon .menu::before,
   .icon .menu::after {
-    background: ${({ theme }) => theme.colors.primaryColor};
     content: '';
-    height: 3px;
+    height: ${lineWidth}px;
+    background: ${({ theme }) => theme.colors.primaryColor};
     display: block;
     position: absolute;
     transition: ease 0.3s, top ease 0.3s 0.3s, transform ease 0.3s;
   }
 
   .icon .menu::before {
-    width: 24px;
+    width: ${width}px;
   }
 
   .icon .menu {
-    width: 24px;
+    width: ${width}px;
     position: absolute;
-    top: 10px;
+    top: ${(width - lineWidth) / 2}px;
   }
 
   .icon .menu::after {
-    width: 24px;
+    width: ${width}px;
   }
 
   .icon:hover .menu,
@@ -53,11 +57,11 @@ const WrapCollapseIcon = styled.div`
   }
 
   .icon .menu::before {
-    top: -8px;
+    top: -${(width - lineWidth) / 2}px;
   }
 
   .icon .menu::after {
-    top: 8px;
+    top: ${(width - lineWidth) / 2}px;
   }
 
   #menu:checked + .icon .menu {
@@ -65,12 +69,12 @@ const WrapCollapseIcon = styled.div`
   }
 
   #menu:checked + .icon .menu::before {
-    width: 21px;
+    width: ${width + 2}px;
     transform: rotate(45deg);
   }
 
   #menu:checked + .icon .menu::after {
-    width: 21px;
+    width: ${width + 2}px;
     transform: rotate(-45deg);
   }
 
