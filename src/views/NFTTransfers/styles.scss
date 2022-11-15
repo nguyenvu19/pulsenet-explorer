@@ -1,3 +1,25 @@
+$mobile-width: 375px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 .nft-transfers-page {
   color: black;
   min-height: 80vh;
@@ -101,6 +123,13 @@
       text-align: left;
       padding: 0 8px;
 
+      @include desktop {
+        width: 96.2%;
+      }
+
+      @include tablet {
+        width: 94.8%;
+      }
       th {
         background-color: #eeeeee;
         height: 50px;
