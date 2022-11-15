@@ -1,0 +1,163 @@
+.nft-tracker-page {
+  color: black;
+  min-height: 80vh;
+  display: flex;
+  max-width: 1320px;
+  margin: 24px auto 104px;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 15px;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 31px;
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #3c3a3a;
+        margin-right: 32px;
+        height: 100%;
+      }
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 58px;
+        height: 26px;
+        font-size: 14px;
+        font-weight: 500;
+        background-color: #eeeeee;
+      }
+    }
+  }
+
+  .content {
+    border: 1px solid #000;
+    border-radius: 12px;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 24px;
+      position: relative;
+
+      &:before {
+        border-bottom: 1px solid #000;
+        content: '';
+        display: block;
+        height: 1px;
+        overflow: hidden;
+        background: #000;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      h1 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 18.16px;
+      }
+
+      .icon {
+        img {
+          float: right;
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .middle {
+      display: flex;
+      height: 44px;
+      width: 100%;
+      justify-content: space-between;
+      margin: 16px 0;
+      padding: 0 24px;
+
+      .description {
+        h2 {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        p {
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .table {
+      max-width: 1242px;
+      width: 100%;
+      margin: 0 24px;
+      text-align: left;
+      padding: 0 8px;
+
+      th {
+        background-color: #eeeeee;
+        height: 50px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      th:nth-child(1) {
+        color: #787a91;
+        padding: 0 24px 0 8px;
+      }
+
+      th:nth-child(2) {
+        color: #787a91;
+        padding-left: 8px;
+      }
+
+      th:nth-child(3) {
+        color: #418143;
+
+        div {
+          height: 18px;
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: 8px;
+          }
+        }
+      }
+
+      th:nth-child(4) {
+        color: #418143;
+        text-align: right;
+        padding-right: 8px;
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      padding: 16px 24px 11px 24px;
+      display: inline-block;
+
+      .left {
+        float: left;
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+
+        .numberPage {
+          margin: 0 20px;
+        }
+      }
+
+      .right {
+        float: right;
+      }
+    }
+  }
+}
