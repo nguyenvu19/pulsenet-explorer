@@ -33,26 +33,28 @@ const NFTTracker = () => {
           <Pagination />
         </div>
 
-        <table className="table">
-          <tr>
-            <th>#</th>
-            <th>Token</th>
-            <th>
-              <div>
-                <img src={down} className="down" />
-                Transfers (24H)
-              </div>
-            </th>
-            <th>Transfers (3D)</th>
-          </tr>
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-        </table>
+        <div className="content-table">
+          <table className="table">
+            <tr>
+              <th>#</th>
+              <th>Token</th>
+              <th>
+                <div>
+                  <img src={down} className="down" />
+                  Transfers (24H)
+                </div>
+              </th>
+              <th>Transfers (3D)</th>
+            </tr>
+            <BlockTracker />
+            <BlockTracker />
+            <BlockTracker />
+            <BlockTracker />
+            <BlockTracker />
+            <BlockTracker />
+            <BlockTracker />
+          </table>
+        </div>
 
         <div className="bottom">
           <div className="left">
