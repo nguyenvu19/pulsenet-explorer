@@ -1,5 +1,3 @@
-import React from 'react'
-
-const ComingSoon = () => <div className="soon-container">soon</div>
+import ComingSoon from 'views/ComingSoon'
 
 export default ComingSoon
