@@ -3,14 +3,14 @@
 .home {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
-  min-height: calc(100vh - 386px - $MENU-HEIGHT);
+  min-height: calc(100vh - 386px - var(--menu-height));
   position: relative;
 
   .bg-dark {
     width: 100%;
     min-height: 270px;
     height: 100%;
-    background-color: $background-color;
+    background-color: var(--background-color);
     background-image: url('/images/background/banner.svg');
 
     .home__body {
@@ -34,7 +34,7 @@
         .body-left-content {
           h1 {
             font-size: 21px;
-            color: $secondary;
+            color: var(--secondary);
             font-family: Arial, Helvetica, sans-serif;
           }
 
@@ -48,7 +48,7 @@
 
             a {
               font-weight: 600;
-              color: $primary;
+              color: var(--primary);
             }
           }
         }
@@ -86,7 +86,7 @@
       margin-bottom: 30px;
       min-height: 501px;
 
-      // background: $secondary;
+      // background: var(--secondary;
       @include media-up(lg) {
         display: flex;
       }
@@ -95,10 +95,10 @@
         width: 100%;
         border-radius: 8px;
 
-        background-color: $secondary;
+        background-color: var(--secondary);
         background-clip: border-box;
-        border: 1px solid $border-table-color;
-        box-shadow: 0 0.5rem 1.2rem $color-shadow;
+        border: 1px solid var(--border-table-color);
+        box-shadow: 0 0.5rem 1.2rem var(--color-shadow);
 
         position: relative;
 
@@ -106,13 +106,13 @@
         flex-direction: column;
 
         .table-header {
-          border-bottom: 1px solid $border-table-color;
+          border-bottom: 1px solid var(--border-table-color);
 
           h2 {
             font-size: 14px;
             font-weight: 700;
             padding: 12px;
-            color: $text-header;
+            color: var(--text-header);
             font-family: Arial, Helvetica, sans-serif;
           }
         }
@@ -145,12 +145,12 @@
           display: block;
           padding: 10px 20px;
           text-align: center;
-          color: $white-color;
+          color: var(--white-color);
           font-weight: 500;
           font-size: 16px;
           line-height: 21px;
-          background: $primary;
-          border-top: 1px solid $primary;
+          background: var(--primary);
+          border-top: 1px solid var(--primary);
           border-radius: 8px;
         }
       }

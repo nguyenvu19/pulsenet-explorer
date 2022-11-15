@@ -106,7 +106,7 @@ const columns = [
   // },
 ]
 
-const BlocksModule = () => {
+const BlocksModule = (props) => {
   const [paramsListBlock, setParamsListBlock] = React.useState({
     page: 1,
     limit: DEFAULT_LIMIT,
@@ -115,7 +115,7 @@ const BlocksModule = () => {
   const [listBlock, setListBlock] = React.useState([])
 
   React.useEffect(() => {
-    ;(async () => {
+    ; (async () => {
       const latest = await web3.eth.getBlockNumber()
       console.log('latest', latest)
       setParamsListBlock((prev) => ({

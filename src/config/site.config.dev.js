@@ -5,7 +5,7 @@ const siteConfig = {
   siteIcon: 'ion-flash',
   footerText: `Explorer`,
   enableAnimatedRoute: false,
-  apiUrl: 'http://yoursite.com/api/',
+  apiUrl: 'https://pulsescan-testnet.evmbuilder.com/api/v1',
   google: {
     analyticsKey: 'UA-xxxxxxxxx-1',
   },

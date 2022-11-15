@@ -8,7 +8,7 @@ import TableLatest from 'components/TableLatest/TableLatest'
 import TableTransactions from 'components/TableTransactions/TableTransactions'
 import MainBox from 'components/MainBox/MainBox'
 
-const Home = () => (
+const HomeView = (props) => (
   <div className="home">
     <section className="bg-dark">
       <div className="container">
@@ -53,7 +53,7 @@ const Home = () => (
           <div className="table-header">
             <h2>Latest Transactions</h2>
           </div>
-          <TableTransactions />
+          <TableTransactions transactions={[]} />
           <div className="table-footer">
             <Link href="/txs" className="btn-soft-primary">
               View all transactions
@@ -65,4 +65,4 @@ const Home = () => (
   </div>
 )
 
-export default Home
+export default HomeView

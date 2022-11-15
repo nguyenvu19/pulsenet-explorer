@@ -7,13 +7,21 @@ const config = [
     items: [],
   },
   {
-    label: 'Faucet',
-    href: siteConfig.faucet_url,
-    target: '_blank',
-    items: [],
+    label: 'Blockchain',
+    items: [
+      {
+        label: 'View Txns',
+        href: '/txs',
+        showBorder: true,
+      },
+      {
+        label: 'View Blocks',
+        href: '/blocks',
+      },
+    ],
   },
   {
-    label: 'Blockchain',
+    label: 'Tokens',
     items: [
       {
         label: 'View Txns',

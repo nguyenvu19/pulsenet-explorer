@@ -30,4 +30,10 @@ class CustomApp extends App {
   }
 }
 
+CustomApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext)
+
+  return { ...appProps }
+}
+
 export default withRedux(initStore)(CustomApp)

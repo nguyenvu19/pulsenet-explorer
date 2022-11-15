@@ -15,7 +15,8 @@ const MainBox = () => {
         }
       },
       xaxis: {
-        categories: ['Mar 21', 'Mar 28', 'Apr 4'],
+        categories: ['Mar 21', 'Mar 24', 'Mar 28', 'Apr 1', 'Apr 4'],
+        tickAmount: 2,
       },
       yaxis: {
         tickAmount: 2,
@@ -40,7 +41,7 @@ const MainBox = () => {
     series: [
       {
         name: 'Price',
-        data: [2500, 3000, 500],
+        data: [2500, 3000, 500, 3500, 2000],
       },
     ],
   })
