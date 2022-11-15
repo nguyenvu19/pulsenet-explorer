@@ -1,57 +1,51 @@
 import React from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 
-import search from '../../../public/images/icon/search.png'
-import down from '../../../public/images/icon/arrow-square-down.png'
 import upDown from '../../../public/images/icon/iconUpDown.png'
 
-import BlockTracker from './components/block-tracker'
 import Pagination from 'components/Pagination'
+import BlockTransfers from './components/block-transfers'
 
-const NFTTracker = () => {
+const NFTTransfers = () => {
   return (
-    <div className="nft-tracker-page">
+    <div className="nft-transfers-page">
       <div className="head">
         <div className="left">
-          <h1>Non-Fungible Token Tracker</h1>
+          <h1>Non-Fungible Token Transfers</h1>
           <span>ERC - 20</span>
         </div>
       </div>
 
       <div className="content">
         <div className="top">
-          <h1>Non-Fungible Tokens (NFT)</h1>
-          <div className="icon">
-            <img src={search} className="search" />
-          </div>
+          <h1>PulseDex presale details to be announced soon</h1>
         </div>
         <div className="middle">
           <div className="description">
-            <h2>A total of 159,264 ERC-721 Token Contracts found</h2>
-            <p>(Showing the last 100k records)</p>
+            <h2>A total of &gt; 10 M txns found</h2>
+            <p>(Showing the last 10,000 records only)</p>
           </div>
           <Pagination />
         </div>
 
         <table className="table">
           <tr>
-            <th>#</th>
+            <th>Txn Hash</th>
+            <th>Age</th>
+            <th>From</th>
+            <th>To</th>
+            <th>TokenID</th>
             <th>Token</th>
-            <th>
-              <div>
-                <img src={down} className="down" />
-                Transfers (24H)
-              </div>
-            </th>
-            <th>Transfers (3D)</th>
+            <th>Details</th>
           </tr>
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
-          <BlockTracker />
+          <BlockTransfers />
+          <BlockTransfers />
+          <BlockTransfers />
+          <BlockTransfers />
+          <BlockTransfers />
+          <BlockTransfers />
+          <BlockTransfers />
+          <BlockTransfers />
         </table>
 
         <div className="bottom">
@@ -71,6 +65,6 @@ const NFTTracker = () => {
     </div>
   )
 }
-NFTTracker.Layout = PublicLayoutBlock
+NFTTransfers.Layout = PublicLayoutBlock
 
-export default NFTTracker
+export default NFTTransfers
