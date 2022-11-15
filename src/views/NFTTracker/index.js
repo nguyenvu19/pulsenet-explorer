@@ -3,8 +3,10 @@ import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 
 import search from '../../../public/images/icon/search.png'
 import down from '../../../public/images/icon/arrow-square-down.png'
+import upDown from '../../../public/images/icon/iconUpDown.png'
 
 import BlockTracker from './components/block-tracker'
+import Pagination from './components/pagination'
 
 const NFTTracker = () => {
   return (
@@ -28,18 +30,7 @@ const NFTTracker = () => {
             <h2>A total of 159,264 ERC-721 Token Contracts found</h2>
             <p>(Showing the last 100k records)</p>
           </div>
-
-          <div className="pagination">
-            <div className="first">First</div>
-            <div className="previous">
-              <span>&#60;</span>
-            </div>
-            <div className="number">Page 1 of 632679</div>
-            <div className="next">
-              <span>&#62;</span>
-            </div>
-            <div className="last">Last</div>
-          </div>
+          <Pagination />
         </div>
 
         <table className="table">
@@ -47,13 +38,35 @@ const NFTTracker = () => {
             <th>#</th>
             <th>Token</th>
             <th>
-              <img src={down} className="down" />
-              Transfers (24H)
+              <div>
+                <img src={down} className="down" />
+                Transfers (24H)
+              </div>
             </th>
             <th>Transfers (3D)</th>
           </tr>
           <BlockTracker />
+          <BlockTracker />
+          <BlockTracker />
+          <BlockTracker />
+          <BlockTracker />
+          <BlockTracker />
+          <BlockTracker />
         </table>
+
+        <div className="bottom">
+          <div className="left">
+            <div className="show">Show</div>
+            <div className="numberPage">
+              25 <img src={upDown} className="upDown" />
+            </div>
+            <div className="records">Records</div>
+          </div>
+
+          <div className="right">
+            <Pagination />
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -10,7 +10,6 @@ const BlockTracker = () => {
           <img src={crypto} className="down" />
           Figma Labs | Genesis
         </span>
-        <br />
         <span>
           ENS offers a secure & decentralised way to address resources both on and off the blockchain using simple,
           human-readable names.

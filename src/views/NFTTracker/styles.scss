@@ -73,6 +73,7 @@
         }
       }
     }
+
     .middle {
       display: flex;
       height: 44px;
@@ -89,41 +90,6 @@
         p {
           font-size: 12px;
           font-weight: 400;
-        }
-      }
-
-      .pagination {
-        display: flex;
-        height: 26px;
-
-        div {
-          background-color: #eeeeee;
-          border-radius: 4px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .first {
-          width: 46px;
-        }
-
-        .previous {
-          width: 26px;
-          margin: 0 8px;
-        }
-
-        .number {
-          width: 122px;
-        }
-
-        .next {
-          width: 26px;
-          margin: 0 8px;
-        }
-
-        .last {
-          width: 46px;
         }
       }
     }
@@ -149,14 +115,48 @@
 
       th:nth-child(2) {
         color: #787a91;
+        padding-left: 8px;
       }
 
       th:nth-child(3) {
         color: #418143;
+
+        div {
+          height: 18px;
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: 8px;
+          }
+        }
       }
 
       th:nth-child(4) {
         color: #418143;
+        text-align: right;
+        padding-right: 8px;
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      padding: 16px 24px 11px 24px;
+      display: inline-block;
+
+      .left {
+        float: left;
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+
+        .numberPage {
+          margin: 0 20px;
+        }
+      }
+
+      .right {
+        float: right;
       }
     }
   }
