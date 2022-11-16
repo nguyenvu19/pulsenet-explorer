@@ -1,22 +1,20 @@
+import Pagination from 'components/Pagination'
 import React from 'react'
 import crypto from '../../../../../public/images/icon/cryptocurrency_eth.png'
 
-const BlockTracker = () => {
+const BlockTracker = ({ data }) => {
   return (
     <tr className="block-tracker">
-      <td>01</td>
+      <td>{data.number}</td>
       <td>
         <span>
           <img src={crypto} className="down" />
-          Figma Labs | Genesis
+          {data.token1}
         </span>
-        <span>
-          ENS offers a secure & decentralised way to address resources both on and off the blockchain using simple,
-          human-readable names.
-        </span>
+        <span>{data.token2}</span>
       </td>
-      <td>$35,265,568.00</td>
-      <td>$35,265,568.00</td>
+      <td>{data.transfers1}</td>
+      <td>{data.transfers2}</td>
     </tr>
   )
 }

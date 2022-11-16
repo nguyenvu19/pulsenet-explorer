@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Pagination = () => {
+const Pagination = ({ page }) => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [limit, setLimit] = useState(1000)
+
+  const handlePagination = (page) => {}
+
   return (
     <div className="pagination">
-      <div className="first">First</div>
-      <div className="previous">
+      <button className="first">First</button>
+      <button className="previous" onClick={() => handlePagination(currentPage - 1)}>
         <span>&#60;</span>
+      </button>
+      <div className="number">
+        Page {currentPage} of {page}
       </div>
-      <div className="number">Page 1 of 632679</div>
-      <div className="next">
+      <button className="next" onClick={() => handlePagination(currentPage + 1)}>
         <span>&#62;</span>
-      </div>
-      <div className="last">Last</div>
+      </button>
+      <button className="last">Last</button>
     </div>
   )
 }

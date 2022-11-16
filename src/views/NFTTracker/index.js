@@ -8,7 +8,15 @@ import upDown from '../../../public/images/icon/iconUpDown.png'
 import BlockTracker from './components/block-tracker'
 import Pagination from 'components/Pagination'
 
+import { FAKE_DATA } from 'views/NFTTracker/fakeData'
+
 const NFTTracker = () => {
+  const fakeData = FAKE_DATA
+
+  const page = fakeData.length
+
+  console.log(fakeData)
+
   return (
     <div className="nft-tracker-page">
       <div className="head">
@@ -30,29 +38,30 @@ const NFTTracker = () => {
             <h2>A total of 159,264 ERC-721 Token Contracts found</h2>
             <p>(Showing the last 100k records)</p>
           </div>
-          <Pagination />
+          <Pagination page={page} />
         </div>
 
         <div className="content-table">
           <table className="table">
-            <tr>
-              <th>#</th>
-              <th>Token</th>
-              <th>
-                <div>
-                  <img src={down} className="down" />
-                  Transfers (24H)
-                </div>
-              </th>
-              <th>Transfers (3D)</th>
-            </tr>
-            <BlockTracker />
-            <BlockTracker />
-            <BlockTracker />
-            <BlockTracker />
-            <BlockTracker />
-            <BlockTracker />
-            <BlockTracker />
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Token</th>
+                <th>
+                  <div>
+                    <img src={down} className="down" />
+                    Transfers (24H)
+                  </div>
+                </th>
+                <th>Transfers (3D)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fakeData &&
+                fakeData.map((data, index) => {
+                  return <BlockTracker key={index} data={data} />
+                })}
+            </tbody>
           </table>
         </div>
 
@@ -66,7 +75,7 @@ const NFTTracker = () => {
           </div>
 
           <div className="right">
-            <Pagination />
+            <Pagination page={page} />
           </div>
         </div>
       </div>
