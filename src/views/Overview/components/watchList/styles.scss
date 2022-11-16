@@ -1,10 +1,55 @@
-.overview_info_title{
+.watch_list {
+    &_title{
+            display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #3c3a3a;
+          
 
-    .btn_add {
-        margin-top: 24px;
-        margin-left: 24px;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 31px;
+        .btn_add {
+            width: 100px;
+            padding: 0 24px;
+            color: #FFFFFF;
+            // margin-top: 24px; 
+            margin-bottom: 16px;
+            margin-right: 24px;  
+            font-size: 16px;
+            font-weight: 700;
+            background-color: #418143;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: none;
+        }
+    }
+      p {
+        margin-top: 16px;
+        margin-left: 0px !important;
+        margin-bottom: 24px;
+      }
+    &_content {
+        // border: none;
+        &_username {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // background-color: #EEEEEE;
+            // padding: 8px 0px;
+            
+            p {
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+        .center {
+            justify-content: center;
+            border-bottom: 1px solid #3c3a3a;
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+        .flex-end{
+            justify-content: flex-end;
+        }
+        
     }
 }

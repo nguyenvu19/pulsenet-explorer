@@ -1,8 +1,8 @@
-@import 'assets/css/variables.scss';
-@import 'assets/css/animation.scss';
-@import 'assets/css/base-class.scss';
-@import 'assets/css/customs-class.scss';
-@import 'assets/css/card.scss';
+@import "assets/css/variables.scss";
+@import "assets/css/animation.scss";
+@import "assets/css/base-class.scss";
+@import "assets/css/customs-class.scss";
+@import "assets/css/card.scss";
 
 * {
   font-family: Yantramanav;
@@ -54,4 +54,8 @@ body {
 p {
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style: none;
 }

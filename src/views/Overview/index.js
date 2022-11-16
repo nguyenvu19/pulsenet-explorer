@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import { Button, Layout } from 'antd'
-import AccountOverview from './components/accountOverview'
-import AccountSetting from './components/accountSetting'
-import PulsescanConnect from './components/pulsescanConnect'
-import WatchList from './components/watchList'
-import PrivateNameTags from './components/addressPrivateTags'
-import TnxPrivateNotes from './components/tnxPrivateNotes'
-import APIkey from './components/apiKey'
-import VerifiedAddresses from './components/verifiedAddresses'
-import CustomABIst from './components/connectCustomABI'
-import TokenIgnoreList from './components/tokenIgnorelist'
-
-const { Sider, Content } = Layout
+import AccountOverview from './components/AccountOverview'
+import AccountSetting from './components/AccountSetting'
+import PulsescanConnect from './components/PulsescanConnect'
+import WatchList from './components/WatchList'
+import PrivateNameTags from './components/AddressPrivateTags'
+import TnxPrivateNotes from './components/TnxPrivateNotes'
+import APIkey from './components/ApiKey'
+import VerifiedAddresses from './components/VerifiedAddresses'
+import CustomABIst from './components/ConnectCustomABI'
+import TokenIgnoreList from './components/TokenIgnorelist'
 
 const Overview = () => {
   const [activeTab, setActiveTab] = useState('overview')
@@ -22,39 +20,40 @@ const Overview = () => {
   }
 
   const renderTabRight = () => {
-    switch(activeTab){
+    switch (activeTab) {
       case 'overview': {
-        return <AccountOverview activeTab={activeTab} />
+        return <AccountOverview />
       }
       case 'settings': {
-        return <AccountSetting activeTab={activeTab} />
+        return <AccountSetting />
       }
       case 'pulsescan': {
-        return <PulsescanConnect/>
+        return <PulsescanConnect />
       }
       case 'watchlist': {
-        return <WatchList/>
+        return <WatchList />
       }
       case 'privatenametags': {
-        return <PrivateNameTags/>
+        return <PrivateNameTags />
       }
       case 'privatenotes': {
-        return <TnxPrivateNotes/>
+        return <TnxPrivateNotes />
       }
       case 'apikey': {
-        return <APIkey/>
+        return <APIkey />
       }
       case 'verifiedaddresses': {
-        return <VerifiedAddresses/>
+        return <VerifiedAddresses />
       }
       case 'customabist': {
-        return <CustomABIst/>
+        return <CustomABIst />
       }
       case 'tokenignore': {
-        return <TokenIgnoreList/>
+        return <TokenIgnoreList />
       }
 
-      default: return null;
+      default:
+        return null
     }
   }
 
@@ -84,7 +83,10 @@ const Overview = () => {
           <div>
             <h1>ACCOUNT</h1>
             <ul>
-              <li onClick={() => handleClick('overview')} className={`${activeTab === 'overview' ? 'account-active' : ''}`}>
+              <li
+                onClick={() => handleClick('overview')}
+                className={`${activeTab === 'overview' ? 'account-active' : ''}`}
+              >
                 <a href="#">
                   <img src="/images/account/overview.png" />
                   <span>Account Overview</span>
@@ -99,10 +101,10 @@ const Overview = () => {
                   <span> Account Settings</span>
                 </a>
               </li>
-              <li 
+              <li
                 onClick={() => handleClick('pulsescan')}
                 className={`${activeTab === 'pulsescan' ? 'account-active' : ''}`}
-                >
+              >
                 <a href="#">
                   <img src="/images/account/pulsescanconnect.png" />
                   <span>PULSESCAN Connect</span>
@@ -113,9 +115,10 @@ const Overview = () => {
           <div>
             <h1>WATCH LIST & NOTES</h1>
             <ul>
-              <li onClick={() => handleClick('watchlist')}
+              <li
+                onClick={() => handleClick('watchlist')}
                 className={`${activeTab === 'watchlist' ? 'account-active' : ''}`}
-                >
+              >
                 <a href="#">
                   <img src="/images/account/watchlist.png" />
                   <span>Watch List</span>
@@ -130,9 +133,10 @@ const Overview = () => {
                   <span>Private Name Tags</span>
                 </a>
               </li>
-              <li 
-               onClick={() => handleClick('privatenotes')}
-               className={`${activeTab === 'privatenotes' ? 'account-active' : ''}`}>
+              <li
+                onClick={() => handleClick('privatenotes')}
+                className={`${activeTab === 'privatenotes' ? 'account-active' : ''}`}
+              >
                 <a href="#">
                   <img src="/images/account/privatenotes.png" />
                   <span>Txn Private Notes</span>
@@ -143,20 +147,16 @@ const Overview = () => {
           <div>
             <h1>OTHERS</h1>
             <ul>
-              <li
-                onClick={() => handleClick('apikey')}
-                className={`${activeTab === 'apikey' ? 'account-active' : ''}`}
-                >
-              
+              <li onClick={() => handleClick('apikey')} className={`${activeTab === 'apikey' ? 'account-active' : ''}`}>
                 <a href="#">
                   <img src="/images/account/api.png" />
                   <span> API Keys</span>
                 </a>
               </li>
-              <li 
+              <li
                 onClick={() => handleClick('verifiedaddresses')}
                 className={`${activeTab === 'verifiedaddresses' ? 'account-active' : ''}`}
-                >
+              >
                 <a href="#">
                   <img src="/images/account/verifiedaddresses.png" />
                   <span>Verified Addresses</span>
@@ -185,9 +185,7 @@ const Overview = () => {
         </Layout>
         <Layout className="overview-page_content_right">
           {/* Personal Info */}
-          {
-            renderTabRight()
-          }
+          {renderTabRight()}
         </Layout>
       </div>
     </div>

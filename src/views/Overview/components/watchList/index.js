@@ -36,7 +36,7 @@ const WatchList = (props) => {
   // console.log('activeTab', activeTab)
   return (
     <>
-      {/* <div className="overview_info watch_list">
+      <div className="overview_info watch_list">
         <WatchListTitle>
           <div className="watch_list_title">
             <h1>Watch List</h1>
@@ -52,26 +52,28 @@ const WatchList = (props) => {
         </WatchListTitle>
 
         <div className="overview_info_content watch_list_content">
-          <div className='watch_list_content_username '>
+          <div className="watch_list_content_username ">
             <p style={{ fontSize: '14px' }}> 0 address selected (out of 50 max limit)</p>
             <div>
               <img src="/images/account/search.png" />
             </div>
           </div>
-          <div className='watch_list_content_username' style={{backgroundColor: '#EEEEEE', height:'21px'}}>
-              <p>Address</p>
-              <p>Private Nametag</p>
-              <p>Notificationz</p>
-              <p></p>
+          <div className="watch_list_content_username" style={{ backgroundColor: '#EEEEEE', height: '21px' }}>
+            <p>Address</p>
+            <p>Private Nametag</p>
+            <p>Notificationz</p>
+            <p></p>
           </div>
-          <div className='watch_list_content_username center 'style={{backgroundColor: '#EEEEEE'}}>
-              <span><img src='/images/account/matching.png'/> There are no matching entries </span>
+          <div className="watch_list_content_username center " style={{ backgroundColor: '#EEEEEE' }}>
+            <span>
+              <img src="/images/account/matching.png" /> There are no matching entries{' '}
+            </span>
           </div>
-          <div className='watch_list_content_username flex-end'>
+          <div className="watch_list_content_username flex-end">
             <span>Your Email Address</span>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   )
 }
