@@ -1,57 +1,79 @@
-import React from "react";
-import { Button, Layout } from 'antd'
+import React from 'react'
+import { Layout, Button } from 'antd'
+import styled from 'styled-components'
 
 const { Content } = Layout
 
-const WatchList = (props) => {
-    // const { activeTab } = props;
-    // console.log('activeTab', activeTab)
-    return (
-        <>
-          <div className="overview_info">
-            <div className="overview_info_title">
-              <h1>Watch List</h1>
-              <Button className="btn_add"><img src="/images/account/add.png"/>Add</Button>
-            </div>
+// const Button = styled.button`
+//     width: 100px;
+//     padding: 0 24px;
+//     color: #FFFFFF;
+//     margin-top: 24px;
+//     margin-right: 24px;
+//     font-size: 16px;
+//     font-weight: 700;
+//     background-color: #418143;
+//     border-radius: 4px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     border: none;
+//     margin-bottom: 16px;
+// `
+const WatchListTitle = styled.div`
+  margin-top: 24px;
+  margin-left: 24px;
+`
+// const WatchListContent = styled.div`
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     border-bottom: 1px solid #3c3a3a;
+// `
 
-            <p>Below are the username, email and overview information for your account.</p>
-            <div className="overview_info_content">
-              <div className="overview_info_content_username">
-                <div className="icon_overview">
-                  <div className="icon_overview_img">
-                    <img src="/images/account/overview.png" />
-                    <span>Your username</span>
-                  </div>
-                  <p style={{ fontWeight: 'bold' }}>mesomedieyoung</p>
-                </div>
-                <Button></Button>
-              </div>
-              <div className="overview_info_content_username">
-                <div className="icon_overview">
-                  <div className="icon_overview_img">
-                    <img src="/images/account/mail.png" />
-                    <span>Your Email Address</span>
-                  </div>
-                  <p>huyette300399@gmail.com</p>
-                </div>
-                <Button className="btn_overview">Edit</Button>
-              </div>
-              <div className="overview_info_content_username">
-                <div className="icon_overview">
-                  <div className="icon_overview_img">
-                    <img src="/images/account/lastlogin.png" />
-                    <span>Your Email Address</span>
-                  </div>
-                  <p>2022-10-27 07:47:13(UTC)</p>
-                </div>
-                <Button className="btn_overview">Show History</Button>
-              </div>
+const WatchList = (props) => {
+  // const { activeTab } = props;
+  // console.log('activeTab', activeTab)
+  return (
+    <>
+      {/* <div className="overview_info watch_list">
+        <WatchListTitle>
+          <div className="watch_list_title">
+            <h1>Watch List</h1>
+            <Button className="btn_add">
+              <img src="/images/account/add.png" />
+              Add
+            </Button>
+          </div>
+          <p>
+            An Email notification can be sent to you when an address on your watch list sends or receives any
+            transactions.
+          </p>
+        </WatchListTitle>
+
+        <div className="overview_info_content watch_list_content">
+          <div className='watch_list_content_username '>
+            <p style={{ fontSize: '14px' }}> 0 address selected (out of 50 max limit)</p>
+            <div>
+              <img src="/images/account/search.png" />
             </div>
           </div>
-          
-          
-        </>
-    )
+          <div className='watch_list_content_username' style={{backgroundColor: '#EEEEEE', height:'21px'}}>
+              <p>Address</p>
+              <p>Private Nametag</p>
+              <p>Notificationz</p>
+              <p></p>
+          </div>
+          <div className='watch_list_content_username center 'style={{backgroundColor: '#EEEEEE'}}>
+              <span><img src='/images/account/matching.png'/> There are no matching entries </span>
+          </div>
+          <div className='watch_list_content_username flex-end'>
+            <span>Your Email Address</span>
+          </div>
+        </div>
+      </div> */}
+    </>
+  )
 }
 
 export default WatchList
