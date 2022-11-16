@@ -1,16 +1,23 @@
 const actions = {
-  CHECK_AUTHORIZATION: 'CHECK_AUTHORIZATION',
-  LOGIN_REQUEST: 'LOGIN_REQUEST',
-  LOGOUT: 'LOGOUT',
-  LOGIN_SUCCESS: 'LOGIN_SUCCESS',
-  LOGIN_ERROR: 'LOGIN_ERROR',
-  checkAuthorization: () => ({ type: actions.CHECK_AUTHORIZATION }),
-  login: (token = false) => ({
-    type: actions.LOGIN_REQUEST,
-    payload: { token },
+  SET_SET_TRANSACTION: 'SET_TRANSACTION',
+  GET_TRANSACTIONS_REQUEST: 'GET_TRANSACTIONS_REQUEST',
+  GET_TRANSACTIONS_START: 'GET_TRANSACTIONS_START',
+  GET_TRANSACTIONS_SUCCESS: 'GET_TRANSACTIONS_SUCCESS',
+  GET_TRANSACTIONS_FAILURE: 'GET_TRANSACTIONS_FAILURE',
+  getListTransactions: (params) => ({
+    type: actions.GET_TRANSACTIONS_START,
+    payload: { params },
   }),
-  logout: () => ({
-    type: actions.LOGOUT,
+  getListRequestSuccess: data => ({
+    type: actions.GET_TRANSACTIONS_SUCCESS,
+    payload: data,
+  }),
+  getListRequestFailure: error => ({
+    type: actions.GET_TRANSACTIONS_FAILURE,
+    payload: error,
   }),
 };
+
+export const { getListTransactions, getListRequestSuccess, getListRequestFailure } = actions;
+
 export default actions;
