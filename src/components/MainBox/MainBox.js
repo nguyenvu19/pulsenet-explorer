@@ -5,9 +5,10 @@ import { Col, Row } from 'antd'
 
 const ApexCharts = dynamic(() => import('react-apexcharts'), { ssr: false, loading: () => <p>Loading ...</p> })
 
-const MainBox = () => {
+const MainBox = ({ latestBlock, latestTransaction }) => {
   const [chart, setChart] = useState({
     options: {
+      colors: ["#3C3A3A"],
       chart: {
         id: 'basic-bar',
         toolbar: {
@@ -56,7 +57,7 @@ const MainBox = () => {
           <div className="body-content">
             <h2 className="body-content-text-below">{siteConfig.nativeCurrency.symbol} PRICE</h2>
             <a className="body-content-text-under">
-              <span className="text-secondary">$0.008</span>
+              <span className="text-secondary">${latestTransaction?.p ? numberFormatter(latestTransaction?.p * 1, latestTransaction?.p * 1 > 1 ? 2 : 5) : "--"}</span>
               <span className="text-secondary small"> +0.50%</span>
             </a>
           </div>

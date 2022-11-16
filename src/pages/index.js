@@ -5,7 +5,6 @@ import { getBlockDetail, getListBlocks } from 'services/api/blocks'
 import HomeView from './home'
 
 export default function HomePage(props) {
-  console.log(props);
   return <HomeView {...props} />
 }
 

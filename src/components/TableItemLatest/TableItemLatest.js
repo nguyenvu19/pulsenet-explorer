@@ -2,6 +2,7 @@ import React from 'react'
 import ReactTimeAgo from 'react-time-ago'
 import Link from 'components/NextLink/NextLink'
 import siteConfig from '../../config/site.config'
+import { formatCode } from 'library/helpers/CommonHelper'
 
 const TableItem = ({ dataItem, ...props }) => (
   <div className="row" {...props}>
@@ -9,14 +10,14 @@ const TableItem = ({ dataItem, ...props }) => (
       <div className="col-sm-4-content">
         <div className="display-none">
           <span className="non-outside">
-            <span className="non-inside">Bk</span>
+            <span className="non-inside">BK</span>
           </span>
         </div>
         <div className="display-block">
           <div className="col-sm-4-content-block">Block</div>
-          <Link href={`/block/${dataItem.number}`}>{dataItem.number}</Link>
+          <Link href={`/block/${dataItem.bn}`}>{dataItem.bn}</Link>
           <p className="block-small">
-            <ReactTimeAgo date={parseInt(dataItem.timestamp) * 1000} locale="en-US" timeStyle="round" />
+            <ReactTimeAgo date={parseInt(dataItem.ti) * 1000} locale="en-US" timeStyle="round" />
           </p>
         </div>
       </div>
@@ -25,19 +26,19 @@ const TableItem = ({ dataItem, ...props }) => (
       <div className="content">
         <div className="show-content">
           <span>
-            <span>Validated By </span>
+            <span>Fee Recipient: </span>
             <Link href="/" className="content-hasktag">
-              {dataItem.miner}
+              {formatCode(dataItem?.f || 0, 5, 3)}
             </Link>
           </span>
           <div>
             <div>
-              <Link href="/txs">{dataItem.transactions.length} txs</Link>
-              <span> in 10 secs</span>
+              <Link href="/txs">{dataItem?.tt || 0} txns</Link>
+              <span> in 12s</span>
             </div>
             <div className="show-content-hide">
               <div className="content-text">
-                {dataItem.gasUsed / 1e9} {siteConfig.nativeCurrency.symbol}{' '}
+                {dataItem.gu / 1e9} {siteConfig.nativeCurrency.symbol}
               </div>
             </div>
           </div>
@@ -45,7 +46,7 @@ const TableItem = ({ dataItem, ...props }) => (
       </div>
       <div className="hide-content">
         <div className="content-text">
-          {dataItem.gasUsed / 1e9} {siteConfig.nativeCurrency.symbol}{' '}
+          {dataItem.gu / 1e9} {siteConfig.nativeCurrency.symbol}
         </div>
       </div>
     </div>

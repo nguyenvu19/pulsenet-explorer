@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from 'antd'
+import { Table, Progress } from 'antd'
 import { range } from 'lodash'
 import ReactTimeAgo from 'react-time-ago'
 import Web3 from 'web3'
@@ -24,7 +24,7 @@ async function getListBlock({ page, limit, latest }) {
 const columns = [
   {
     title: 'Block',
-    dataIndex: 'number',
+    dataIndex: 'bn',
     render: (text) => (
       <Link href={`/block/${text}`} className="data-block">
         {text}
@@ -32,40 +32,40 @@ const columns = [
     ),
   },
   {
-    title: <div className="title-age">Age</div>,
-    dataIndex: 'timestamp',
+    title: "Age",
+    dataIndex: 'ti',
     render: (text) => <ReactTimeAgo date={parseInt(text) * 1000} locale="en-US" timeStyle="round" />,
   },
   {
     title: 'Txn',
-    dataIndex: 'transactions',
+    dataIndex: 'tt',
     render: (text, record) => (
-      <Link href={`/txs?block=${record.number}`} className="data-txn">
-        {text.length}
+      <Link href={`/txs?block=${record.bn}`} className="data-txn">
+        {text}
       </Link>
     ),
   },
-  // {
-  //   title: 'Validator',
-  //   dataIndex: 'validator',
-  //   render: () => (
-  //     <Link href="/address/0xe7e2cb8c81c10ff191a73fe266788c9ce62ec754" className="data-validator">
-  //       -- 0xe7e2cb8c81c10ff191a73fe266788c9ce62ec754
-  //     </Link>
-  //   ),
-  // },
+  {
+    title: 'Fee Recipient',
+    dataIndex: 'bn',
+    render: () => (
+      <Link href="/address/0xe7e2cb8c81c10ff191a73fe266788c9ce62ec754" className="data-validator">
+        Flashbots: Builder
+      </Link>
+    ),
+  },
   {
     title: 'Gas Used',
-    dataIndex: 'gasUsed',
+    dataIndex: 'gu',
     // width: 100,
     render: (text, record) => (
       <div className="data-gasUse">
         <div>
           <CurrencyFormat value={text} displayType="text" thousandSeparator renderText={(value) => value} />{' '}
-          <span className="data-gasUse-span">({((record.gasUsed / record.gasLimit) * 100).toFixed(1)}%, +10%)</span>
+          <span className="data-gasUse-span">({((record.gu * 1 / record.gl * 1) * 100).toFixed(1)}%, -3%)</span>
         </div>
         <div className="gas-process">
-          <div style={{ width: `${Math.floor((record.gasUsed / record.gasLimit) * 100)}%` }} />
+          <div style={{ width: `${Math.floor((record.gu * 1 / record.gl * 1) * 100)}%` }} />
         </div>
       </div>
     ),
@@ -78,35 +78,37 @@ const columns = [
       <CurrencyFormat value={text} displayType="text" thousandSeparator renderText={(value) => value} />
     ),
   },
-  // {
-  //   title: 'Base Fee',
-  //   dataIndex: 'baseFee',
-  //   // width: 80,
-  //   render: () => '-- Gwei',
-  // },
-  // {
-  //   title: 'Reward',
-  //   dataIndex: 'reward',
-  //   key: 'reward',
-  //   width: 100,
-  //   render: () => '2.47217 PI ',
-  // },
-  // {
-  //   title: 'Burnt Fees (PI )',
-  //   dataIndex: 'burntfees',
-  //   key: 'burntfees',
-  //   width: 100,
-  //   render: () => (
-  //     <div className="data-burntfees">
-  //       0.010660
-  //       <span className="data-burntfees-span"> (0.43%)</span>
-  //       <Progress percent={99.94} />
-  //     </div>
-  //   ),
-  // },
+  {
+    title: 'Base Fee',
+    dataIndex: 'f',
+    // width: 80,
+    render: (text) => { `${text} Gwei` },
+  },
+  {
+    title: 'Reward',
+    dataIndex: 'br',
+    key: 'reward',
+    width: 100,
+    render: (text) => text,
+  },
+  {
+    title: 'Burnt Fees (PI )',
+    dataIndex: 'f',
+    key: 'burntfees',
+    width: 100,
+    render: (text) => (
+      <div className="data-burntfees">
+        {text || "--"}
+        <span className="data-burntfees-span"> (0.43%)</span>
+        <Progress percent={99.94} />
+      </div>
+    ),
+  },
 ]
 
 const BlocksModule = (props) => {
+  const { listBlocks } = props;
+
   const [paramsListBlock, setParamsListBlock] = React.useState({
     page: 1,
     limit: DEFAULT_LIMIT,
@@ -117,7 +119,6 @@ const BlocksModule = (props) => {
   React.useEffect(() => {
     ; (async () => {
       const latest = await web3.eth.getBlockNumber()
-      console.log('latest', latest)
       setParamsListBlock((prev) => ({
         ...prev,
         latest,
@@ -141,18 +142,20 @@ const BlocksModule = (props) => {
           <div>
             <span className="heading-network">Network Utilization: 50.9%</span>
             <Link>
-              <span>🔥 Burnt Fees: </span>
-              <span>-- {siteConfig.nativeCurrency.symbol} </span>
+              <span>Burnt Fees:</span>
+              <span>-- {siteConfig.nativeCurrency.symbol}</span>
+              <span> | Dashboard</span>
             </Link>
           </div>
         </div>
+        <p className="blocks-desc">PulseDex presale details to be announced soon</p>
         <div className="blocks-bottom">
           <div className="blocks-card">
             <div className="block-card-body">
               <div className="card-body-header">
                 <p>
-                  New Block #{paramsListBlock.latest || 0} (Total of{' '}
-                  {listBlock[0]?.number && (
+                  Block #{paramsListBlock.latest || 0} to #{paramsListBlock.latest || 0} (Total of{' '}
+                  {listBlocks?.[0]?.number && (
                     <CurrencyFormat
                       value={paramsListBlock.latest || 0}
                       displayType="text"
@@ -162,11 +165,20 @@ const BlocksModule = (props) => {
                   )}{' '}
                   blocks)
                 </p>
+                <nav aria-label="page navigation">
+                  <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item disabled"><span class="page-link">First</span></li>
+                    <li class="page-item disabled"><span class="page-link"><i class="fa fa-chevron-left small"></i></span><span class="sr-only">Previous</span></li>
+                    <li class="page-item disabled"><span class="page-link text-nowrap">Page <strong class="font-weight-medium">1</strong> of <strong class="font-weight-medium">10000</strong></span></li>
+                    <li class="page-item" data-toggle="tooltip" title="" data-original-title="Go to Next"><a class="page-link" href="txs?p=2" aria-label="Next"><span aria-hidden="True"><i class="fa fa-chevron-right small"></i></span> <span class="sr-only">Next</span></a></li>
+                    <li class="page-item"><a class="page-link" href="txs?p=10000"><span aria-hidden="True">Last</span> <span class="sr-only">Last</span></a></li>
+                  </ul>
+                </nav>
               </div>
               <div className="card-body-center">
                 <Table
                   columns={columns}
-                  dataSource={[...listBlock]}
+                  dataSource={[...listBlocks]}
                   scroll={{ x: 600 }}
                   pagination={{
                     total: paramsListBlock.latest,
