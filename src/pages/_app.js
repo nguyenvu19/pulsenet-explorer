@@ -1,39 +1,71 @@
-import React from 'react'
-import App from 'next/app'
+import React, { Fragment } from 'react'
+import app from 'next/app'
 import { Provider } from 'react-redux'
-import withRedux from 'next-redux-wrapper'
 import en from 'javascript-time-ago/locale/en'
 import ru from 'javascript-time-ago/locale/ru'
 import TimeAgo from 'javascript-time-ago'
-import PublicLayout from 'layouts/PublicLayout'
+import Script from 'next/script'
+import withReduxSaga from 'next-redux-saga'
 import { ThemeContextProvider } from 'containers/ThemeContext'
-import initStore from 'redux/store'
+import { wrapper } from 'redux/store'
 import 'antd/dist/antd.css'
 import 'styles/index.scss'
 
 TimeAgo.addLocale(en)
 TimeAgo.addLocale(ru)
 
-class CustomApp extends App {
+class MyApp extends app {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {}
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
+    return { pageProps }
+  }
+
   render() {
-    const { Component, pageProps, store } = this.props
-    const Layout = Component.Layout || PublicLayout
     return (
-      <Provider store={store}>
-        <ThemeContextProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeContextProvider>
-      </Provider>
+      <>
+        <CustomApp {...this.props} />
+        <Script
+          strategy="afterInteractive"
+          id="google-tag"
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTAG}');
+          `,
+          }}
+        />
+      </>
     )
   }
 }
 
-CustomApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext)
+const CustomApp = ({ Component, ...rest }) => {
+  if (Component.pure) {
+    return <Component {...rest.pageProps} />
+  }
 
-  return { ...appProps }
+  // Use the layout defined at the page level, if available
+  const Layout = Component.Layout || Fragment
+
+  const { store } = wrapper.useWrappedStore(rest)
+
+  return (
+    <Provider store={store}>
+      <ThemeContextProvider>
+        <Layout>
+          <Component {...rest.pageProps} />
+        </Layout>
+      </ThemeContextProvider>
+    </Provider>
+  )
 }
 
-export default withRedux(initStore)(CustomApp)
+export default wrapper.withRedux(withReduxSaga(MyApp))

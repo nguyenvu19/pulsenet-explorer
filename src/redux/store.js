@@ -1,12 +1,11 @@
+import { createWrapper } from 'next-redux-wrapper'
 import { createStore, applyMiddleware } from 'redux'
-import createSagaMiddleware, { END } from 'redux-saga'
-
+import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk'
-
 import rootReducer from './root-reducer'
 import rootSaga from './root-saga'
 
-const sagaMiddleware = createSagaMiddleware()
+// const sagaMiddleware = createSagaMiddleware()
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -16,45 +15,51 @@ const bindMiddleware = (middleware) => {
   return applyMiddleware(...middleware)
 }
 
-function configureStore(initialState = {}) {
-  const store = createStore(
-    rootReducer,
+// function configureStore(initialState = {}) {
+//   const store = createStore(rootReducer, initialState, bindMiddleware([thunk, sagaMiddleware]))
 
-    initialState,
-    bindMiddleware([thunk, sagaMiddleware]),
-  )
+//   store.runSaga = () => {
+//     // Avoid running twice
+//     if (store.saga) return
+//     store.saga = sagaMiddleware.run(rootSaga)
+//   }
 
-  store.runSaga = () => {
-    // Avoid running twice
-    if (store.saga) return
-    store.saga = sagaMiddleware.run(rootSaga)
-  }
+//   store.stopSaga = async () => {
+//     // Avoid running twice
+//     if (!store.saga) return
+//     store.dispatch(END)
+//     await store.saga.done
+//     store.saga = null
+//   }
 
-  store.stopSaga = async () => {
-    // Avoid running twice
-    if (!store.saga) return
-    store.dispatch(END)
-    await store.saga.done
-    store.saga = null
-  }
+//   store.execSagaTasks = async (isServer, tasks) => {
+//     // run saga
+//     store.runSaga()
+//     // dispatch saga tasks
+//     tasks(store.dispatch)
+//     // Stop running and wait for the tasks to be done
+//     await store.stopSaga()
+//     // Re-run on client side
+//     if (!isServer) {
+//       store.runSaga()
+//     }
+//   }
 
-  store.execSagaTasks = async (isServer, tasks) => {
-    // run saga
-    store.runSaga()
-    // dispatch saga tasks
-    tasks(store.dispatch)
-    // Stop running and wait for the tasks to be done
-    await store.stopSaga()
-    // Re-run on client side
-    if (!isServer) {
-      store.runSaga()
-    }
-  }
+//   // Initial run
+//   store.runSaga()
 
-  // Initial run
-  store.runSaga()
+//   return store
+// }
+
+const initialState = {}
+
+const makeStore = (context) => {
+  const sagaMiddleware = createSagaMiddleware()
+  const store = createStore(rootReducer, initialState, bindMiddleware([thunk, sagaMiddleware]))
+
+  store.sagaTask = sagaMiddleware.run(rootSaga)
 
   return store
 }
 
-export default configureStore
+export const wrapper = createWrapper(makeStore)

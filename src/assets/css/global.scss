@@ -8,6 +8,7 @@
   font-family: Yantramanav;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -33,7 +34,7 @@
   --text-header: #4a4f55;
   --text-span: #77838f;
 
-  --background-color: #3C3A3A;
+  --background-color: #3c3a3a;
   --background-wrapper: #f8f9fa;
   --background-color-dark: rgba(47, 50, 65, 0.5);
   --background-button-dard: rgba(119, 131, 143, 0.1);

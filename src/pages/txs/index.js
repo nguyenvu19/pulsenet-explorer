@@ -1,25 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-
-import { getListTransactions } from 'services/api/transactions'
-
 import TxsView from 'views/Txs'
+import { getListTransactions } from 'services/api/transactions'
+import { getListRequestSuccess } from 'redux/transactions/actions'
 
-export default function Txs(props) {
-    console.log(props);
-    return <TxsView {...props} />
+function Txs(props) {
+  const { dispatch, listTransaction } = props
+  useEffect(() => {
+    dispatch(getListRequestSuccess(listTransaction))
+  }, [dispatch])
+  return <TxsView {...props} />
+}
+
+export async function getServerSideProps(props) {
+  const [listTransaction] = await Promise.all([getListTransactions({ page: 1, page_size: 10 })])
+  return { props: { listTransaction: listTransaction.data || [] } }
 }
 
 Txs.Layout = PublicLayoutBlock
 
-export async function getServerSideProps({ req, res }) {
-    const [
-        listTransaction
-    ] = await Promise.all([
-        getListTransactions({ page: 1, page_size: 10 }),
-    ]);
-
-    return {
-        props: { listTransaction: listTransaction?.data || [] },
-    };
-}
+export default connect((state) => state)(Txs)
