@@ -3,7 +3,13 @@ $tablet-width: 768px;
 $desktop-width: 992px;
 
 @mixin mobile {
-  @media (min-width: #{$mobile-width}) {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
     @content;
   }
 }
@@ -29,6 +35,7 @@ $desktop-width: 992px;
   width: 100%;
   flex-direction: column;
   padding: 0 15px;
+
   .head {
     display: flex;
     justify-content: space-between;
@@ -104,11 +111,36 @@ $desktop-width: 992px;
       margin: 16px 0;
       padding: 0 24px;
 
+      @include tablet {
+        justify-content: center;
+      }
+
+      @include tablet-small {
+        justify-content: center;
+      }
+
+      @include mobile {
+        justify-content: center;
+      }
+
       .description {
         h2 {
           font-size: 14px;
           font-weight: 500;
         }
+
+        @include tablet {
+          display: none;
+        }
+
+        @include tablet-small {
+          display: none;
+        }
+
+        @include mobile {
+          display: none;
+        }
+
         p {
           font-size: 12px;
           font-weight: 400;
@@ -116,64 +148,91 @@ $desktop-width: 992px;
       }
     }
 
-    .table {
-      max-width: 1242px;
+    .horizontal-scroll {
       width: 100%;
-      margin: 0 24px;
-      text-align: left;
-      padding: 0 8px;
-
-      @include desktop {
-        width: 96.2%;
-      }
 
       @include tablet {
-        width: 94.8%;
-      }
-      th {
-        background-color: #eeeeee;
-        height: 50px;
-        font-size: 14px;
-        font-weight: bold;
+        overflow: hidden;
+        overflow-x: auto;
+        clear: both;
       }
 
-      th:nth-child(1) {
-        padding: 0 24px 0 8px;
+      @include tablet-small {
+        overflow: hidden;
+        overflow-x: auto;
+        clear: both;
       }
 
-      th:nth-child(2) {
-        padding-left: 24px;
+      @include mobile {
+        overflow: hidden;
+        overflow-x: auto;
+        clear: both;
       }
 
-      th:nth-child(3) {
-        text-align: center;
-        vertical-align: middle;
-        padding-right: 115px;
-        div {
-          height: 18px;
-          display: flex;
-          align-items: center;
-          padding-left: 37px;
+      .table {
+        max-width: 1242px;
+        width: 100%;
+        margin: 0 24px;
+        text-align: left;
+        padding: 0 8px;
 
-          img {
-            margin-right: 8px;
+        @include desktop {
+          width: 96.2%;
+        }
+
+        @include tablet {
+          width: 94.8%;
+        }
+
+        @include tablet-small {
+          width: 94.8%;
+        }
+
+        th {
+          background-color: #eeeeee;
+          height: 50px;
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        th:nth-child(1) {
+          padding: 0 24px 0 8px;
+        }
+
+        th:nth-child(2) {
+          padding-left: 24px;
+        }
+
+        th:nth-child(3) {
+          text-align: center;
+          vertical-align: middle;
+          padding-right: 115px;
+          div {
+            height: 18px;
+            display: flex;
+            align-items: center;
+            padding-left: 37px;
+
+            img {
+              margin-right: 8px;
+            }
           }
         }
-      }
 
-      th:nth-child(4) {
-        padding-left: 8px;
-      }
+        th:nth-child(4) {
+          padding-left: 8px;
+        }
 
-      th:nth-child(6) {
-        text-align: center;
-        padding-right: 65px;
-        padding-left: 37px;
-      }
+        th:nth-child(6) {
+          text-align: center;
+          padding-right: 65px;
+          padding-left: 37px;
+        }
 
-      th:nth-child(7) {
-        padding-left: 8px;
-        text-align: center;
+        th:nth-child(7) {
+          padding-left: 8px;
+          text-align: center;
+        }
       }
     }
 
@@ -181,6 +240,20 @@ $desktop-width: 992px;
       width: 100%;
       padding: 16px 24px 11px 24px;
       display: inline-block;
+
+      @include tablet-small {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
       .left {
         float: left;

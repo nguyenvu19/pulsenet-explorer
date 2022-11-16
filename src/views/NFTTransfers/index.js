@@ -28,25 +28,27 @@ const NFTTransfers = () => {
           <Pagination />
         </div>
 
-        <table className="table">
-          <tr>
-            <th>Txn Hash</th>
-            <th>Age</th>
-            <th>From</th>
-            <th>To</th>
-            <th>TokenID</th>
-            <th>Token</th>
-            <th>Details</th>
-          </tr>
-          <BlockTransfers />
-          <BlockTransfers />
-          <BlockTransfers />
-          <BlockTransfers />
-          <BlockTransfers />
-          <BlockTransfers />
-          <BlockTransfers />
-          <BlockTransfers />
-        </table>
+        <div class="horizontal-scroll">
+          <table className="table">
+            <tr>
+              <th>Txn Hash</th>
+              <th>Age</th>
+              <th>From</th>
+              <th>To</th>
+              <th>TokenID</th>
+              <th>Token</th>
+              <th>Details</th>
+            </tr>
+            <BlockTransfers />
+            <BlockTransfers />
+            <BlockTransfers />
+            <BlockTransfers />
+            <BlockTransfers />
+            <BlockTransfers />
+            <BlockTransfers />
+            <BlockTransfers />
+          </table>
+        </div>
 
         <div className="bottom">
           <div className="left">
