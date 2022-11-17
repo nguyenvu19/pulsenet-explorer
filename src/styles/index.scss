@@ -1,5 +1,4 @@
 @import '../assets/css/global.scss';
-
 @import '../widgets/Banner/styles.scss';
 @import '../widgets/ButtonPrimary/styles.scss';
 @import '../widgets/ButtonSecondary/styles.scss';
@@ -10,9 +9,7 @@
 @import '../widgets/SelectWithImage/styles.scss';
 @import '../widgets/Svg/styles.scss';
 @import '../widgets/TypeNumber/styles.scss';
-
 @import '../components/Card/CardBase/style.scss';
-
 @import '../components/Footer/styles.scss';
 @import '../components/InputCode/styles.scss';
 @import '../components/Menu/MenuDefault/styles.scss';
@@ -27,7 +24,6 @@
 @import '../components/TableTransactionDetailTxn/styles.scss';
 @import '../components/TableTransactions/TableTransactions.scss';
 @import '../components/Pagination/styles.scss';
-
 @import '../views/account/styles.scss';
 @import '../views/auth/pages/ForgotPassword/styles.scss';
 @import '../views/auth/pages/ResetPassword/styles.scss';
@@ -43,16 +39,16 @@
 @import '../views/txs/styles.scss';
 @import '../views/transactionDetailFrom/style.scss';
 @import '../views/Unitconverter/style.scss';
-
 //account - overview
 @import '../views/Login/style.scss';
 @import '../views/Register/style.scss';
 @import '../views/Forgot/style.scss';
 @import '../views/Overview/style.scss';
 @import '../views/Overview/components/watchList/styles.scss';
-
 @import '../views/Topstatistics/style.scss';
 @import '../views/NFTTracker/styles.scss';
 @import '../views/NFTTracker/components/block-tracker/styles.scss';
 @import '../views/NFTTransfers/styles.scss';
 @import '../views/NFTTransfers/components/block-transfers/styles.scss';
+//verify page
+@import '../views/Verify/style.scss';
