@@ -4,7 +4,7 @@ $mobile-width: 375px;
 $tablet-width: 768px;
 $desktop-width: 992px;
 
-$background-image: url(../../../public/images/icon/iconUpDown.png);
+$background-image: url('/images/icon/iconUpDown.png');
 
 @mixin mobile {
   @media (max-width: #{$mobile-width}) {
@@ -231,11 +231,7 @@ $background-image: url(../../../public/images/icon/iconUpDown.png);
         font-weight: 500;
 
         .numberPage {
-          // background: $background-image no-repeat right #ffffff;
-          // background-size: 18px 18px;
-
           margin: 0 20px;
-          position: relative;
 
           select::-ms-expand {
             display: none;
@@ -245,7 +241,6 @@ $background-image: url(../../../public/images/icon/iconUpDown.png);
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-
             display: block;
             float: left;
             color: #333;
@@ -254,20 +249,23 @@ $background-image: url(../../../public/images/icon/iconUpDown.png);
             border: none;
             -ms-word-break: normal;
             word-break: normal;
+            width: 32px;
+            background: $background-image no-repeat;
+            background-position: calc(100% - 0.5rem), 100% 0;
+            background-size: 8px 9px;
           }
-        }
 
-        .numberPage:after {
-          content: '';
-          width: 30px;
-          height: 30px;
-          background: $background-image;
+          // select:after {
+          //   content: '';
+          //   width: 10px;
+          //   height: 10px;
+          //   background-repeat: no-repeat;
 
-          right: 0;
-          padding: 0 0 2px;
-
-          position: absolute;
-          pointer-events: none;
+          //   position: absolute;
+          //   top: 6px;
+          //   left: 19px;
+          //   pointer-events: none;
+          // }
         }
       }
 
