@@ -6,8 +6,9 @@ import Link from 'components/NextLink/NextLink'
 import SearchInput from 'components/SearchInput'
 import TableLatest from 'components/TableLatest/TableLatest'
 import TableTransactions from 'components/TableTransactions/TableTransactions'
+import MainBox from 'components/MainBox/MainBox'
 
-const Home = () => (
+const HomeView = (props) => (
   <div className="home">
     <section className="bg-dark">
       <div className="container">
@@ -33,14 +34,11 @@ const Home = () => (
       </div>
     </section>
     <div className="container container-home-bottom">
-      {/* <div className="row-card" style={{ marginTop: '-30px' }}>
+      <div className="row-card" style={{ marginTop: '-50px' }}>
         <MainBox />
-      </div> */}
-      {/* <div className="home-banner-advert">
-        <Banner />
-      </div> */}
+      </div>
       <div className="home-table">
-        <div className="card wrap-latest wrap-latest-block" style={{ marginTop: '-30px' }}>
+        <div className="card wrap-latest wrap-latest-block">
           <div className="table-header">
             <h2>Latest Block</h2>
           </div>
@@ -55,7 +53,7 @@ const Home = () => (
           <div className="table-header">
             <h2>Latest Transactions</h2>
           </div>
-          <TableTransactions />
+          <TableTransactions transactions={[]} />
           <div className="table-footer">
             <Link href="/txs" className="btn-soft-primary">
               View all transactions
@@ -67,4 +65,4 @@ const Home = () => (
   </div>
 )
 
-export default Home
+export default HomeView

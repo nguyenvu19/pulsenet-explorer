@@ -1,10 +1,8 @@
 import React from 'react'
-// import './banner.scss'
 
 const index = () => (
   <a className="banner-container">
-    <span className="showcase-banner-text">Ad</span>
-    <img src="/images/bybit_dip_v5_321x101.webp" alt="" />
+    <img className="qr-code" src="/images/pulsescan.png" alt="" />
   </a>
 )
 

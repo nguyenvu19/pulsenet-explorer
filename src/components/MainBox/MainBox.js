@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import siteConfig from '../../config/site.config'
+import { Col, Row } from 'antd'
 
 const ApexCharts = dynamic(() => import('react-apexcharts'), { ssr: false, loading: () => <p>Loading ...</p> })
 
@@ -9,102 +10,115 @@ const MainBox = () => {
     options: {
       chart: {
         id: 'basic-bar',
+        toolbar: {
+          show: false,
+        }
       },
       xaxis: {
-        categories: ['Mar 21', 'Mar 28', 'Apr 4'],
+        categories: ['Mar 21', 'Mar 24', 'Mar 28', 'Apr 1', 'Apr 4'],
+        tickAmount: 2,
       },
+      yaxis: {
+        tickAmount: 2,
+      },
+      grid: {
+        xaxis: {
+          lines: {
+            show: false
+          }
+        },
+        yaxis: {
+          lines: {
+            show: false,
+          },
+        },
+      },
+      stroke: {
+        curve: 'smooth',
+        width: 1,
+      }
     },
     series: [
       {
-        name: 'series-1',
-        data: [2500, 3000, 500],
+        name: 'Price',
+        data: [2500, 3000, 500, 3500, 2000],
       },
     ],
   })
 
   return (
-    <div className="row-body">
-      <div className="col-md-col-6 col-lg-4">
+    <Row gutter={[32, 32]} className="row-body">
+      <Col xs={24} sm={24} md={24} lg={8} className="col-item">
         <div className="col-left-1">
           <div className="body-img">
-            <img src="/logo.png" alt="" />
+            <img src="/images/icon/price.png" alt="" />
           </div>
           <div className="body-content">
             <h2 className="body-content-text-below">{siteConfig.nativeCurrency.symbol} PRICE</h2>
             <a className="body-content-text-under">
-              $1.57
-              <span className="text-secondary"> @ 0.000035 BTC</span>
-              <span className="text-secondary small"> (+8.53%)</span>
+              <span className="text-secondary">$0.008</span>
+              <span className="text-secondary small"> +0.50%</span>
             </a>
           </div>
         </div>
         <div className="col-left-1">
           <div className="body-img">
-            <img src="/images/logo/matic-marketcap.svg" alt="" />
+            <img src="/images/icon/marketcap.png" alt="" />
           </div>
           <div className="body-content">
             <h2 className="body-content-text-below">
-              {siteConfig.nativeCurrency.symbol} MARKET CAP ON {siteConfig.nativeCurrency.symbol} SMARTCHAIN
+              MARKET CAP
             </h2>
             <a className="body-content-text-under">
-              $12,059,874,854.00
-              <span className="text-secondary"> (7,701,069,511 {siteConfig.nativeCurrency.symbol} )</span>
+              $803,850.00
             </a>
           </div>
         </div>
-      </div>
-      <div className="col-md-col-6 col-lg-4">
+      </Col>
+      <Col xs={24} sm={24} md={24} lg={8} className="col-item">
         <div className="col-left-1 col-center-1">
           <div className="col-center-left-container">
             <div className="body-img">
-              <img src="/images/logo/transaction.svg" alt="" />
+              <img src="/images/icon/transactions.png" alt="" />
             </div>
             <div className="body-content">
               <h2 className="body-content-text-below">TRANSACTIONS</h2>
               <a className="body-content-text-under">
-                1,528.01 M<span className="text-secondary small-black"> (36.5 TPS)</span>
+                464
               </a>
             </div>
           </div>
           <div className="body-right">
             <h2>MED GAS PRICE</h2>
-            <a href="/">44 Gwei</a>
-            <span>(2.1s)</span>
+            <a href="/">5 Gwei</a>
+            <span> ($0,001)</span>
           </div>
         </div>
         <div className="col-left-1 col-center-2">
           <div className="body-img">
-            <img src="/images/logo/lasted block.svg" alt="" />
+            <img src="/images/icon/finalized.png" alt="" />
           </div>
           <div className="body-content">
-            <h2 className="body-content-text-below">LATEST BLOCK</h2>
+            <h2 className="body-content-text-below">LAST FINALIZED BLOCK</h2>
             <a className="body-content-text-under">
-              26601141
-              <a className="text-secondary">
-                <span className="text-secondary-11">($0.01)</span>
-              </a>
+              15793060
             </a>
           </div>
         </div>
-      </div>
-      <div className="col-md-col-12 col-lg-4">
-        {/* <div>
-          <h2>POLYGON TRANSACTION HISTORY LAST 14 DAYS</h2>
-        </div> */}
-        <div className="row">
-          <div className="mixed-chart">
-            <ApexCharts
-              className="mixed-chart-item"
-              options={chart.options}
-              series={chart.series}
-              type="area"
-              // width="400px"
-              // height="100%"
-            />
-          </div>
+      </Col>
+      <Col xs={24} sm={24} md={24} lg={8} className="col-item">
+        <div className="mixed-chart">
+          <h2 className="body-content-text-below">PULSENET TRANSACTION HISTORY IN 12 DAYS</h2>
+          <ApexCharts
+            className="mixed-chart-item"
+            options={chart.options}
+            series={chart.series}
+            height="150px"
+            type="line"
+          />
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   )
 }
 

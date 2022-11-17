@@ -1,4 +1,4 @@
-# explorer
+# Explorer
 
 This project contains the main features of the application.
 

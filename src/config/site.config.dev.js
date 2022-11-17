@@ -5,7 +5,7 @@ const siteConfig = {
   siteIcon: 'ion-flash',
   footerText: `Explorer`,
   enableAnimatedRoute: false,
-  apiUrl: 'http://yoursite.com/api/',
+  apiUrl: 'https://pulsescan-testnet.evmbuilder.com/api/v1',
   google: {
     analyticsKey: 'UA-xxxxxxxxx-1',
   },
@@ -22,6 +22,9 @@ const siteConfig = {
     address: 'PULSE',
     image: '',
   },
+  company: "PULSENET",
+  siteTitle: "PULSESCAN",
+  siteLogo: "/logo.png",
   donateAddress: '0x5694f5a0bda8f95E780218D61311Ed18E6CEbd7c',
 }
 

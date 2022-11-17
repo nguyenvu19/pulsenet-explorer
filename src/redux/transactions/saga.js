@@ -1,56 +1,39 @@
-import { all, takeEvery, put, fork } from 'redux-saga/effects'
+import { all, takeLatest, put, call, fork } from 'redux-saga/effects'
+import axios from 'axios';
 
-// export function* loginRequest() {
-//   yield takeEvery('LOGIN_REQUEST', function* ({ payload }) {
-//     const { token } = payload
-//     if (token) {
-//       yield put({
-//         type: actions.LOGIN_SUCCESS,
-//         token: token,
-//         profile: 'Profile',
-//       })
-//     } else {
-//       if (fakeApiCall) {
-//         yield put({
-//           type: actions.LOGIN_SUCCESS,
-//           token: 'secret token',
-//           profile: 'Profile',
-//         })
-//       } else {
-//         yield put({ type: actions.LOGIN_ERROR })
-//       }
-//     }
-//   })
-// }
+import actions from './actions';
 
-// export function* loginSuccess() {
-//   yield takeEvery(actions.LOGIN_SUCCESS, function* (payload) {
-//     yield localStorage.setItem('id_token', payload.token)
-//   })
-// }
+import siteConfig from 'config/site.config';
 
-// export function* loginError() {
-//   yield takeEvery(actions.LOGIN_ERROR, function* () {})
-// }
+const ApiUrl = `${siteConfig?.apiUrl || ""}/transaction`;
 
-// export function* logout() {
-//   yield takeEvery(actions.LOGOUT, function* () {
-//     yield clearToken()
-//     history.push('/')
-//   })
-// }
-// export function* checkAuthorization() {
-//   yield takeEvery(actions.CHECK_AUTHORIZATION, function* () {
-//     const token = getToken().get('idToken')
-//     if (token) {
-//       yield put({
-//         type: actions.LOGIN_SUCCESS,
-//         token,
-//         profile: 'Profile',
-//       })
-//     }
-//   })
-// }
+function* getListRequest({ params }) {
+  try {
+    const response = yield axios.get(ApiUrl, {
+      method: 'GET',
+      params: params,
+      headers: {
+        'content-type': 'multipart/form-data' && 'application/json',
+      },
+      timeout: 600000,
+    });
+    if (response.status === 200) {
+      const data = yield response.json();
+      yield put(actions.getListRequestSuccess(data));
+    } else {
+      let error = new Error(response.statusText)
+      error.response = response
+      throw error
+    }
+  } catch (error) {
+    yield put(actions.getListRequestFailure(error))
+  }
+}
+
+export function* onGetList() {
+  yield takeLatest(actions.GET_TRANSACTIONS_START, getListRequest)
+}
+
 export default function* rootSaga() {
-  yield all([])
+  yield all([call(onGetList)])
 }
