@@ -21,6 +21,11 @@ const Pagination = ({ page }) => {
     console.log(query)
   }, [query.page])
 
+  // Handle button first
+  const handleFirst = (pageIndex) => {
+    router.replace(`?page=${pageIndex}&limit=${limit}`)
+  }
+
   // Handler button decrease
   const handleDecrement = (pageIndex) => {
     let p = pageIndex >= 1 ? pageIndex : 1
@@ -35,9 +40,16 @@ const Pagination = ({ page }) => {
     router.replace(`?page=${p}&limit=${limit}`)
   }
 
+  // Handler button last
+  const handleLast = (pageIndex) => {
+    router.replace(`?page=${pageIndex}&limit=${limit}`)
+  }
+
   return (
     <div className="pagination">
-      <button className="first">First</button>
+      <button className="first" onClick={() => handleFirst(1)}>
+        First
+      </button>
       <button className="previous" onClick={() => handleDecrement(currentPage - 1)}>
         <span>&#60;</span>
       </button>
@@ -47,7 +59,9 @@ const Pagination = ({ page }) => {
       <button className="next" onClick={() => handleIncrement(currentPage + 1)}>
         <span>&#62;</span>
       </button>
-      <button className="last">Last</button>
+      <button className="last" onClick={() => handleLast(page)}>
+        Last
+      </button>
     </div>
   )
 }
