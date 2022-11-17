@@ -93,8 +93,6 @@ const VerifyPage = () => {
             </p>
           </div>
           <div className="input-verify">
-            
-
             <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
               <Form.Item
                 name="Compiler type"
@@ -140,55 +138,38 @@ const VerifyPage = () => {
                 </Select>
               </Form.Item>
 
-              {/* <Form.Item
-                noStyle
-                shouldUpdate={(prevValues, currentValues) => prevValues.gender !== currentValues.gender}
-              >
-                {({ getFieldValue }) =>
-                  getFieldValue('gender') === 'other' ? (
-                    <Form.Item
-                      name="customizeGender"
-                      label="Customize Gender"
-                      rules={[
-                        {
-                          required: true,
-                        },
-                      ]}
-                    >
-                      <Input />
-                    </Form.Item>
-                  ) : null
-                }
-              </Form.Item>
-              <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
-                  Submit
-                </Button>
-                <Button htmlType="button" onClick={onReset}>
-                  Reset
-                </Button>
-                <Button type="link" htmlType="button" onClick={onFill}>
-                  Fill form
-                </Button>
-              </Form.Item> */}
+              <Form.Item
+                // style={{marginLeft: '-50%'}}
 
-              <div className="checkBox">
-                <Checkbox />
-                <span>
-                  i agree to the <span className="textGreen">terms of service</span>
-                </span>
+                name="agreement"
+                valuePropName="checked"
+                rules={[
+                  {
+                    validator: (_, value) =>
+                      value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
+                  },
+                ]}
+                {...tailLayout}
+                style={{ marginBottom: '128px' }}
+              >
+                <Checkbox style={{ fontSize: '14px', fontWeight: 400,opacity:"0.8" }}>i agree to the <span className='text-green'>terms of service</span></Checkbox>
+              </Form.Item>
+
+              
+
+              <div className="check-buttons">
+                
               </div>
               <div className="button-container">
-              <Button className="green" type="primary" htmlType="submit">
-                Submit
-              </Button>
-              <Button className="white" htmlType="button" onClick={onReset}>
-                Reset
-              </Button>
+                <Button className="green" type="primary" htmlType="submit">
+                  Submit
+                </Button>
+                <Button className="white" htmlType="button" onClick={onReset}>
+                  Reset
+                </Button>
               </div>
             </Form>
           </div>
-          
         </div>
       </div>
     </div>
