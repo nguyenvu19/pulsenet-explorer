@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 
 import search from '../../../public/images/icon/search.png'
@@ -9,13 +9,22 @@ import BlockTracker from './components/block-tracker'
 import Pagination from 'components/Pagination'
 
 import { FAKE_DATA } from 'views/NFTTracker/fakeData'
+import getQueryUrl from 'utils/getQueryUrl'
+import { useRouter } from 'next/router'
 
 const NFTTracker = () => {
-  const fakeData = FAKE_DATA
+  const [limit, setLimit] = useState(10)
 
-  const page = fakeData.length
+  const router = useRouter()
+  const { query, pathname } = router
 
-  console.log(fakeData)
+  const pageLength = FAKE_DATA.length
+
+  const handlePerPage = (limitNumber) => {
+    router.replace(`?page=${1}&limit=${limitNumber}`)
+    setLimit(limitNumber)
+    console.log(limitNumber)
+  }
 
   return (
     <div className="nft-tracker-page">
@@ -38,7 +47,7 @@ const NFTTracker = () => {
             <h2>A total of 159,264 ERC-721 Token Contracts found</h2>
             <p>(Showing the last 100k records)</p>
           </div>
-          <Pagination page={page} />
+          <Pagination page={pageLength} />
         </div>
 
         <div className="content-table">
@@ -57,8 +66,8 @@ const NFTTracker = () => {
               </tr>
             </thead>
             <tbody>
-              {fakeData &&
-                fakeData.map((data, index) => {
+              {FAKE_DATA &&
+                FAKE_DATA.map((data, index) => {
                   return <BlockTracker key={index} data={data} />
                 })}
             </tbody>
@@ -68,14 +77,21 @@ const NFTTracker = () => {
         <div className="bottom">
           <div className="left">
             <div className="show">Show</div>
-            <div className="numberPage">
-              25 <img src={upDown} className="upDown" />
+
+            <div className="numberPage" value={limit} onChange={(e) => handlePerPage(e.target.value)}>
+              <select>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+              </select>
             </div>
+
             <div className="records">Records</div>
           </div>
 
           <div className="right">
-            <Pagination page={page} />
+            <Pagination page={pageLength} limit={limit} />
           </div>
         </div>
       </div>
