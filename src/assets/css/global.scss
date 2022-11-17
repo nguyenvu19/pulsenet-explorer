@@ -1,8 +1,8 @@
-@import "assets/css/variables.scss";
-@import "assets/css/animation.scss";
-@import "assets/css/base-class.scss";
-@import "assets/css/customs-class.scss";
-@import "assets/css/card.scss";
+@import 'assets/css/variables.scss';
+@import 'assets/css/animation.scss';
+@import 'assets/css/base-class.scss';
+@import 'assets/css/customs-class.scss';
+@import 'assets/css/card.scss';
 
 * {
   font-family: Yantramanav;
@@ -102,6 +102,15 @@ menu,
 nav,
 section {
   display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 body {

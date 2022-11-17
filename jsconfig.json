@@ -6,4 +6,3 @@
   "exclude": ["node_modules"],
   "include": ["next-env.d.js", "./src/**/*.js", "./src/**/*.jsx"]
 }
- 
