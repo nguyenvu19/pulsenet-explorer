@@ -25,12 +25,12 @@ import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import Link from 'components/NextLink/NextLink'
 import CoppyText from 'components/CoppyText'
 import { APP_URL } from 'config/constants'
-import ABI_TOKEN from 'config/constants/abis/abi_token_bep20.json'
+import ABI_ERC20 from 'config/constants/abis/erc20.json'
 import TokensTransferred from 'components/TokensTransferred'
 import siteConfig from '../../config/site.config'
 
 const abiDecoder = require('abi-decoder')
-abiDecoder.addABI(ABI_TOKEN)
+abiDecoder.addABI(ABI_ERC20)
 
 const { TabPane } = Tabs
 

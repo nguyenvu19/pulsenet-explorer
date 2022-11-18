@@ -358,9 +358,8 @@ const onClick = ({ key }) => {
 }
 
 /**
- * Detail address
+ * Detail token
  */
-
 const TokenPage = () => {
   const { query } = useRouter()
   const refToken = React.useRef()

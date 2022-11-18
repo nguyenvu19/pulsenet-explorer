@@ -180,7 +180,7 @@ const search = (
  */
 const web3 = new Web3(PROVIDER_NETWORK_URL)
 
-const TransactionDetailTolModule = () => {
+const AddressPage = () => {
   const {
     query: { address },
   } = useRouter()
@@ -403,5 +403,5 @@ const TransactionDetailTolModule = () => {
   )
 }
 
-TransactionDetailTolModule.Layout = PublicLayoutBlock
-export default TransactionDetailTolModule
+AddressPage.Layout = PublicLayoutBlock
+export default AddressPage
