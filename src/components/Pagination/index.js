@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import getQueryUrl from 'hooks/useQueryUrl'
+import useQueryUrl from 'hooks/useQueryUrl'
 
 const Pagination = ({ page }) => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -9,7 +9,7 @@ const Pagination = ({ page }) => {
   const { query, pathname } = router
 
   // Get limit from url
-  const { limit } = getQueryUrl()
+  const { limit } = useQueryUrl()
 
   useEffect(() => {
     // Check page change
