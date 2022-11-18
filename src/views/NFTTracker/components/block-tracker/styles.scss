@@ -1,3 +1,5 @@
+@import '../../../../../src/assets/css/mixins/breakpoints.scss';
+
 .block-tracker {
   max-width: 821px;
   width: 100%;
@@ -8,7 +10,6 @@
     padding: 16px;
 
     span {
-      height: 18px;
       align-items: flex-start;
       margin-bottom: 2px;
     }
@@ -41,6 +42,9 @@
     }
 
     span:last-child {
+      @include media-down(sm) {
+        display: none;
+      }
     }
   }
 
