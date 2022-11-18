@@ -11,7 +11,7 @@ const NFTTransfers = () => {
     <div className="nft-transfers-page">
       <div className="head">
         <div className="left">
-          <h1>Non-Fungible Token Transfers</h1>
+          Non-Fungible Token Transfers
           <span>ERC - 20</span>
         </div>
       </div>

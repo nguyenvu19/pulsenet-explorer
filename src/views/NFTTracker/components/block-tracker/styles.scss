@@ -8,6 +8,7 @@
 
   td {
     padding: 16px;
+    color: #787a91;
 
     span {
       align-items: flex-start;
@@ -42,6 +43,7 @@
     }
 
     span:last-child {
+      color: #787a91;
       @include media-down(sm) {
         display: none;
       }

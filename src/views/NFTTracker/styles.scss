@@ -218,6 +218,8 @@ $background-image: url('/images/icon/iconUpDown.png');
       padding: 16px 24px 12px 24px;
       display: inline-block;
 
+      color: #3c3a3a;
+
       @include media-down(md) {
         display: flex;
         flex-direction: column;
