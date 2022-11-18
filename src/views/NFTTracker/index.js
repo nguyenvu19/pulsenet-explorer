@@ -30,7 +30,7 @@ const NFTTracker = () => {
     <div className="nft-tracker-page">
       <div className="head">
         <div className="left">
-          <h1>Non-Fungible Token Tracker</h1>
+          Non-Fungible Token Tracker
           <span>ERC - 20</span>
         </div>
       </div>
