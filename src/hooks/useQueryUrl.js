@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-const getQueryUrl = () => {
+const useQueryUrl = () => {
   const router = useRouter()
   const { query } = router
   let page = Number(query.page) >= 1 ? Number(query.page) : 1
@@ -15,4 +15,4 @@ const getQueryUrl = () => {
   }
 }
 
-export default getQueryUrl
+export default useQueryUrl

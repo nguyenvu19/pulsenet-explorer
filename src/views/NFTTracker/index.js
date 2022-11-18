@@ -9,7 +9,6 @@ import BlockTracker from './components/block-tracker'
 import Pagination from 'components/Pagination'
 
 import { FAKE_DATA } from 'views/NFTTracker/fakeData'
-import getQueryUrl from 'utils/getQueryUrl'
 import { useRouter } from 'next/router'
 
 const NFTTracker = () => {
