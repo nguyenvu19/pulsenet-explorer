@@ -1,5 +1,5 @@
 import React from 'react'
-import { getListTransactions } from 'services/api/transactions'
+import { getListTransactions, getStatistics } from 'services/api/transactions'
 import { getBlockDetail, getListBlocks } from 'services/api/blocks'
 
 import HomeView from './home'
@@ -12,9 +12,11 @@ export async function getServerSideProps({ req, res }) {
   const [
     listTransaction,
     listBlock,
+    statistics,
   ] = await Promise.all([
     getListTransactions({ page: 1, page_size: 10 }),
     getListBlocks({ page: 1, page_size: 10 }),
+    getStatistics({ page: 1, page_size: 12 }),
   ]);
 
   let latestBlockDetail = {};
@@ -34,6 +36,7 @@ export async function getServerSideProps({ req, res }) {
       listBlock: listBlock?.data || [],
       latestBlockDetail: latestBlockDetail?.data?.[0] || {},
       latestTransactionDetail: latestTransactionDetail?.data?.[0] || {},
+      statistics: statistics || {},
     },
   };
 }

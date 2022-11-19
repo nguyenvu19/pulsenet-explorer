@@ -1,25 +1,15 @@
 import React from 'react'
-import { Table, Progress } from 'antd'
-import { range } from 'lodash'
+import { Table, Row, Col } from 'antd'
 import ReactTimeAgo from 'react-time-ago'
-import Web3 from 'web3'
 import CurrencyFormat from 'react-currency-format'
 import Link from 'components/NextLink/NextLink'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import { PROVIDER_NETWORK_URL } from 'config/constants'
 import siteConfig from '../../config/site.config'
 
-const web3 = new Web3(PROVIDER_NETWORK_URL)
+import TablePagination from 'components/TablePagination/TablePagination'
+import router from 'next/router'
 
-const DEFAULT_LIMIT = 10
-
-async function getListBlock({ page, limit, latest }) {
-  const from = latest - page * limit + DEFAULT_LIMIT
-  const to = from - limit
-  const blockNumbers = range(from, to, -1).filter((n) => n >= 0)
-  const blocks = await Promise.all(blockNumbers.map((n) => web3.eth.getBlock(n)))
-  return { blocks }
-}
+const DEFAULT_LIMIT = 25
 
 const columns = [
   {
@@ -62,17 +52,17 @@ const columns = [
       <div className="data-gasUse">
         <div>
           <CurrencyFormat value={text} displayType="text" thousandSeparator renderText={(value) => value} />{' '}
-          <span className="data-gasUse-span">({((record.gu * 1 / record.gl * 1) * 100).toFixed(1)}%, -3%)</span>
+          <span className="data-gasUse-span">({((record?.gu * 1 / record.gl * 1) * 100).toFixed(1)}%)</span>
         </div>
         <div className="gas-process">
-          <div style={{ width: `${Math.floor((record.gu * 1 / record.gl * 1) * 100)}%` }} />
+          <div style={{ width: `${Math.floor((record?.gu * 1 / record.gl * 1) * 100)}%` }} />
         </div>
       </div>
     ),
   },
   {
     title: 'Gas Limit',
-    dataIndex: 'gasLimit',
+    dataIndex: 'gl',
     // width: 80,
     render: (text) => (
       <CurrencyFormat value={text} displayType="text" thousandSeparator renderText={(value) => value} />
@@ -82,25 +72,23 @@ const columns = [
     title: 'Base Fee',
     dataIndex: 'f',
     // width: 80,
-    render: (text) => { `${text} Gwei` },
+    render: (text) => { `${text || "--"} Gwei` },
   },
   {
     title: 'Reward',
     dataIndex: 'br',
     key: 'reward',
     width: 100,
-    render: (text) => text,
+    render: (text) => text || "--",
   },
   {
-    title: 'Burnt Fees (PI )',
+    title: `Burnt Fees (${siteConfig?.nativeCurrency?.symbol})`,
     dataIndex: 'f',
     key: 'burntfees',
     width: 100,
     render: (text) => (
       <div className="data-burntfees">
         {text || "--"}
-        <span className="data-burntfees-span"> (0.43%)</span>
-        <Progress percent={99.94} />
       </div>
     ),
   },
@@ -111,31 +99,67 @@ const BlocksModule = (props) => {
 
   const [paramsListBlock, setParamsListBlock] = React.useState({
     page: 1,
-    limit: DEFAULT_LIMIT,
-    latest: '',
+    page_size: DEFAULT_LIMIT,
   })
-  const [listBlock, setListBlock] = React.useState([])
+
+  const [loading, setLoading] = React.useState(false)
 
   React.useEffect(() => {
-    ; (async () => {
-      const latest = await web3.eth.getBlockNumber()
-      setParamsListBlock((prev) => ({
-        ...prev,
-        latest,
-      }))
-    })()
-  }, [])
-
-  React.useEffect(() => {
-    if (paramsListBlock.latest) {
-      getListBlock(paramsListBlock).then(({ blocks }) => {
-        setListBlock((prev) => [...blocks])
+    setLoading(true);
+    if (paramsListBlock?.page !== 1) {
+      router.push({
+        pathname: '/blocks',
+        query: { ...paramsListBlock }
+      })
+    } else {
+      router.push({
+        pathname: '/blocks',
       })
     }
   }, [paramsListBlock])
 
+  React.useEffect(() => {
+    setLoading(false);
+  }, [listBlocks])
+
+  const handleChangePagination = (key) => {
+    switch (key) {
+      case 'first':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page: 1
+        })
+        break;
+      case 'previous':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page: paramsListBlock?.page - 1,
+        })
+        break;
+      case 'next':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page: paramsListBlock?.page + 1,
+        })
+        break;
+      case 'last':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page: listBlocks?.total % paramsListBlock?.page_size > 0 ? Math.floor(listBlocks?.total / paramsListBlock?.page_size) + 1 : Math.floor(listBlocks?.total / paramsListBlock?.page_size)
+        })
+        break;
+    }
+  };
+
+  const handleChangeShow = (value) => {
+    setParamsListBlock({
+      ...paramsListBlock,
+      page_size: value
+    })
+  };
+
   return (
-    <div className=" blocks-wrapper">
+    <div className="blocks-wrapper">
       <div className="container ">
         <div className="blocks-heading">
           <h1>Blocks </h1>
@@ -153,47 +177,27 @@ const BlocksModule = (props) => {
           <div className="blocks-card">
             <div className="block-card-body">
               <div className="card-body-header">
-                <p>
-                  Block #{paramsListBlock.latest || 0} to #{paramsListBlock.latest || 0} (Total of{' '}
-                  {listBlocks?.[0]?.number && (
-                    <CurrencyFormat
-                      value={paramsListBlock.latest || 0}
-                      displayType="text"
-                      thousandSeparator
-                      renderText={(value) => value}
-                    />
-                  )}{' '}
-                  blocks)
-                </p>
-                <nav aria-label="page navigation">
-                  <ul class="pagination pagination-sm mb-0">
-                    <li class="page-item disabled"><span class="page-link">First</span></li>
-                    <li class="page-item disabled"><span class="page-link"><i class="fa fa-chevron-left small"></i></span><span class="sr-only">Previous</span></li>
-                    <li class="page-item disabled"><span class="page-link text-nowrap">Page <strong class="font-weight-medium">1</strong> of <strong class="font-weight-medium">10000</strong></span></li>
-                    <li class="page-item" data-toggle="tooltip" title="" data-original-title="Go to Next"><a class="page-link" href="txs?p=2" aria-label="Next"><span aria-hidden="True"><i class="fa fa-chevron-right small"></i></span> <span class="sr-only">Next</span></a></li>
-                    <li class="page-item"><a class="page-link" href="txs?p=10000"><span aria-hidden="True">Last</span> <span class="sr-only">Last</span></a></li>
-                  </ul>
-                </nav>
+                <Row>
+                  <Col xs={{ span: 24 }} md={{ span: 12 }}>
+                    <p className="block-info">
+                      Block #{listBlocks?.data?.[0]?.bn || 0} to #{listBlocks?.data?.[listBlocks?.data?.length - 1]?.bn || 0} (Total of {listBlocks?.total || 0} blocks)
+                    </p>
+                  </Col>
+                  <Col xs={{ span: 24 }} md={{ span: 12 }} className="header-pagination">
+                    <TablePagination total={listBlocks?.total || 0} pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT} page={paramsListBlock?.page || 1} onChange={handleChangePagination} disableShow={true} />
+                  </Col>
+                </Row>
               </div>
               <div className="card-body-center">
                 <Table
                   columns={columns}
-                  dataSource={[...listBlocks]}
-                  scroll={{ x: 600 }}
-                  pagination={{
-                    total: paramsListBlock.latest,
-                    current: paramsListBlock.page,
-                    showSizeChanger: false,
-                    showQuickJumper: true,
-                    onChange: (page, limit) => {
-                      setParamsListBlock((prev) => ({
-                        ...prev,
-                        page,
-                        limit,
-                      }))
-                    },
-                  }}
+                  dataSource={[...listBlocks?.data || []]}
+                  loading={loading}
+                  pagination={false}
                 />
+              </div>
+              <div className='card-footer'>
+                <TablePagination total={listBlocks?.total || 0} pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT} page={paramsListBlock?.page || 1} onChange={handleChangePagination} onChangeShow={handleChangeShow} />
               </div>
             </div>
           </div>

@@ -174,7 +174,8 @@
     }
 
     .mixed-chart-item {
-      min-height: 100px;
+      min-height: 180px;
+      margin-bottom: -50px;
 
       @include media-up(xm) {
         max-width: 350px;

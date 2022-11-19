@@ -5,7 +5,6 @@ import { formatCode, numberFormatter } from 'library/helpers/CommonHelper'
 import siteConfig from '../../config/site.config'
 
 const TableItemTransactions = ({ key, dataItem }) => {
-  console.log(dataItem);
   return (
     <div className="row" key={key}>
       <div className="col-sm-4">

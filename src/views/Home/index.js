@@ -9,7 +9,7 @@ import TableTransactions from 'components/TableTransactions/TableTransactions'
 import MainBox from 'components/MainBox/MainBox'
 
 const HomeView = (props) => {
-  const { listTransaction, listBlock, latestBlockDetail, latestTransactionDetail } = props;
+  const { listTransaction, listBlock, latestBlockDetail, latestTransactionDetail, statistics } = props;
   return (
     <div className="home">
       <section className="bg-dark">
@@ -29,7 +29,7 @@ const HomeView = (props) => {
       </section>
       <div className="container container-home-bottom">
         <div className="row-card" style={{ marginTop: '-50px' }}>
-          <MainBox latestBlock={latestBlockDetail} latestTransaction={latestTransactionDetail} />
+          <MainBox latestBlock={latestBlockDetail} latestTransaction={latestTransactionDetail} statistics={statistics} />
         </div>
         <div className="home-table">
           <div className="card wrap-latest wrap-latest-block">
