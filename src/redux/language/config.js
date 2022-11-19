@@ -1,4 +1,4 @@
-import language from 'config/language.config'
+import language from 'config/translation/language.config'
 
 const config = {
   defaultLanguage: language,

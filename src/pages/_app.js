@@ -8,7 +8,8 @@ import withReduxSaga from 'next-redux-saga'
 import { ThemeContextProvider } from 'containers/ThemeContext'
 import { wrapper } from 'redux/store'
 import 'antd/dist/antd.css'
-import 'styles/index.scss'
+import 'assets/css/global.scss'
+import 'styles/main.scss'
 
 TimeAgo.addLocale(en)
 TimeAgo.addLocale(ru)
