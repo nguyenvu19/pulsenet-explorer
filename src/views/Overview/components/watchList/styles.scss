@@ -1,17 +1,13 @@
 .watch_list {
-    &_title{
-            display: flex;
-          justify-content: space-between;
-          border-bottom: 1px solid #3c3a3a;
-          
+    &_title {
+        display: flex;
+        justify-content: space-between;
 
         .btn_add {
             width: 100px;
             padding: 0 24px;
-            color: #FFFFFF;
-            // margin-top: 24px; 
-            margin-bottom: 16px;
-            margin-right: 24px;  
+            color: #ffffff;
+
             font-size: 16px;
             font-weight: 700;
             background-color: #418143;
@@ -22,34 +18,66 @@
             border: none;
         }
     }
-      p {
-        margin-top: 16px;
+    p {
         margin-left: 0px !important;
-        margin-bottom: 24px;
-      }
+    }
     &_content {
-        // border: none;
-        &_username {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            // background-color: #EEEEEE;
-            // padding: 8px 0px;
-            
-            p {
-                font-size: 16px;
-                font-weight: 700;
+        &_top {
+            margin-bottom: 24px;
+            border-bottom: 1px solid #3c3a3a;
+
+            &_username {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #eeeeee;
+                margin: 24px 0px;
+                p {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                &:first-child {
+                    background-color: #ffffff;
+                }
+                &:nth-child(2) {
+                    border-radius: 8px;
+                    background-color: #eeeeee;
+
+                    p {
+                        font-size: 16px;
+                        margin: 8px 0px;
+                        padding-left: 16px;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 24px;
+                    border-radius: 8px;
+                    background-color: #eeeeee;
+                }
+                p.center {
+                    width: 100%;
+                    margin: 8px 0px;
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
             }
         }
-        .center {
-            justify-content: center;
-            border-bottom: 1px solid #3c3a3a;
-            margin-top: 8px;
-            margin-bottom: 24px;
-        }
-        .flex-end{
+        &_bottom {
+            display: flex;
             justify-content: flex-end;
+            .flex-end {
+                a,
+                span {
+                    font-size: 14px;
+                    color: #3c3a3a;
+                    margin: 0px 8px;
+                    padding: 4px 10px;
+                    background-color: #eeeeee;
+                    border-radius: 4px;
+                    font-weight: 500;
+                }
+            }
         }
-        
     }
 }
