@@ -1,25 +1,27 @@
-import config, { getCurrentLanguage } from './config';
+import { CACHE_LANGUAGE, DEFAULT_LANGUAGE, getLanguage } from 'config/language/config'
+import { isServer } from 'utils/isServer'
+import actions from './actions'
 
-import actions from './actions';
+const languageLocal = !isServer ? localStorage.getItem(CACHE_LANGUAGE) : undefined
+const language = languageLocal || DEFAULT_LANGUAGE || 'en'
+const selectLanguage = getLanguage(language)
 
 const initState = {
-  isActivated: false,
-  language: getCurrentLanguage(config.defaultLanguage || 'english'),
-};
+  language: selectLanguage ? selectLanguage.code : DEFAULT_LANGUAGE,
+}
 
-export default function Reducer(state = initState, action) {
+export default function LanguageReducer(state = initState, action) {
+  const { payload } = action
   switch (action.type) {
-    case actions.ACTIVATE_LANG_MODAL:
-      return {
-        ...state,
-        isActivated: !state.isActivated,
-      };
     case actions.CHANGE_LANGUAGE:
+      if (!isServer) {
+        localStorage.setItem(CACHE_LANGUAGE, payload || DEFAULT_LANGUAGE)
+      }
       return {
         ...state,
-        language: action.language,
-      };
+        language: payload || DEFAULT_LANGUAGE,
+      }
     default:
-      return state;
+      return state
   }
 }
