@@ -1,3 +1,27 @@
+/* Mixin */
+/* Set các giá trị với màn hình tương ứng */
+$mobile-width: 375px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 .topstatistics-page {
   color: black;
   min-height: 80vh;
@@ -41,10 +65,18 @@
 
   table:nth-child(even) {
     margin-left: 15px;
+
+    @include tablet {
+      margin-left: 0;
+    }
   }
 
   table:nth-child(odd) {
     margin-right: 15px;
+
+    @include tablet {
+      margin-right: 0;
+    }
   }
 
   table tr {
@@ -141,18 +173,47 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .topstatistics-transaction {
     width: calc(50% - 15px);
+
+    @include tablet {
+      width: calc(100% - 15px);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   .topstatistics-tokens {
     width: calc(50% - 15px);
+
+    @include tablet {
+      width: calc(100% - 15px);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   .topstatistics-network {
     width: calc(50% - 15px);
+
+    @include tablet {
+      width: calc(100% - 15px);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   .green {
