@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactTimeAgo from 'react-time-ago'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import siteConfig from '../../config/site.config'
 
 const TableItem = ({ dataItem, ...props }) => (

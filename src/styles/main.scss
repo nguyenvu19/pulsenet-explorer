@@ -12,6 +12,7 @@
 
 // Components
 @import '../components/Card/CardBase/style.scss';
+@import '../components/Card/CardTabs/style.scss';
 @import '../components/Footer/styles.scss';
 @import '../components/InputCode/styles.scss';
 @import '../components/Menu/MenuDefault/styles.scss';
@@ -38,7 +39,7 @@
 @import '../views/comingSoon/styles.scss';
 @import '../views/home/styles.scss';
 @import '../views/address/style.scss';
-@import '../views/token/styles.scss';
+@import '../views/Token/styles.scss';
 @import '../views/tx/styles.scss';
 @import '../views/txs/styles.scss';
 @import '../views/transactionDetailFrom/style.scss';

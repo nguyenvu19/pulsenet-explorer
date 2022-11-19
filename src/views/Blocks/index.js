@@ -4,7 +4,7 @@ import { range } from 'lodash'
 import ReactTimeAgo from 'react-time-ago'
 import Web3 from 'web3'
 import CurrencyFormat from 'react-currency-format'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import { PROVIDER_NETWORK_URL } from 'config/constants'
 import siteConfig from '../../config/site.config'
@@ -115,7 +115,7 @@ const BlocksModule = (props) => {
   const [listBlock, setListBlock] = React.useState([])
 
   React.useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       const latest = await web3.eth.getBlockNumber()
       console.log('latest', latest)
       setParamsListBlock((prev) => ({

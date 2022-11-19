@@ -13,7 +13,7 @@ import Web3 from 'web3'
 import ReactTimeAgo from 'react-time-ago'
 import CurrencyFormat from 'react-currency-format'
 import { PROVIDER_NETWORK_URL } from 'config/constants'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 
 const web3 = new Web3(PROVIDER_NETWORK_URL)

@@ -142,10 +142,7 @@ ul {
 
 .hr-alt-01 {
   width: 100%;
-  & > div {
-    width: 100%;
-    border-bottom: 0.5px solid $border-color;
-  }
+  border-bottom: 0.5px solid $border-color;
 }
 
 .card {

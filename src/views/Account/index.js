@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Pagination, Table, Tag, Radio, Space } from 'antd'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import siteConfig from '../../config/site.config'
 

@@ -5,7 +5,7 @@ import Web3 from 'web3'
 import CurrencyFormat from 'react-currency-format'
 import { DownOutlined, ExpandOutlined } from '@ant-design/icons'
 import { PROVIDER_NETWORK_URL } from 'config/constants'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import siteConfig from '../../config/site.config'
 
 const WrapAddressOverview = styled.div`

@@ -14,7 +14,7 @@ import {
   CheckCircleOutlined,
 } from '@ant-design/icons'
 import styled from 'styled-components'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import TypeNumber from 'widgets/TypeNumber/index'
 
 const WrapperTx = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BackTop, message, Col, Row } from 'antd'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import { ArrowUpOutlined } from '@ant-design/icons'
 import siteConfig from '../../config/site.config'
 
@@ -32,16 +32,24 @@ const Footer = () => {
               <p className="info-desc">{siteConfig.siteTitle} is a Block Explorer and Analytics Platform</p>
               <ul className="list-social">
                 <li>
-                  <Link href="/"><img src="/images/icon/telegram.svg" alt="" /></Link>
+                  <Link href="/">
+                    <img src="/images/icon/telegram.svg" alt="" />
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/"><img src="/images/icon/facebook.svg" alt="" /></Link>
+                  <Link href="/">
+                    <img src="/images/icon/facebook.svg" alt="" />
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/"><img src="/images/icon/reddit.svg" alt="" /></Link>
+                  <Link href="/">
+                    <img src="/images/icon/reddit.svg" alt="" />
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/"><img src="/images/icon/gmail.svg" alt="" /></Link>
+                  <Link href="/">
+                    <img src="/images/icon/gmail.svg" alt="" />
+                  </Link>
                 </li>
               </ul>
               <p className="copyright">{siteConfig.siteTitle} 2022</p>

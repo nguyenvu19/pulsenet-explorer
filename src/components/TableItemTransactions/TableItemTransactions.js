@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import { formatCode } from 'library/helpers/CommonHelper'
 import siteConfig from '../../config/site.config'
 
