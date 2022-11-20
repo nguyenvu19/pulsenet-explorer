@@ -109,9 +109,14 @@
   },
   "scripts": {
     "dev": "next",
+    "dev:stag": "env-cmd -f .env.staging next",
+    "dev:prod": "env-cmd -f .env.production next",
     "start": "next start",
     "serve": "next start",
     "build": "next build",
+    "build:dev": "env-cmd -f .env.development next build",
+    "build:stag": "env-cmd -f .env.staging next build",
+    "build:prod": "env-cmd -f .env.production next build",
     "analyze": "cross-env ANALYZE=1 next build",
     "heroku-postbuild": "npm run build"
   },
@@ -119,6 +124,7 @@
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-styled-components": "^1.11.1",
     "cross-env": "^7.0.2",
+    "env-cmd": "^10.1.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",

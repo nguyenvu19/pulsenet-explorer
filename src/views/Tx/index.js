@@ -13,6 +13,7 @@ import ReactTimeAgo from 'react-time-ago'
 import CurrencyFormat from 'react-currency-format'
 import TxReceiptEventLogItem from 'components/TxReceiptEventLogItem'
 import { toFixed } from 'utils/number'
+import abiErc20 from 'config/constants/abis/erc20.json'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import { Link } from 'components/Link'
 import CoppyText from 'components/CoppyText'
@@ -20,7 +21,7 @@ import siteConfig from '../../config/site.config'
 import { numberFormatter } from 'library/helpers/CommonHelper'
 
 const abiDecoder = require('abi-decoder')
-abiDecoder.addABI(ABI_ERC20)
+abiDecoder.addABI(abiErc20)
 
 const { TabPane } = Tabs
 
