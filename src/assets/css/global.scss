@@ -107,6 +107,15 @@ section {
   display: block;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 body {
   color: --text;
   font-weight: 400;
@@ -126,4 +135,8 @@ p {
 a {
   color: var(--link-color);
   transition: all .3s;
+}
+
+ul {
+  list-style: none;
 }
