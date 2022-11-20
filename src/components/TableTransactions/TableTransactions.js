@@ -11,7 +11,7 @@ const TableTransactions = ({ transactions }) => {
             <div className="card-body-outside">
               <div className="card-body-container">
                 {transactions?.map((item) => {
-                  return <TableItemTransactions key={`txs-${item?.txh}`} dataItem={item} />
+                  return <TableItemTransactions key={`txs-${item?.h}`} dataItem={item} />
                 })}
               </div>
             </div>

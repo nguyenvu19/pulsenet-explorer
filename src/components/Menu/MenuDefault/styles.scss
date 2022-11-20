@@ -2,7 +2,7 @@
 
 .nav-default {
   padding: 0;
-  background: $secondary;
+  background: var(--white);
   border-bottom: 0.5px solid #3c3a3a;
 
   .nav-content {
@@ -13,12 +13,14 @@
     .nav-top {
       width: 100%;
       background: #262525;
+
       .nav-top-content {
         height: 80px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
         @include media-down(md) {
           height: 72px;
         }
@@ -40,6 +42,7 @@
             width: auto;
             height: 45px;
             object-fit: contain;
+
             @include media-down(md) {
               height: 32px;
             }
@@ -48,16 +51,19 @@
       }
 
       .nav-top-right {
-        color: $primary;
+        color: var(--primary);
         width: 100%;
         align-items: center;
         flex-flow: row nowrap;
         justify-content: flex-end;
+
         @include media-down(sm) {
           width: fit-content;
         }
+
         .menu-collapse {
           display: block;
+
           @include media-up(md) {
             display: none;
           }
@@ -67,12 +73,15 @@
           display: flex;
           align-items: center;
           justify-content: flex-end;
+
           @include media-down(sm) {
             display: none;
           }
+
           ul {
             list-style: none;
             margin-bottom: 0;
+
             @include media-up(md) {
               list-style: none;
               display: flex;
@@ -80,6 +89,7 @@
               align-items: center;
               justify-content: flex-end;
             }
+
             li {
               white-space: nowrap;
               height: 100%;
@@ -87,7 +97,7 @@
               display: block;
 
               a {
-                color: $tertiary;
+                color: var(--tertiary);
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 160%;
@@ -99,14 +109,15 @@
                   transform: rotate(0deg);
                 }
 
-                > span {
+                >span {
                   font-size: 18px;
                   margin-left: 9px;
                 }
+
                 &.right-destop-logo {
                   width: 28px;
                   height: 28px;
-                  background: $background-color-padding;
+                  background: var(--background-color-padding);
                   border-color: transparent;
                   border-radius: 4px;
                 }
@@ -115,19 +126,22 @@
                   svg {
                     width: 10px;
                     height: 10px;
-                    fill: $tertiary;
+                    fill: var(--tertiary);
                   }
                 }
               }
+
               a:hover {
-                color: $primary;
+                color: var(--primary);
                 font-weight: 400;
+
                 svg {
-                  fill: $primary;
+                  fill: var(--primary);
                 }
               }
+
               .active {
-                color: $primary;
+                color: var(--primary);
               }
 
               .submenu {
@@ -140,29 +154,33 @@
                 ul {
                   display: flex;
                   flex-direction: column;
-                  background-color: $secondary;
+                  background-color: var(--white);
                   border-bottom-right-radius: 4px;
                   border-bottom-left-radius: 4px;
-                  border-top: 3px solid $primary;
+                  border-top: 3px solid var(--primary);
                   box-shadow: 0 8px 20px rgb(130 71 229 / 8%);
 
                   li {
                     width: 100%;
+
                     a {
-                      color: $text;
+                      color: var(--text);
+
                       &:hover {
-                        color: $primary;
+                        color: var(--primary);
                       }
                     }
                   }
                 }
+
                 .dropdown-divider {
-                  border-top: 0.2px solid $border-color;
+                  border-top: 0.2px solid var(--border-color);
                   padding: 0;
                 }
               }
             }
-            & > li:hover {
+
+            &>li:hover {
               .submenu {
                 display: block;
               }
@@ -173,25 +191,30 @@
               position: relative;
             }
           }
+
           .nav-account {
             margin-left: 14px;
             display: flex;
             align-items: center;
             cursor: pointer;
+
             .username {
               margin-right: 8px;
+
               a {
-                color: $tertiary;
+                color: var(--tertiary);
               }
             }
+
             .avatar {
               width: 24px;
               height: 24px;
               border-radius: 50%;
               object-fit: cover;
               object-position: center;
+
               svg {
-                fill: $tertiary;
+                fill: var(--tertiary);
               }
             }
           }

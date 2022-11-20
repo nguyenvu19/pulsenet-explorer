@@ -1,21 +1,85 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
-import { IntlProvider } from 'react-intl'
-import Script from 'next/script'
-import withReduxSaga from 'next-redux-saga'
-import en from 'javascript-time-ago/locale/en'
-import ru from 'javascript-time-ago/locale/ru'
 import TimeAgo from 'javascript-time-ago'
 import { ThemeContextProvider } from 'containers/ThemeContext'
 import { wrapper } from 'redux/store'
-import { useLanguage } from 'redux/language/hooks'
+import PublicLayout from 'layouts/PublicLayout'
+import { languages } from 'config/language/config'
+
 import 'antd/dist/antd.css'
 import 'assets/css/global.scss'
 import 'styles/main.scss'
-import { languages } from 'config/language/config'
 
-TimeAgo.addLocale(en)
-TimeAgo.addLocale(ru)
+TimeAgo.addLocale({
+  locale: 'en',
+  long: {
+    second: {
+      past: {
+        one: '{0}s ago',
+        other: '{0}s ago',
+      },
+      future: {
+        one: 'in {0}s',
+        other: 'in {0}s',
+      },
+    },
+    minute: {
+      past: {
+        one: '{0}m ago',
+        other: '{0}m ago',
+      },
+      future: {
+        one: 'in {0}m',
+        other: 'in {0}m',
+      },
+    },
+    hour: {
+      past: {
+        one: '{0}h ago',
+        other: '{0}h ago',
+      },
+      future: {
+        one: 'in {0}h',
+        other: 'in {0}h',
+      },
+    },
+  },
+})
+TimeAgo.addLocale({
+  locale: 'ru',
+  long: {
+    second: {
+      past: {
+        one: '{0}s назад',
+        other: '{0}s назад',
+      },
+      future: {
+        one: 'в {0}s',
+        other: 'в {0}s',
+      },
+    },
+    minute: {
+      past: {
+        one: '{0}m назад',
+        other: '{0}m назад',
+      },
+      future: {
+        one: 'в {0}m',
+        other: 'в {0}m',
+      },
+    },
+    hour: {
+      past: {
+        one: '{0}h назад',
+        other: '{0}h назад',
+      },
+      future: {
+        one: 'в {0}h',
+        other: 'в {0}h',
+      },
+    },
+  },
+})
 
 const CustomApp = (props) => {
   const { Component, ...rest } = props
@@ -50,7 +114,7 @@ function App({ Component, ...rest }) {
   }
 
   // Use the layout defined at the page level, if available
-  const Layout = Component.Layout || Fragment
+  const Layout = Component.Layout || PublicLayout
 
   const { language } = useLanguage()
   return (

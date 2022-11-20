@@ -45,7 +45,7 @@ const CoppyText = ({ value, href, target, children, ...props }) => {
 
       <a className="coppy-right">
         <Space>
-          {!isCoppy ? <CopyOutlined onClick={setIsCopped} /> : <CheckCircleOutlined onClick={setIsCopped} />}
+          {!isCoppy ? <img src="/images/icon/folder.svg" alt="" onClick={setIsCopped} /> : <CheckCircleOutlined onClick={setIsCopped} />}
           {isCoppy && (
             <span className="coppied" style={{ color: '#8c98a4' }}>
               coppied

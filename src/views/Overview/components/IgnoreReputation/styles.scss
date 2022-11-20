@@ -16,6 +16,9 @@
             align-items: center;
             justify-content: space-between;
             border: none;
+            img {
+                width: 16px;
+            }
         }
     }
     p {
@@ -44,6 +47,9 @@
                     align-items: center;
                     justify-content: space-between;
                     border: none;
+                    img {
+                        width: 16px;
+                    }
                 }
                 .ant-checkbox-checked .ant-checkbox-inner {
                     background-color: #418143;

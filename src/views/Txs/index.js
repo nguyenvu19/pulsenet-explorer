@@ -1,167 +1,200 @@
-import { ArrowRightOutlined, ContainerOutlined, EyeOutlined } from '@ant-design/icons'
-import { Table, Progress } from 'antd'
+import { Col, Row, Table } from 'antd'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import React, { useState } from 'react'
-import Web3 from 'library/Web3'
-import Link from 'components/Link/NextLink'
-import { useRouter } from 'next/dist/client/router'
-import { formatCode, formatDate } from 'library/helpers/CommonHelper'
+import React from 'react'
+import { Link } from 'components/Link'
+import { formatCode, numberFormatter } from 'library/helpers/CommonHelper'
 import siteConfig from '../../config/site.config'
-import useLatestTransactionList from '../../hooks/useLatestTransactionList'
+import TablePagination from 'components/TablePagination/TablePagination'
+import ReactTimeAgo from 'react-time-ago/commonjs/ReactTimeAgo'
+import router from 'next/router'
 
-const { web3 } = new Web3()
+const DEFAULT_LIMIT = 25
 
-const columns = (block) => [
+const columns = [
   {
     title: 'Txn Hash',
-    dataIndex: 'txh',
+    dataIndex: 'f',
     render: (text) => (
       <div className="data-txnHash">
-        <div>
-          <EyeOutlined />
-        </div>
-        <Link href={`/tx/${text}`}>{formatCode(text, 6, 12)}</Link>
+        <img src="/images/icon/eye.svg" alt="" />
+        <Link href={`/tx/${text?.a}`}>{formatCode(text?.a, 13, 0)}</Link>
       </div>
     ),
   },
   {
-    title: 'Method ',
-    dataIndex: 'method',
-    render: () => <div className="data-method">Method</div>,
+    title: 'MPULSEod ',
+    dataIndex: 'm',
+    render: (text) => <div className="data-method">{text || '--'}</div>,
   },
   {
     title: 'Block',
-    dataIndex: 'blockDetail',
-    render: (blockDetail) => (
-      <Link className="data-block" href={`/block/${blockDetail.number}`}>
-        {blockDetail.number}
+    dataIndex: 'bn',
+    render: (bn) => (
+      <Link className="data-block" href={`/block/${bn}`}>
+        {bn}
       </Link>
     ),
   },
   {
     title: 'Age',
-    dataIndex: 'blockDetail',
-    render: (blockDetail) => <div className="data-age">{formatDate(blockDetail?.timestamp)}</div>,
+    dataIndex: 'ti',
+    render: (text) => <ReactTimeAgo date={parseInt(text) * 1000} locale="en-US" timeStyle="round" />,
   },
   {
     title: 'From',
-    dataIndex: 'txhDetail',
-    render: (txhDetail) => (
+    dataIndex: 'f',
+    render: (f) => (
       <div className="data-from">
         <Link href="/address/-" className="data-from-link">
-          {formatCode(txhDetail?.from, 6, 10)}
+          {formatCode(f?.a || '', 13, 0)}
         </Link>
       </div>
     ),
   },
   {
     title: 'To',
-    dataIndex: 'txhDetail',
-    render: (txhDetail) => (
+    dataIndex: 't',
+    render: (t) => (
       <div className="data-to">
-        <div>
-          <ArrowRightOutlined />
-        </div>
+        <img src="/images/icon/arrow-right.svg" alt="" />
         <Link href="/address/-" className="data-to-link">
-          {formatCode(txhDetail?.to, 6, 10)}
+          {formatCode(t?.a || '', 16, 0)}
         </Link>
       </div>
     ),
   },
   {
     title: 'Value',
-    dataIndex: 'txhDetail',
-    render: () => <div className="data-value">-- {siteConfig.nativeCurrency.symbol} </div>,
+    dataIndex: 'v',
+    render: (v) => (
+      <div className="data-value">
+        {numberFormatter(v * 1, 2) || '--'} {siteConfig.nativeCurrency.symbol}{' '}
+      </div>
+    ),
   },
   {
-    title: '[Txn Fee]',
-    dataIndex: 'txnFee',
-    render: () => (
+    title: 'Txn Fee',
+    dataIndex: 'tf',
+    render: (tf) => (
       <div className="data-txnfee">
-        <Link className=" data-txnfee-link-txs">-- </Link>
-        <div>💡</div>
+        <span>{numberFormatter(tf * 1, 2) || '--'}</span>
+        <img src="/images/icon/lamp-charge.svg" alt="" />
       </div>
     ),
   },
 ]
 
-const TransactionsModule = () => {
-  const router = useRouter()
+const TransactionsModule = (props) => {
+  const { listTransactions } = props
 
-  const [blockDetail, setBlockDetail] = useState({})
+  const [paramsListBlock, setParamsListBlock] = React.useState({
+    page: 1,
+    page_size: DEFAULT_LIMIT,
+  })
 
-  /* Get block detail */
+  const [loading, setLoading] = React.useState(false)
+
   React.useEffect(() => {
-    ;(async () => {
-      if (router.query.block) {
-        try {
-          const blockDt = await web3.eth.getBlock(router.query.block)
-          if (blockDt && blockDt?.transactions) {
-            let obj = {}
-            blockDt?.transactions?.forEach((txh) => {
-              obj[txh] = {
-                txh,
-                blockDetail: blockDt,
-              }
-            })
-            setBlockDetail(obj)
-          }
-        } catch (error) {
-          setBlockDetail({})
-        }
-      }
-    })()
-  }, [router.query.block])
+    setLoading(true)
+    if (paramsListBlock?.page !== 1) {
+      router.push({
+        pathname: '/txs',
+        query: { ...paramsListBlock },
+      })
+    } else {
+      router.push({
+        pathname: '/txs',
+      })
+    }
+  }, [paramsListBlock])
 
-  /*  */
-  const { transactions } = useLatestTransactionList(router.query.block)
+  React.useEffect(() => {
+    setLoading(false)
+  }, [listTransactions])
+
+  const handleChangePagination = (key) => {
+    switch (key) {
+      case 'first':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page: 1,
+        })
+        break
+      case 'previous':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page: paramsListBlock?.page - 1,
+        })
+        break
+      case 'next':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page: paramsListBlock?.page + 1,
+        })
+        break
+      case 'last':
+        setParamsListBlock({
+          ...paramsListBlock,
+          page:
+            listTransactions?.total % paramsListBlock?.page_size > 0
+              ? Math.floor(listTransactions?.total / paramsListBlock?.page_size) + 1
+              : Math.floor(listTransactions?.total / paramsListBlock?.page_size),
+        })
+        break
+    }
+  }
+
+  const handleChangeShow = (value) => {
+    setParamsListBlock({
+      ...paramsListBlock,
+      page_size: value,
+    })
+  }
 
   return (
     <div className="txs-wrapper">
       <div className="container ">
         <div className="txs-heading">
-          <h1>
-            Transactions
-            {router.query.block && (
-              <p>
-                For Block <Link href={`/block/${router.query.block}`}>{router.query.block}</Link>
-              </p>
-            )}
-          </h1>
-          {/* <div>
-            <span className="heading-network">Network Utilization: 50.9%</span>
-            <Link>
-              <span>🔥 Burnt Fees: </span>
-              <span>617,479.30 PI </span>
-            </Link>
-          </div> */}
+          <h1>Transactions</h1>
         </div>
+        <p className="txs-desc">PulseDex presale details to be announced soon</p>
         <div className="txs-bottom">
           <div className="txs-card">
             <div className="txs-card-body">
-              {/* <div className="card-body-header">
-                <p>Block #27052449 to #27052548 (Total of 27,052,549 blocks)</p>
-              </div> */}
-              <div className="card-body-center">
-                {router.query.block ? (
-                  <Table
-                    columns={columns(router.query.block)}
-                    loading={Object.values(blockDetail).length <= 0}
-                    dataSource={Object.values(blockDetail)}
-                  />
-                ) : (
-                  <Table
-                    columns={columns(router.query.block)}
-                    loading={Object.values(transactions).length <= 0}
-                    dataSource={Object.values(transactions)}
-                  />
-                )}
+              <div className="card-body-header">
+                <Row>
+                  <Col xs={{ span: 24 }} md={{ span: 12 }}>
+                    <p className="txs-info">More than &gt; {listTransactions?.total} transactions found</p>
+                    <p className="txs-show">(Showing the last 500k records)</p>
+                  </Col>
+                  <Col xs={{ span: 24 }} md={{ span: 12 }} className="header-pagination">
+                    <TablePagination
+                      total={listTransactions?.total || 0}
+                      pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT}
+                      page={paramsListBlock?.page || 1}
+                      onChange={handleChangePagination}
+                      disableShow={true}
+                    />
+                  </Col>
+                </Row>
               </div>
-              {/* <div className="card-body-footer"> 
-                <ul>
-                  <li>footer</li>
-                </ul>
-              </div> */}
+              <div className="card-body-center">
+                <Table
+                  columns={columns}
+                  loading={loading}
+                  dataSource={[...(listTransactions?.data || [])]}
+                  pagination={false}
+                />
+              </div>
+              <div className="card-footer">
+                <TablePagination
+                  total={listTransactions?.total || 0}
+                  pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT}
+                  page={paramsListBlock?.page || 1}
+                  onChange={handleChangePagination}
+                  onChangeShow={handleChangeShow}
+                />
+              </div>
             </div>
           </div>
         </div>

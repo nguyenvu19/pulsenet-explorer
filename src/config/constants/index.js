@@ -12,6 +12,8 @@ export const TOKEN_WPULSE = ''
 
 export const TOKEN_KEY = 'ac_tk'
 
+export const TOKEN = ''
+
 export const NATIVE_TOKEN = siteConfig.nativeCurrency
 
 export const DONATE_ADDRESS = siteConfig.donateAddress
