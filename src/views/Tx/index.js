@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Menu, Dropdown, Button, Space, Tabs, Row, Col, message } from 'antd'
 import {
-  DownOutlined,
   UserOutlined,
   ClockCircleOutlined,
   ArrowDownOutlined,
@@ -11,7 +10,6 @@ import {
 } from '@ant-design/icons'
 import ReactTimeAgo from 'react-time-ago'
 import CurrencyFormat from 'react-currency-format'
-import TxReceiptEventLogItem from 'components/TxReceiptEventLogItem'
 import { toFixed } from 'utils/number'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import { Link } from 'components/Link'
@@ -19,14 +17,7 @@ import CoppyText from 'components/CoppyText'
 import siteConfig from '../../config/site.config'
 import { numberFormatter } from 'library/helpers/CommonHelper'
 
-const abiDecoder = require('abi-decoder')
-abiDecoder.addABI(ABI_ERC20)
-
 const { TabPane } = Tabs
-
-function callback(key) {
-  console.log(key)
-}
 
 const onClick = ({ key }) => {
   message.info(`Click on item ${key}`)
@@ -224,7 +215,7 @@ const TransactionModule = (props) => {
       </div>
       <div className="container transaction-bottom">
         <div className="card transaction-space-card">
-          <Tabs defaultActiveKey="1" onChange={callback} tabBarExtraContent={operations}>
+          <Tabs defaultActiveKey="1" tabBarExtraContent={operations}>
             <TabPane tab="Overview" key="1">
               {txDetail && (
                 <>
