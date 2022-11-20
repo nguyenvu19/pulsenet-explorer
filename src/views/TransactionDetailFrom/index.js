@@ -21,7 +21,7 @@ import {
 } from '@ant-design/icons'
 import { Menu, Dropdown, Button, Space, Tabs, Row, Col, Modal } from 'antd'
 import Banner from 'widgets/Banner/index'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import TableTransactionDetail from 'components/TableTransactionDetail/index'
 import TableTransactionDetailTxn from 'components/TableTransactionDetailTxn'
 import siteConfig from '../../config/site.config'

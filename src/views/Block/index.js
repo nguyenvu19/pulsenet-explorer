@@ -1,17 +1,11 @@
 import React, { useState } from 'react'
 import { Menu, Space, Row, Col } from 'antd'
-import {
-  LeftOutlined,
-  RightOutlined,
-  ClockCircleOutlined,
-  ArrowDownOutlined,
-  ArrowUpOutlined,
-} from '@ant-design/icons'
+import { LeftOutlined, RightOutlined, ClockCircleOutlined, ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
 import ReactTimeAgo from 'react-time-ago'
 import CurrencyFormat from 'react-currency-format'
-import Link from 'components/NextLink/NextLink'
+import { Link } from 'components/Link'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import siteConfig from 'config/site.config.dev'
+import siteConfig from 'config/site.config'
 import { numberFormatter } from 'library/helpers/CommonHelper'
 
 const Block = (props) => {
@@ -43,13 +37,15 @@ const Block = (props) => {
               <Menu.Item
                 onClick={() => setMenuTab('Consensus Info')}
                 className={menuTab === 'Consensus Info' ? 'ant-menu-item-selected' : 'consensus-info'}
-                key="consensus-info">
+                key="consensus-info"
+              >
                 Consensus Info
               </Menu.Item>
               <Menu.Item
                 onClick={() => setMenuTab('Comments')}
                 className={menuTab === 'Comments' ? 'ant-menu-item-selected' : 'comment'}
-                key="comments">
+                key="comments"
+              >
                 Comments
               </Menu.Item>
             </Menu>
@@ -109,7 +105,9 @@ const Block = (props) => {
                       <span>Proposed On:</span>
                     </Col>
                     <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                      <div className="item-proposed">Block proposed on slot <span>5052115</span>, epoch <span>157878</span></div>
+                      <div className="item-proposed">
+                        Block proposed on slot <span>5052115</span>, epoch <span>157878</span>
+                      </div>
                     </Col>
                   </Row>
                 </div>
@@ -140,7 +138,7 @@ const Block = (props) => {
                       <span>Fee Recipient:</span>
                     </Col>
                     <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                      <span className="item-fee-recipient">{blockDetail?.h || ""}</span>
+                      <span className="item-fee-recipient">{blockDetail?.h || ''}</span>
                     </Col>
                   </Row>
                 </div>
@@ -151,7 +149,7 @@ const Block = (props) => {
                       <span>Block Reward:</span>
                     </Col>
                     <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                      <span className="reward-text">{blockDetail?.br || ""}</span>
+                      <span className="reward-text">{blockDetail?.br || ''}</span>
                     </Col>
                   </Row>
                 </div>
@@ -162,9 +160,7 @@ const Block = (props) => {
                       <span>Total Difficulty:</span>
                     </Col>
                     <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                      <span className="item-total-difficulty">
-                        {blockDetail?.td || ""}
-                      </span>
+                      <span className="item-total-difficulty">{blockDetail?.td || ''}</span>
                     </Col>
                   </Row>
                 </div>
@@ -247,7 +243,9 @@ const Block = (props) => {
                     <Col xs={{ span: 24 }} md={{ span: 16 }}>
                       <div className="item-burn-fee">
                         <img src="/images/icon/fire.svg" alt="" />
-                        <span>{blockDetail?.f || 0} {siteConfig?.nativeCurrency?.symbol}</span>
+                        <span>
+                          {blockDetail?.f || 0} {siteConfig?.nativeCurrency?.symbol}
+                        </span>
                       </div>
                     </Col>
                   </Row>
@@ -272,8 +270,10 @@ const Block = (props) => {
                           <span>{siteConfig?.nativeCurrency?.symbol} Price:</span>
                         </Col>
                         <Col xs={{ span: 24 }} md={{ span: 16 }}>
-
-                          <a className="reward-text">${price > 0 ? numberFormatter(price, 2) : numberFormatter(price, 5)} / {siteConfig?.nativeCurrency?.symbol}</a>
+                          <a className="reward-text">
+                            ${price > 0 ? numberFormatter(price, 2) : numberFormatter(price, 5)} /{' '}
+                            {siteConfig?.nativeCurrency?.symbol}
+                          </a>
                         </Col>
                       </Row>
                     </div>
@@ -284,7 +284,7 @@ const Block = (props) => {
                           <span>Hash:</span>
                         </Col>
                         <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                          <span className="reward-text">{blockDetail?.h || ""}</span>
+                          <span className="reward-text">{blockDetail?.h || ''}</span>
                         </Col>
                       </Row>
                     </div>
@@ -295,7 +295,7 @@ const Block = (props) => {
                           <span>Parent Hash:</span>
                         </Col>
                         <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                          <span className="reward-text"> {blockDetail?.ph || ""}</span>
+                          <span className="reward-text"> {blockDetail?.ph || ''}</span>
                         </Col>
                       </Row>
                     </div>
@@ -306,7 +306,7 @@ const Block = (props) => {
                           <span>StateRoot:</span>
                         </Col>
                         <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                          <span className="reward-text"> {blockDetail?.sn || ""}</span>
+                          <span className="reward-text"> {blockDetail?.sn || ''}</span>
                         </Col>
                       </Row>
                     </div>
@@ -317,7 +317,7 @@ const Block = (props) => {
                           <span>Nonce:</span>
                         </Col>
                         <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                          <span className="reward-text"> {blockDetail?.nonce || ""}</span>
+                          <span className="reward-text"> {blockDetail?.nonce || ''}</span>
                         </Col>
                       </Row>
                     </div>
@@ -342,20 +342,20 @@ const Block = (props) => {
                 </a>
               </div>
             )}
-            {menuTab === 'Consensus Info' && (
-              <p>Comming soon...</p>
-            )}
-            {menuTab === 'Comments' && (
-              <p>Comming soon...</p>
-            )}
+            {menuTab === 'Consensus Info' && <p>Comming soon...</p>}
+            {menuTab === 'Comments' && <p>Comming soon...</p>}
           </div>
         </div>
         <div className="block-desc">
           <img src="/images/icon/lamp-hub.png" alt="" />
-          <span>A wallet address is a publicly available address that allows its owner to receive funds from another party. To access the funds in an address, you must have its private key. Learn more about addresses in our <Link href="/knowledgw-base">Knowledge Base.</Link></span>
+          <span>
+            A wallet address is a publicly available address that allows its owner to receive funds from another party.
+            To access the funds in an address, you must have its private key. Learn more about addresses in our{' '}
+            <Link href="/knowledgw-base">Knowledge Base.</Link>
+          </span>
         </div>
       </div>
-    </section >
+    </section>
   )
 }
 

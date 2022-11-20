@@ -1,7 +1,3 @@
-*{
-  font-family: 'Yantramanav','regular';
-  
-}
 .login-page {
   color: black;
   min-height: 80vh;
@@ -9,83 +5,72 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   //login-page_header
   &_header {
     text-align: center;
     height: 60px;
 
-    h1{
+    h1 {
       font-weight: 700;
       font-size: 24px;
       line-height: 31.13px;
       color: #418143;
     }
-    p{
+    p {
       font-weight: 500;
       font-size: 16px;
       line-height: 20.75px;
-      color: #3C3A3A;
+      color: #3c3a3a;
     }
   }
   //form
- 
-  &_form{
-    
+
+  &_form {
     margin-top: 32px;
     margin-bottom: 144px;
-    
 
-    .form_header{
+    .form_header {
       margin-bottom: 32px;
-      
     }
 
     &_item {
       font-weight: 500;
       font-size: 16px;
       line-height: 20.75px;
-      color: #3C3A3A;
+      color: #3c3a3a;
       max-width: 600px;
-      
-      
 
       &_input {
-       
-       width: 100%;
-       outline: none;
-       border: 1px solid #3C3A3A;
-       color: #3C3A3A;
-       border-radius: 5px;
-
-       
+        width: 100%;
+        outline: none;
+        border: 1px solid #3c3a3a;
+        color: #3c3a3a;
+        border-radius: 5px;
       }
-     
-      
-      
     }
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
-        transition: background-color 5000s ease-in-out 0s;
+      transition: background-color 5000s ease-in-out 0s;
     }
-    input::placeholder{
+    input::placeholder {
       font-weight: 400;
       font-size: 14px;
-      color: #3C3A3A;
+      color: #3c3a3a;
     }
-    .btn_login{
+    .btn_login {
       font-weight: 700;
       font-size: 16px;
       line-height: 21px;
-      color: #FFFFFF;
+      color: #ffffff;
       border-radius: 4px;
       background-color: #418143;
       padding: 8px 10px;
       width: 156px;
-      height: 37px; 
-      margin-bottom:16px ;
+      height: 37px;
+      margin-bottom: 16px;
       border: none;
     }
     //checked
@@ -95,22 +80,21 @@
       border-radius: 6px;
       width: 20px;
     }
-    .question{
+    .question {
       text-align: center;
 
       p {
-        color: #3C3A3A;
+        color: #3c3a3a;
         font-size: 14px;
         font-weight: 400;
         line-height: 18.16px;
       }
-      
-      a{
+
+      a {
         color: #418143;
       }
     }
   }
-  
 }
 //ipad
 // @media(max-width: 768px) {
@@ -120,29 +104,27 @@
 //   }
 //   .login-page_form_item_input{
 //     width: 300px;
-    
+
 //   }
 // }
 
 //pc
-@media(min-width: 768px) {
-  .form_header{
+@media (min-width: 768px) {
+  .form_header {
     width: 600px;
     margin: 0 auto;
   }
-  .login-page_form_item_input{
+  .login-page_form_item_input {
     width: 100%;
-    
   }
 }
 //ipad
-@media(min-width: 500px) and (max-width: 768px) {
-  .form_header{
+@media (min-width: 500px) and (max-width: 768px) {
+  .form_header {
     width: 400px;
     margin: 0 auto;
   }
-  .login-page_form_item_input{
+  .login-page_form_item_input {
     width: 100%;
-    
   }
 }

@@ -13,18 +13,7 @@ const nextConfig = {
   webpack: (config, options) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      // '@app/theme': path.join(__dirname, 'theme'),
-      // '@app/constants': path.join(__dirname, 'config/constants'),
-      // '@app/pages': path.join(__dirname, 'pages'),
-      // '@app/assets': path.join(__dirname, 'assets'),
-      // '@app/layouts': path.join(__dirname, 'layouts'),
-      // '@app/components': path.join(__dirname, 'components'),
-      // '@app/config': path.join(__dirname, 'config'),
-      // '@app/containers': path.join(__dirname, 'containers'),
-      // '@app/redux': path.join(__dirname, 'redux'),
-      // '@app/lib': path.join(__dirname, 'library'),
-      // '@app/utils': path.join(__dirname, 'utils'),
-      // '@app/widgets': path.join(__dirname, 'widgets'),
+      // custom here
     }
     return config
   },

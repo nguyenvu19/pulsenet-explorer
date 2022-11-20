@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux'
-import App from 'redux/app/reducer'
+import Global from 'redux/global/reducer'
 import Auth from 'redux/auth/reducer'
 import Transactions from 'redux/transactions/reducer'
-import ThemeSwitcher from 'redux/themeSwitcher/reducer'
-import LanguageSwitcher from 'redux/languageSwitcher/reducer'
+import Language from 'redux/language/reducer'
 
 export default combineReducers({
+  Global,
   Auth,
-  App,
   Transactions,
-  ThemeSwitcher,
-  LanguageSwitcher,
+  Language,
 })

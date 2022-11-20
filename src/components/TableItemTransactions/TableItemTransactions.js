@@ -1,12 +1,12 @@
 import React from 'react'
-import Link from 'components/NextLink/NextLink'
 import ReactTimeAgo from 'react-time-ago'
+import { Link } from 'components/Link'
 import { formatCode, numberFormatter } from 'library/helpers/CommonHelper'
 import siteConfig from '../../config/site.config'
 
-const TableItemTransactions = ({ key, dataItem }) => {
+const TableItemTransactions = ({ dataItem }) => {
   return (
-    <div className="row" key={key}>
+    <div className="row">
       <div className="col-sm-4">
         <div className="col-sm-4-content">
           <div className="display-none">
@@ -29,19 +29,21 @@ const TableItemTransactions = ({ key, dataItem }) => {
             <span>
               <div>
                 <span>From</span>
-                <Link href={`/address/${dataItem?.f?.a || ""}`} className="content-hasktag">
-                  {formatCode(dataItem?.f?.a || "", 20, 0)}
+                <Link href={`/address/${dataItem?.f?.a || ''}`} className="content-hasktag">
+                  {formatCode(dataItem?.f?.a || '', 20, 0)}
                 </Link>
               </div>
               <div>
                 <span>To </span>
-                <Link href={`/address/${dataItem?.t?.a || ""}`}>{formatCode(dataItem?.t?.a || "", 20, 0)}</Link>
+                <Link href={`/address/${dataItem?.t?.a || ''}`}>{formatCode(dataItem?.t?.a || '', 20, 0)}</Link>
               </div>
             </span>
             <div>
               <div className="show-content-hide-transactions">
                 <div className="content-text">
-                  {`${numberFormatter(dataItem?.v * 1, dataItem?.v * 1 > 1 ? 2 : 5)} ${siteConfig.nativeCurrency.symbol}`}
+                  {`${numberFormatter(dataItem?.v * 1, dataItem?.v * 1 > 1 ? 2 : 5)} ${
+                    siteConfig.nativeCurrency.symbol
+                  }`}
                 </div>
               </div>
             </div>

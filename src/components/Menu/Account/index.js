@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import { UserIcon } from 'widgets/Svg'
-import NextLink from 'components/NextLink/NextLink'
+import NextLink from 'components/Link/NextLink'
 
 const WrapAccount = styled(Link)`
   display: flex;

@@ -1,7 +1,7 @@
 import { Col, Row, Table } from 'antd'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import React from 'react'
-import Link from 'components/NextLink/NextLink'
+import { Link } from 'components/Link'
 import { formatCode, numberFormatter } from 'library/helpers/CommonHelper'
 import siteConfig from '../../config/site.config'
 import TablePagination from 'components/TablePagination/TablePagination'
@@ -24,7 +24,7 @@ const columns = [
   {
     title: 'MPULSEod ',
     dataIndex: 'm',
-    render: (text) => <div className="data-method">{text || "--"}</div>,
+    render: (text) => <div className="data-method">{text || '--'}</div>,
   },
   {
     title: 'Block',
@@ -46,7 +46,7 @@ const columns = [
     render: (f) => (
       <div className="data-from">
         <Link href="/address/-" className="data-from-link">
-          {formatCode(f?.a || "", 13, 0)}
+          {formatCode(f?.a || '', 13, 0)}
         </Link>
       </div>
     ),
@@ -58,7 +58,7 @@ const columns = [
       <div className="data-to">
         <img src="/images/icon/arrow-right.svg" alt="" />
         <Link href="/address/-" className="data-to-link">
-          {formatCode(t?.a || "", 16, 0)}
+          {formatCode(t?.a || '', 16, 0)}
         </Link>
       </div>
     ),
@@ -66,14 +66,18 @@ const columns = [
   {
     title: 'Value',
     dataIndex: 'v',
-    render: (v) => <div className="data-value">{numberFormatter(v * 1, 2) || "--"} {siteConfig.nativeCurrency.symbol} </div>,
+    render: (v) => (
+      <div className="data-value">
+        {numberFormatter(v * 1, 2) || '--'} {siteConfig.nativeCurrency.symbol}{' '}
+      </div>
+    ),
   },
   {
     title: 'Txn Fee',
     dataIndex: 'tf',
     render: (tf) => (
       <div className="data-txnfee">
-        <span>{numberFormatter(tf * 1, 2) || "--"}</span>
+        <span>{numberFormatter(tf * 1, 2) || '--'}</span>
         <img src="/images/icon/lamp-charge.svg" alt="" />
       </div>
     ),
@@ -81,7 +85,7 @@ const columns = [
 ]
 
 const TransactionsModule = (props) => {
-  const { listTransactions } = props;
+  const { listTransactions } = props
 
   const [paramsListBlock, setParamsListBlock] = React.useState({
     page: 1,
@@ -91,11 +95,11 @@ const TransactionsModule = (props) => {
   const [loading, setLoading] = React.useState(false)
 
   React.useEffect(() => {
-    setLoading(true);
+    setLoading(true)
     if (paramsListBlock?.page !== 1) {
       router.push({
         pathname: '/txs',
-        query: { ...paramsListBlock }
+        query: { ...paramsListBlock },
       })
     } else {
       router.push({
@@ -105,7 +109,7 @@ const TransactionsModule = (props) => {
   }, [paramsListBlock])
 
   React.useEffect(() => {
-    setLoading(false);
+    setLoading(false)
   }, [listTransactions])
 
   const handleChangePagination = (key) => {
@@ -113,36 +117,39 @@ const TransactionsModule = (props) => {
       case 'first':
         setParamsListBlock({
           ...paramsListBlock,
-          page: 1
+          page: 1,
         })
-        break;
+        break
       case 'previous':
         setParamsListBlock({
           ...paramsListBlock,
           page: paramsListBlock?.page - 1,
         })
-        break;
+        break
       case 'next':
         setParamsListBlock({
           ...paramsListBlock,
           page: paramsListBlock?.page + 1,
         })
-        break;
+        break
       case 'last':
         setParamsListBlock({
           ...paramsListBlock,
-          page: listTransactions?.total % paramsListBlock?.page_size > 0 ? Math.floor(listTransactions?.total / paramsListBlock?.page_size) + 1 : Math.floor(listTransactions?.total / paramsListBlock?.page_size)
+          page:
+            listTransactions?.total % paramsListBlock?.page_size > 0
+              ? Math.floor(listTransactions?.total / paramsListBlock?.page_size) + 1
+              : Math.floor(listTransactions?.total / paramsListBlock?.page_size),
         })
-        break;
+        break
     }
-  };
+  }
 
   const handleChangeShow = (value) => {
     setParamsListBlock({
       ...paramsListBlock,
-      page_size: value
+      page_size: value,
     })
-  };
+  }
 
   return (
     <div className="txs-wrapper">
@@ -161,7 +168,13 @@ const TransactionsModule = (props) => {
                     <p className="txs-show">(Showing the last 500k records)</p>
                   </Col>
                   <Col xs={{ span: 24 }} md={{ span: 12 }} className="header-pagination">
-                    <TablePagination total={listTransactions?.total || 0} pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT} page={paramsListBlock?.page || 1} onChange={handleChangePagination} disableShow={true} />
+                    <TablePagination
+                      total={listTransactions?.total || 0}
+                      pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT}
+                      page={paramsListBlock?.page || 1}
+                      onChange={handleChangePagination}
+                      disableShow={true}
+                    />
                   </Col>
                 </Row>
               </div>
@@ -169,12 +182,18 @@ const TransactionsModule = (props) => {
                 <Table
                   columns={columns}
                   loading={loading}
-                  dataSource={[...listTransactions?.data || []]}
+                  dataSource={[...(listTransactions?.data || [])]}
                   pagination={false}
                 />
               </div>
-              <div className='card-footer'>
-                <TablePagination total={listTransactions?.total || 0} pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT} page={paramsListBlock?.page || 1} onChange={handleChangePagination} onChangeShow={handleChangeShow} />
+              <div className="card-footer">
+                <TablePagination
+                  total={listTransactions?.total || 0}
+                  pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT}
+                  page={paramsListBlock?.page || 1}
+                  onChange={handleChangePagination}
+                  onChangeShow={handleChangeShow}
+                />
               </div>
             </div>
           </div>

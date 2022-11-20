@@ -14,7 +14,7 @@ import {
   TeamOutlined,
 } from '@ant-design/icons'
 import { PROVIDER_NETWORK_URL } from 'config/constants'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 
 const WrapAddressMoreInfo = styled.div`
   color: ${({ theme }) => theme.colors.blackColor};
