@@ -13,17 +13,27 @@ Tx.Layout = PublicLayoutBlock
 export async function getServerSideProps(context) {
     const txHash = context?.query?.txHash
 
-    const [
-        txDetail,
-        latestBlock,
-    ] = await Promise.all([
-        getTransactionDetail(txHash),
-        getListBlocks({ page: 1, page_size: 1 }),
-    ]);
+    let blockDetail = {}
+    let txDetail = {}
+    let latestBlock = {}
 
-    let blockDetail = {};
+    try {
+        const [
+            txDetailData,
+            latestBlockData,
+        ] = await Promise.all([
+            getTransactionDetail(txHash),
+            getListBlocks({ page: 1, page_size: 1 }),
+        ])
+        txDetail = txDetailData
+        latestBlock = latestBlockData
+    } catch { }
+
+
     if (txDetail?.data?.bn) {
-        blockDetail = await getBlockDetail(txDetail?.data?.bn)
+        try {
+            blockDetail = await getBlockDetail(txDetail?.data?.bn)
+        } catch { }
     }
 
     return {

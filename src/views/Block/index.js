@@ -92,8 +92,12 @@ const Block = (props) => {
                         <ClockCircleOutlined />
                       </Link>
                       <span className="item-clock">
-                        <ReactTimeAgo date={parseInt(blockDetail?.ti) * 1000} locale="en-US" /> (
-                        {new Date(parseInt(blockDetail?.ti) * 1000).toISOString()})
+                        {blockDetail?.ti && (
+                          <>
+                            <ReactTimeAgo date={parseInt(blockDetail?.ti) * 1000} locale="en-US" /> (
+                            {new Date(parseInt(blockDetail?.ti) * 1000).toISOString()})
+                          </>
+                        )}
                       </span>
                     </Col>
                   </Row>

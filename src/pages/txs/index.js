@@ -12,11 +12,10 @@ Txs.Layout = PublicLayoutBlock
 export async function getServerSideProps(context) {
   const query = (context?.query?.page && context?.query?.page_size) ? context?.query : { page: 1, page_size: 25 };
 
-  const [
-    listTransactions
-  ] = await Promise.all([
-    getListTransactions(query),
-  ]);
+  let listTransactions = {}
+  try {
+    listTransactions = await getListTransactions(query)
+  } catch { }
 
   return { props: { listTransactions: listTransactions || [] } }
 }

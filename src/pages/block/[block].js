@@ -12,11 +12,11 @@ Block.Layout = PublicLayoutBlock
 export async function getServerSideProps(context) {
     const block_number = context?.query?.block
 
-    const [
-        blockDetail
-    ] = await Promise.all([
-        getBlockDetail(block_number),
-    ]);
+    let blockDetail = {}
+
+    try {
+        blockDetail = await getBlockDetail(block_number)
+    } catch { }
 
     return {
         props: { blockDetail: blockDetail?.data?.[0] || {} },
