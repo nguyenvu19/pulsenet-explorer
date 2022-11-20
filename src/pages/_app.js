@@ -85,6 +85,13 @@ TimeAgo.addLocale({
   },
 })
 
+// eslint-disable-next-line no-extend-native
+Date.prototype.addDays = (date, days) => {
+  const pDate = new Date(date || new Date())
+  pDate.setDate(pDate.getDate() + days)
+  return pDate
+}
+
 const CustomApp = (props) => {
   const { Component, ...rest } = props
 
