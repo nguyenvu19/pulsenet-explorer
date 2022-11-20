@@ -7,9 +7,9 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
 
-  background: var(--secondary);
+  background: var(--white);
   background-clip: border-box;
-  border: 1px solid #e7eaf3;
+  border: 1px solid var(--secondary);
   border-radius: 8px;
   box-shadow: 0 0.5rem 1.2rem var(--color-shadow);
 
@@ -174,7 +174,8 @@
     }
 
     .mixed-chart-item {
-      min-height: 100px;
+      min-height: 180px;
+      margin-bottom: -50px;
 
       @include media-up(xm) {
         max-width: 350px;
