@@ -4,9 +4,9 @@ import { Link } from 'components/Link'
 import { formatCode, numberFormatter } from 'library/helpers/CommonHelper'
 import siteConfig from '../../config/site.config'
 
-const TableItemTransactions = ({ key, dataItem }) => {
+const TableItemTransactions = ({ dataItem }) => {
   return (
-    <div className="row" key={key}>
+    <div className="row">
       <div className="col-sm-4">
         <div className="col-sm-4-content">
           <div className="display-none">
