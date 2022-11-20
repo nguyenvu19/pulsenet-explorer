@@ -1,5 +1,5 @@
+import { createStore, applyMiddleware, compose } from 'redux'
 import { createWrapper } from 'next-redux-wrapper'
-import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk'
 import rootReducer from './root-reducer'
@@ -12,7 +12,7 @@ const bindMiddleware = (middleware) => {
     const { composeWithDevTools } = require('redux-devtools-extension')
     return composeWithDevTools(applyMiddleware(...middleware))
   }
-  return applyMiddleware(...middleware)
+  return compose(applyMiddleware(...middleware))
 }
 
 // function configureStore(initialState = {}) {

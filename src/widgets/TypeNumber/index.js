@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Menu, Dropdown, Button, Space } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 
 const TypeNumber = ({ mapkey, dataItem }) => {
   const [activeKey, setActiveKey] = React.useState('Hex')

@@ -14,14 +14,13 @@ import CurrencyFormat from 'react-currency-format'
 import TxReceiptEventLogItem from 'components/TxReceiptEventLogItem'
 import { toFixed } from 'utils/number'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import Link from 'components/NextLink/NextLink'
+import { Link } from 'components/Link'
 import CoppyText from 'components/CoppyText'
-import ABI_TOKEN from 'config/constants/abis/abi_token_bep20.json'
 import siteConfig from '../../config/site.config'
 import { numberFormatter } from 'library/helpers/CommonHelper'
 
 const abiDecoder = require('abi-decoder')
-abiDecoder.addABI(ABI_TOKEN)
+abiDecoder.addABI(ABI_ERC20)
 
 const { TabPane } = Tabs
 
@@ -200,24 +199,16 @@ const TransactionModule = (props) => {
         <div>
           <Space wrap>
             <Dropdown overlay={Buy} trigger={['click']} className="active">
-              <Button>
-                Buy
-              </Button>
+              <Button>Buy</Button>
             </Dropdown>
             <Dropdown overlay={Exchange} trigger={['click']} className="active">
-              <Button>
-                Exchange
-              </Button>
+              <Button>Exchange</Button>
             </Dropdown>
             <Dropdown overlay={Earn} trigger={['click']}>
-              <Button>
-                Earn
-              </Button>
+              <Button>Earn</Button>
             </Dropdown>
             <Dropdown overlay={Gaming} trigger={['click']}>
-              <Button>
-                Gaming
-              </Button>
+              <Button>Gaming</Button>
             </Dropdown>
           </Space>
         </div>
@@ -226,7 +217,10 @@ const TransactionModule = (props) => {
         <div />
       </div>
       <div className="container transaction-space">
-        <b>Sponsored:</b> Hot games, huge winnings, <b>welcome bonus up to $1000. <Link href="/register">Register now !</Link></b>
+        <b>Sponsored:</b> Hot games, huge winnings,{' '}
+        <b>
+          welcome bonus up to $1000. <Link href="/register">Register now !</Link>
+        </b>
       </div>
       <div className="container transaction-bottom">
         <div className="card transaction-space-card">
@@ -376,7 +370,7 @@ const TransactionModule = (props) => {
                                 {siteConfig?.nativeCurrency?.symbol}
                               </span>
                             </Dropdown>
-                            <span className="card-content-item-price">(${txDetail?.p || "--"})</span>
+                            <span className="card-content-item-price">(${txDetail?.p || '--'})</span>
                           </Space>
                         </Col>
                       </Row>
@@ -393,8 +387,12 @@ const TransactionModule = (props) => {
                           Transaction Fee:
                         </Col>
                         <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                          <span className="card-content-item-value">{txDetail?.tf / 1e18 || "--"} {siteConfig?.nativeCurrency?.symbol}</span>
-                          <span className="card-content-item-price">(${((txDetail?.gp / 1e9) * txDetail.gu) / 1e9})</span>
+                          <span className="card-content-item-value">
+                            {txDetail?.tf / 1e18 || '--'} {siteConfig?.nativeCurrency?.symbol}
+                          </span>
+                          <span className="card-content-item-price">
+                            (${((txDetail?.gp / 1e9) * txDetail.gu) / 1e9})
+                          </span>
                         </Col>
                       </Row>
                     </div>
@@ -421,10 +419,10 @@ const TransactionModule = (props) => {
                             <Space>
                               <img src="/images/icon/question.svg" alt="" />
                             </Space>
-                            {siteConfig?.nativeCurrency?.symbol || ""} Price:
+                            {siteConfig?.nativeCurrency?.symbol || ''} Price:
                           </Col>
                           <Col xs={{ span: 24 }} md={{ span: 16 }}>
-                            {txDetail?.p ? numberFormatter(txDetail?.p, txDetail?.p > 0 ? 2 : 5) : "--"}
+                            {txDetail?.p ? numberFormatter(txDetail?.p, txDetail?.p > 0 ? 2 : 5) : '--'}
                           </Col>
                         </Row>
                       </div>
@@ -441,7 +439,7 @@ const TransactionModule = (props) => {
                               <textarea className="text-area-private" cols="30" rows="2" />
                             ) : (
                               <span className="text-private">
-                                To access the Private Note feature, you must be  <Link href="/login">Logged In</Link>
+                                To access the Private Note feature, you must be <Link href="/login">Logged In</Link>
                               </span>
                             )}
                           </Col>
@@ -481,7 +479,11 @@ const TransactionModule = (props) => {
         </div>
         <div className="txn-desc">
           <img src="/images/icon/lamp-hub.png" alt="" />
-          <span>A wallet address is a publicly available address that allows its owner to receive funds from another party. To access the funds in an address, you must have its private key. Learn more about addresses in our <Link href="/knowledgw-base">Knowledge Base.</Link></span>
+          <span>
+            A wallet address is a publicly available address that allows its owner to receive funds from another party.
+            To access the funds in an address, you must have its private key. Learn more about addresses in our{' '}
+            <Link href="/knowledgw-base">Knowledge Base.</Link>
+          </span>
         </div>
         <div className="txn-banner-bottom">
           <img src="/images/mask.png" alt="" />

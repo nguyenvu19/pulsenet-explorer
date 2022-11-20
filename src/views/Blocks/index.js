@@ -2,7 +2,7 @@ import React from 'react'
 import { Table, Row, Col } from 'antd'
 import ReactTimeAgo from 'react-time-ago'
 import CurrencyFormat from 'react-currency-format'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import siteConfig from '../../config/site.config'
 
@@ -22,7 +22,7 @@ const columns = [
     ),
   },
   {
-    title: "Age",
+    title: 'Age',
     dataIndex: 'ti',
     render: (text) => <ReactTimeAgo date={parseInt(text) * 1000} locale="en-US" timeStyle="round" />,
   },
@@ -52,10 +52,10 @@ const columns = [
       <div className="data-gasUse">
         <div>
           <CurrencyFormat value={text} displayType="text" thousandSeparator renderText={(value) => value} />{' '}
-          <span className="data-gasUse-span">({((record?.gu * 1 / record.gl * 1) * 100).toFixed(1)}%)</span>
+          <span className="data-gasUse-span">({(((record?.gu * 1) / record.gl) * 1 * 100).toFixed(1)}%)</span>
         </div>
         <div className="gas-process">
-          <div style={{ width: `${Math.floor((record?.gu * 1 / record.gl * 1) * 100)}%` }} />
+          <div style={{ width: `${Math.floor(((record?.gu * 1) / record.gl) * 1 * 100)}%` }} />
         </div>
       </div>
     ),
@@ -72,30 +72,28 @@ const columns = [
     title: 'Base Fee',
     dataIndex: 'f',
     // width: 80,
-    render: (text) => { `${text || "--"} Gwei` },
+    render: (text) => {
+      ;`${text || '--'} Gwei`
+    },
   },
   {
     title: 'Reward',
     dataIndex: 'br',
     key: 'reward',
     width: 100,
-    render: (text) => text || "--",
+    render: (text) => text || '--',
   },
   {
     title: `Burnt Fees (${siteConfig?.nativeCurrency?.symbol})`,
     dataIndex: 'f',
     key: 'burntfees',
     width: 100,
-    render: (text) => (
-      <div className="data-burntfees">
-        {text || "--"}
-      </div>
-    ),
+    render: (text) => <div className="data-burntfees">{text || '--'}</div>,
   },
 ]
 
 const BlocksModule = (props) => {
-  const { listBlocks } = props;
+  const { listBlocks } = props
 
   const [paramsListBlock, setParamsListBlock] = React.useState({
     page: 1,
@@ -105,11 +103,11 @@ const BlocksModule = (props) => {
   const [loading, setLoading] = React.useState(false)
 
   React.useEffect(() => {
-    setLoading(true);
+    setLoading(true)
     if (paramsListBlock?.page !== 1) {
       router.push({
         pathname: '/blocks',
-        query: { ...paramsListBlock }
+        query: { ...paramsListBlock },
       })
     } else {
       router.push({
@@ -119,7 +117,7 @@ const BlocksModule = (props) => {
   }, [paramsListBlock])
 
   React.useEffect(() => {
-    setLoading(false);
+    setLoading(false)
   }, [listBlocks])
 
   const handleChangePagination = (key) => {
@@ -127,36 +125,39 @@ const BlocksModule = (props) => {
       case 'first':
         setParamsListBlock({
           ...paramsListBlock,
-          page: 1
+          page: 1,
         })
-        break;
+        break
       case 'previous':
         setParamsListBlock({
           ...paramsListBlock,
           page: paramsListBlock?.page - 1,
         })
-        break;
+        break
       case 'next':
         setParamsListBlock({
           ...paramsListBlock,
           page: paramsListBlock?.page + 1,
         })
-        break;
+        break
       case 'last':
         setParamsListBlock({
           ...paramsListBlock,
-          page: listBlocks?.total % paramsListBlock?.page_size > 0 ? Math.floor(listBlocks?.total / paramsListBlock?.page_size) + 1 : Math.floor(listBlocks?.total / paramsListBlock?.page_size)
+          page:
+            listBlocks?.total % paramsListBlock?.page_size > 0
+              ? Math.floor(listBlocks?.total / paramsListBlock?.page_size) + 1
+              : Math.floor(listBlocks?.total / paramsListBlock?.page_size),
         })
-        break;
+        break
     }
-  };
+  }
 
   const handleChangeShow = (value) => {
     setParamsListBlock({
       ...paramsListBlock,
-      page_size: value
+      page_size: value,
     })
-  };
+  }
 
   return (
     <div className="blocks-wrapper">
@@ -180,24 +181,38 @@ const BlocksModule = (props) => {
                 <Row>
                   <Col xs={{ span: 24 }} md={{ span: 12 }}>
                     <p className="block-info">
-                      Block #{listBlocks?.data?.[0]?.bn || 0} to #{listBlocks?.data?.[listBlocks?.data?.length - 1]?.bn || 0} (Total of {listBlocks?.total || 0} blocks)
+                      Block #{listBlocks?.data?.[0]?.bn || 0} to #
+                      {listBlocks?.data?.[listBlocks?.data?.length - 1]?.bn || 0} (Total of {listBlocks?.total || 0}{' '}
+                      blocks)
                     </p>
                   </Col>
                   <Col xs={{ span: 24 }} md={{ span: 12 }} className="header-pagination">
-                    <TablePagination total={listBlocks?.total || 0} pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT} page={paramsListBlock?.page || 1} onChange={handleChangePagination} disableShow={true} />
+                    <TablePagination
+                      total={listBlocks?.total || 0}
+                      pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT}
+                      page={paramsListBlock?.page || 1}
+                      onChange={handleChangePagination}
+                      disableShow={true}
+                    />
                   </Col>
                 </Row>
               </div>
               <div className="card-body-center">
                 <Table
                   columns={columns}
-                  dataSource={[...listBlocks?.data || []]}
+                  dataSource={[...(listBlocks?.data || [])]}
                   loading={loading}
                   pagination={false}
                 />
               </div>
-              <div className='card-footer'>
-                <TablePagination total={listBlocks?.total || 0} pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT} page={paramsListBlock?.page || 1} onChange={handleChangePagination} onChangeShow={handleChangeShow} />
+              <div className="card-footer">
+                <TablePagination
+                  total={listBlocks?.total || 0}
+                  pageSize={paramsListBlock?.page_size || DEFAULT_LIMIT}
+                  page={paramsListBlock?.page || 1}
+                  onChange={handleChangePagination}
+                  onChangeShow={handleChangeShow}
+                />
               </div>
             </div>
           </div>

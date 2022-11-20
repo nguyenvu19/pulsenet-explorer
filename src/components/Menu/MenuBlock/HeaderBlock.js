@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/dist/client/router'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import SearchInput from 'components/SearchInput'
 import MenuCollapseIcon from 'widgets/MenuCollapseIcon'
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'

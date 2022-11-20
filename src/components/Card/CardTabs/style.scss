@@ -1,0 +1,33 @@
+.card-tabs {
+  width: 100%;
+  border: 1px solid #c1c1c1;
+  border-radius: 12px;
+  overflow: hidden;
+
+  & > .ant-tabs-nav {
+    padding: 0 24px;
+    margin: 0;
+
+    // left
+    .ant-tabs-tab .ant-tabs-tab-btn {
+      color: #3c3a3a;
+      font-weight: 700;
+      &:hover {
+        color: #418143;
+      }
+    }
+    .ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: #418143;
+    }
+  }
+
+  & > .ant-tabs-nav::before {
+    border-bottom: 1px solid #c1c1c1;
+  }
+
+  & > .ant-tabs-content-holder {
+    .ant-tabs-content {
+      padding: 16px 24px;
+    }
+  }
+}
