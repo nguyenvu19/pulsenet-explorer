@@ -1,56 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { Menu, Space, Row, Col, Dropdown, Button } from 'antd'
-import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import { Menu, Space, Row, Col } from 'antd'
 import {
-  QuestionCircleOutlined,
   LeftOutlined,
   RightOutlined,
   ClockCircleOutlined,
   ArrowDownOutlined,
   ArrowUpOutlined,
 } from '@ant-design/icons'
-import Web3 from 'web3'
 import ReactTimeAgo from 'react-time-ago'
 import CurrencyFormat from 'react-currency-format'
-import { PROVIDER_NETWORK_URL } from 'config/constants'
 import Link from 'components/NextLink/NextLink'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import siteConfig from 'config/site.config.dev'
 import { numberFormatter } from 'library/helpers/CommonHelper'
 
-const web3 = new Web3(PROVIDER_NETWORK_URL)
-
 const Block = (props) => {
-  console.log(props);
   const { blockDetail } = props
-  const {
-    query: { block },
-  } = useRouter()
-
-  const [blockDetails, setBlockDetail] = React.useState()
-  // console.log(blockDetail)
-
-  useEffect(() => {
-    async function getDetailBlock(blockNumber) {
-      const res = await web3.eth.getBlock(blockNumber)
-      return res
-    }
-    if (block) {
-      getDetailBlock(block)
-        .then((res) => setBlockDetail(res))
-        .catch(console.error)
-    }
-  }, [block])
 
   const [collapse, setCollapse] = useState(false)
   const [menuTab, setMenuTab] = useState('Overview')
-
-  const setMenu1 = () => {
-    setMenuTab('Overview')
-  }
-  const setMenu2 = () => {
-    setMenuTab('Comment')
-  }
 
   const collapseToggle = () => {
     setCollapse(!collapse)
@@ -153,11 +121,11 @@ const Block = (props) => {
                     </Col>
                     <Col xs={{ span: 24 }} md={{ span: 16 }}>
                       <div className="item-transaction">
-                        <Link className="transaction-link" href={`/txs?block=${block}`}>
+                        <Link className="transaction-link" href={`/txs?block=${blockDetail?.bn}`}>
                           {blockDetail?.tt || 0} transactions
                         </Link>
                         and
-                        <Link className="transaction-link" href={`/txs?block=${block}`}>
+                        <Link className="transaction-link" href={`/txs?block=${blockDetail?.bn}`}>
                           {blockDetail?.tt || 0} contact internal transactions
                         </Link>
                         in this block
@@ -384,7 +352,7 @@ const Block = (props) => {
         </div>
         <div className="block-desc">
           <img src="/images/icon/lamp-hub.png" alt="" />
-          <span>A wallet address is a publicly available address that allows its owner to receive funds from another party. To access the funds in an address, you must have its private key. Learn more about addresses in our Knowledge Base.</span>
+          <span>A wallet address is a publicly available address that allows its owner to receive funds from another party. To access the funds in an address, you must have its private key. Learn more about addresses in our <Link href="/knowledgw-base">Knowledge Base.</Link></span>
         </div>
       </div>
     </section >
