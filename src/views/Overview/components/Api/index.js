@@ -8,7 +8,7 @@ const Api = () => {
       <ApiKeys />
       <ApiPlans />
       <div className="notes">
-        <img src="/images/account/matching.png" />
+        <img style={{ width: '16px' }} src="/images/account/matching.png" />
         &emsp;
         <span>
           API keys created on Etherscan.io can be used for the Kovan, Rinkeby, Ropsten, Sepolia and Goerli Testnets.
