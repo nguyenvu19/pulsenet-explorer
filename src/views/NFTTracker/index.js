@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 
-import search from '../../../public/images/icon/search.png'
-import down from '../../../public/images/icon/arrow-square-down.png'
-import upDown from '../../../public/images/icon/iconUpDown.png'
-
-import BlockTracker from './components/block-tracker'
+import BlockTracker from './components/BlockTracker'
 import Pagination from 'components/Pagination'
 
 import { FAKE_DATA } from 'views/NFTTracker/fakeData'
@@ -38,7 +34,7 @@ const NFTTracker = () => {
         <div className="top">
           <h1>Non-Fungible Tokens (NFT)</h1>
           <div className="icon">
-            <img src={search} className="search" />
+            <img src="/images/icon/search.png" className="search" />
           </div>
         </div>
         <div className="middle">
@@ -57,7 +53,7 @@ const NFTTracker = () => {
                 <th>Token</th>
                 <th>
                   <div>
-                    <img src={down} className="down" />
+                    <img src="/images/icon/arrow-square-down.png" className="down" />
                     Transfers (24H)
                   </div>
                 </th>

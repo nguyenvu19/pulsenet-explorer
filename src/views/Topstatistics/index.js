@@ -1,7 +1,5 @@
 import React from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import tether from '../../../public/images/icon/tethericon.png'
-import crypto from '../../../public/images/icon/cryptocurrency_eth.png'
 
 const Topstatistics = () => {
   return (
@@ -37,7 +35,7 @@ const Topstatistics = () => {
             <td className="green">FTX Exchange 2</td>
             <td>
               {' '}
-              <img src={crypto} className="crypto" /> 147,096.946643999
+              <img src="/images/icon/cryptocurrency_eth.png" className="crypto" /> 147,096.946643999
             </td>
           </tr>
 
@@ -48,7 +46,7 @@ const Topstatistics = () => {
           <tr>
             <td className="green">FTX Exchange 2</td>
             <td>
-              <img src={crypto} className="crypto" /> 147,096.946643999
+              <img src="/images/icon/cryptocurrency_eth.png" className="crypto" /> 147,096.946643999
             </td>
           </tr>
 
@@ -60,7 +58,7 @@ const Topstatistics = () => {
             <td className="green">FTX Exchange 2</td>
             <td>
               {' '}
-              <img src={crypto} className="crypto" /> 147,096.946643999
+              <img src="/images/icon/cryptocurrency_eth.png" className="crypto" /> 147,096.946643999
             </td>
           </tr>
         </table>
@@ -76,7 +74,7 @@ const Topstatistics = () => {
           </tr>
           <tr>
             <td className="green">
-              <img src={tether} className="tether" />
+              <img src="/images/icon/tethericon.png" className="tether" />
               Tether USD(USDT)
             </td>
             <td>201.459</td>
@@ -88,7 +86,7 @@ const Topstatistics = () => {
           </tr>
           <tr>
             <td className="green">
-              <img src={tether} className="tether" />
+              <img src="/images/icon/tethericon.png" className="tether" />
               Tether USD(USDT)
             </td>
             <td>201.459</td>
@@ -100,7 +98,7 @@ const Topstatistics = () => {
           </tr>
           <tr>
             <td className="green">
-              <img src={tether} className="tether" /> Tether USD(USDT)
+              <img src="/images/icon/tethericon.png" className="tether" /> Tether USD(USDT)
             </td>
             <td>201.459</td>
           </tr>
