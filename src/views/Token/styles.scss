@@ -1,6 +1,7 @@
 @import 'assets/css/variables.scss';
 
 .token-wrapper {
+  width: 100%;
   min-height: calc(100vh - 211px - $MENU-HEIGHT);
   background: $background-wrapper;
   overflow: hidden;
