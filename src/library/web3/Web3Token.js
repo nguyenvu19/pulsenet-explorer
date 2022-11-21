@@ -1,11 +1,11 @@
 import Web3Libs from 'web3'
 import { TOKEN_WPULSE, PROVIDER_NETWORK_URL } from 'config/constants'
-import ABI_ERC20 from 'config/constants/abis/erc20.json'
+import abiErc20 from 'config/constants/abis/erc20.json'
 
 class Web3Token {
   constructor(address, abi, rpc) {
     this.address = address || TOKEN_WPULSE
-    this.abi = abi || ABI_ERC20
+    this.abi = abi || abiErc20
     this.web3 = new Web3Libs(new Web3Libs.providers.HttpProvider(rpc || PROVIDER_NETWORK_URL))
     this.contract = new this.web3.eth.Contract(this.abi, this.address)
   }
