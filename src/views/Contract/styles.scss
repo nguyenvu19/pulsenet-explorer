@@ -1,0 +1,127 @@
+@import 'assets/css/variables.scss';
+
+.contract-page {
+  color: #3c3a3a;
+  min-height: 80vh;
+  display: flex;
+  max-width: 1320px;
+  margin: 16px auto 104px;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 15px;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    padding-bottom: 8px;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        display: flex;
+        align-items: center;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        .token {
+          font-weight: bold;
+          font-size: 24px;
+          margin: 0 16px;
+        }
+
+        div:last-child {
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+
+      .tag {
+        button {
+          width: 100px;
+          height: 21px;
+          background-color: #eeeeee;
+          font-size: 12px;
+          font-weight: 500;
+          border-radius: 4px;
+          border: 1px solid #fff;
+          cursor: pointer;
+        }
+
+        .bitfinex {
+          margin-right: 16px;
+        }
+      }
+    }
+
+    .right {
+      button {
+        width: 100px;
+        height: 21px;
+        background-color: #eeeeee;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        cursor: pointer;
+      }
+
+      .exchange {
+        margin: 0 16px;
+      }
+
+      .earn {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .description {
+    padding: 16px 0 24px;
+
+    span {
+      font-weight: 500;
+    }
+
+    .learn-more {
+      color: #418143;
+    }
+  }
+
+  .middle {
+    display: flex;
+    flex-wrap: wrap;
+
+    .overview {
+      width: 50%;
+
+      .overview-head {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 24px;
+
+        .overview-head-left {
+          font-size: 16px;
+          font-weight: 700;
+
+          span {
+            font-weight: 400;
+          }
+        }
+
+        .overview-head-right {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .contract {
+      width: 50%;
+    }
+  }
+}
