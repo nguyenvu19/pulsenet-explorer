@@ -11,7 +11,7 @@ import {
   SearchOutlined,
 } from '@ant-design/icons'
 import { isAddress } from 'utils'
-import Web3Token from 'library/Web3Token'
+import Web3Token from 'library/web3/Web3Token'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import CardTabs from 'components/Card/CardTabs'
 import Transfers from './components/Transfers'
