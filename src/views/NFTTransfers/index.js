@@ -4,7 +4,7 @@ import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import upDown from '../../../public/images/icon/iconUpDown.png'
 
 import Pagination from 'components/Pagination'
-import BlockTransfers from './components/block-transfers'
+import BlockTransfers from './components/BlockTransfers'
 
 const NFTTransfers = () => {
   return (

@@ -5,7 +5,7 @@ import search from '../../../public/images/icon/search.png'
 import down from '../../../public/images/icon/arrow-square-down.png'
 import upDown from '../../../public/images/icon/iconUpDown.png'
 
-import BlockTracker from './components/block-tracker'
+import BlockTracker from './components/BlockTracker'
 import Pagination from 'components/Pagination'
 
 import { FAKE_DATA } from 'views/NFTTracker/fakeData'
