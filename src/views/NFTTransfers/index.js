@@ -1,10 +1,8 @@
 import React from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 
-import upDown from '../../../public/images/icon/iconUpDown.png'
-
 import Pagination from 'components/Pagination'
-import BlockTransfers from './components/block-transfers'
+import BlockTransfers from './components/BlockTransfers'
 
 const NFTTransfers = () => {
   return (
@@ -54,7 +52,7 @@ const NFTTransfers = () => {
           <div className="left">
             <div className="show">Show</div>
             <div className="numberPage">
-              25 <img src={upDown} className="upDown" />
+              25 <img src="images/icon/iconUpDown.png" className="upDown" />
             </div>
             <div className="records">Records</div>
           </div>

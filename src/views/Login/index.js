@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
+import { useDispatch } from 'react-redux'
 import { Button, Checkbox, Form, Input } from 'antd'
+import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
+import useAuth from 'hooks/useAuth'
 
 const formItemLayout = {
   labelCol: {
@@ -37,8 +39,11 @@ const tailFormItemLayout = {
 const LoginPage = () => {
   const [form] = Form.useForm()
 
+  const { login, register } = useAuth()
+
   const onFinish = (values) => {
     console.log('Received values of form: ', values)
+    login(values)
   }
 
   return (

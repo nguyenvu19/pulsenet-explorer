@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { sleep } from 'library/helpers/Misc'
-import Web3 from '../library/Web3'
+import Web3 from '../library/web3/Web3'
 import { CACHE_TRANSACTION } from '../redux/transactions/reducer'
 
 const web3 = new Web3()

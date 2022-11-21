@@ -1,27 +1,3 @@
-/* Mixin */
-/* Set các giá trị với màn hình tương ứng */
-$mobile-width: 375px;
-$tablet-width: 768px;
-$desktop-width: 992px;
-
-@mixin mobile {
-  @media (max-width: #{$mobile-width}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: #{$tablet-width}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
-}
-
 .topstatistics-page {
   color: black;
   min-height: 80vh;
@@ -66,7 +42,7 @@ $desktop-width: 992px;
   table:nth-child(even) {
     margin-left: 15px;
 
-    @include tablet {
+    @include media-down(md) {
       margin-left: 0;
     }
   }
@@ -74,7 +50,7 @@ $desktop-width: 992px;
   table:nth-child(odd) {
     margin-right: 15px;
 
-    @include tablet {
+    @include media-down(md) {
       margin-right: 0;
     }
   }
@@ -174,7 +150,7 @@ $desktop-width: 992px;
     flex-wrap: wrap;
     align-items: center;
 
-    @include tablet {
+    @include media-down(md) {
       display: flex;
       flex-direction: column;
     }
@@ -183,11 +159,11 @@ $desktop-width: 992px;
   .topstatistics-transaction {
     width: calc(50% - 15px);
 
-    @include tablet {
+    @include media-down(md) {
       width: calc(100% - 15px);
     }
 
-    @include mobile {
+    @include media-down(sm) {
       width: 100%;
     }
   }
@@ -195,11 +171,11 @@ $desktop-width: 992px;
   .topstatistics-tokens {
     width: calc(50% - 15px);
 
-    @include tablet {
+    @include media-down(md) {
       width: calc(100% - 15px);
     }
 
-    @include mobile {
+    @include media-down(sm) {
       width: 100%;
     }
   }
@@ -207,11 +183,11 @@ $desktop-width: 992px;
   .topstatistics-network {
     width: calc(50% - 15px);
 
-    @include tablet {
+    @include media-down(md) {
       width: calc(100% - 15px);
     }
 
-    @include mobile {
+    @include media-down(sm) {
       width: 100%;
     }
   }

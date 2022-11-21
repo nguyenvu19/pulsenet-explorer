@@ -131,6 +131,6 @@
     "imagemin-svgo": "^8.0.0",
     "nodemon": "^2.0.4",
     "redux-devtools-extension": "^2.13.8",
-    "sass": "^1.53.0"
+    "sass": "^1.56.1"
   }
 }

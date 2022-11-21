@@ -1,4 +1,4 @@
-@import '../../../src/assets/css/mixins/breakpoints';
+@import 'assets/css/variables.scss';
 
 .nft-transfers-page {
   color: black;
@@ -59,7 +59,7 @@
       color: #0c230c;
 
       @include media-down(xm) {
-        padding: 16px 4px;
+        padding: 16px 12px;
       }
 
       &:before {
@@ -104,7 +104,7 @@
       }
 
       @include media-down(xm) {
-        padding: 16px 4px;
+        padding: 16px 12px;
       }
 
       .description {
@@ -132,7 +132,7 @@
       overflow-x: auto;
 
       @include media-down(xm) {
-        padding: 16px 4px;
+        padding: 16px 12px;
       }
 
       .table {
@@ -235,7 +235,7 @@
       }
 
       @include media-down(xm) {
-        padding: 16px 4px;
+        padding: 16px 12px;
       }
 
       .left {

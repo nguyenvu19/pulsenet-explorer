@@ -16,7 +16,7 @@ import {
 } from '@ant-design/icons'
 import CurrencyFormat from 'react-currency-format'
 import ReactTimeAgo from 'react-time-ago'
-import Web3Token from 'library/Web3Token'
+import Web3Token from 'library/web3/Web3Token'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import Link from 'components/Link/NextLink'
 import TypeNumber from 'widgets/TypeNumber/index'
