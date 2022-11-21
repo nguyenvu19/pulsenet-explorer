@@ -1,6 +1,6 @@
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock';
 import { getBlockDetail, getListBlocks } from 'services/api/blocks';
-import { getListTransactions } from 'services/api/transactions'
+import { getTransactionDetail } from 'services/api/transactions'
 
 import TxView from 'views/Tx'
 
@@ -13,22 +13,32 @@ Tx.Layout = PublicLayoutBlock
 export async function getServerSideProps(context) {
     const txHash = context?.query?.txHash
 
-    const [
-        txDetail,
-        latestBlock,
-    ] = await Promise.all([
-        getListTransactions({ a: txHash }),
-        getListBlocks({ page: 1, page_size: 1 }),
-    ]);
+    let blockDetail = {}
+    let txDetail = {}
+    let latestBlock = {}
 
-    let blockDetail = {};
-    if (txDetail?.data?.[0]?.bn) {
-        blockDetail = await getBlockDetail(txDetail?.data?.[0]?.bn)
+    try {
+        const [
+            txDetailData,
+            latestBlockData,
+        ] = await Promise.all([
+            getTransactionDetail(txHash),
+            getListBlocks({ page: 1, page_size: 1 }),
+        ])
+        txDetail = txDetailData
+        latestBlock = latestBlockData
+    } catch { }
+
+
+    if (txDetail?.data?.bn) {
+        try {
+            blockDetail = await getBlockDetail(txDetail?.data?.bn)
+        } catch { }
     }
 
     return {
         props: {
-            txDetail: txDetail?.data?.[0] || {},
+            txDetail: txDetail?.data || {},
             blockDetail: blockDetail?.data?.[0] || {},
             latestBlock: latestBlock?.data?.[0] || {},
         },

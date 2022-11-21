@@ -15,3 +15,10 @@ export const getStatistics = async (params) =>
     params,
     isAuth: false,
   });
+
+export const getTransactionDetail = async (txnHash) =>
+  request({
+    url: `/transaction/${txnHash}`,
+    method: "GET",
+    isAuth: false,
+  });

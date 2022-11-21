@@ -13,11 +13,11 @@ const DEFAULT_LIMIT = 25
 const columns = [
   {
     title: 'Txn Hash',
-    dataIndex: 'f',
+    dataIndex: 'h',
     render: (text) => (
       <div className="data-txnHash">
         <img src="/images/icon/eye.svg" alt="" />
-        <Link href={`/tx/${text?.a}`}>{formatCode(text?.a, 13, 0)}</Link>
+        <Link href={`/tx/${text}`}>{formatCode(text, 13, 0)}</Link>
       </div>
     ),
   },

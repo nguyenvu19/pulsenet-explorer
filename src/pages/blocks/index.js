@@ -14,11 +14,10 @@ Blocks.Layout = PublicLayoutBlock
 export async function getServerSideProps(context) {
     const query = (context?.query?.page && context?.query?.page_size) ? context?.query : { page: 1, page_size: 25 };
 
-    const [
-        listBlocks
-    ] = await Promise.all([
-        getListBlocks(query),
-    ]);
+    let listBlocks = {}
+    try {
+        listBlocks = await getListBlocks(query)
+    } catch { }
 
     return {
         props: { listBlocks: listBlocks || {} },

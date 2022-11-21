@@ -16,7 +16,7 @@ const TableItemTransactions = ({ dataItem }) => {
           </div>
           <div className="display-block-transactions">
             <div className="col-sm-4-content-block">Tx#</div>
-            <Link href={`/tx/${dataItem?.f?.a}`}>{formatCode(dataItem?.f?.a, 8, 5)}</Link>
+            <Link href={`/tx/${dataItem?.h}`}>{formatCode(dataItem?.h, 8, 5)}</Link>
             <p className="block-small-transactions">
               <ReactTimeAgo date={parseInt(dataItem?.ti || 0) * 1000} locale="en-US" timeStyle="round" />
             </p>
