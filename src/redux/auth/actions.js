@@ -5,12 +5,12 @@ const actions = {
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_ERROR: 'LOGIN_ERROR',
   checkAuthorization: () => ({ type: actions.CHECK_AUTHORIZATION }),
-  login: (token = false) => ({
+  login: (payload) => ({
     type: actions.LOGIN_REQUEST,
-    payload: { token },
+    payload,
   }),
   logout: () => ({
     type: actions.LOGOUT,
   }),
-};
-export default actions;
+}
+export default actions
