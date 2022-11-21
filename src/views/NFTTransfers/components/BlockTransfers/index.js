@@ -1,14 +1,11 @@
 import React from 'react'
-import eye from '../../../../../public/images/icon/emojione_eye-in-speech-bubble.png'
-import arrowRight from '../../../../../public/images/icon/arrow-right.png'
-import tether from '../../../../../public/images/icon/tethericon.png'
 
 const BlockTransfers = () => {
   return (
     <tr className="block-transfers">
       <td>
         <span>
-          <img src={eye} className="down" />
+          <img src="/images/icon/emojione_eye-in-speech-bubble.png" className="down" />
           kjbas8127jbsdc23DS...
         </span>
       </td>
@@ -19,7 +16,7 @@ const BlockTransfers = () => {
 
       <td>
         <span>
-          <img src={arrowRight} className="down" />
+          <img src="/images/icon/arrow-right.png" className="down" />
           212asdb12s15asd
         </span>
       </td>
@@ -28,7 +25,7 @@ const BlockTransfers = () => {
 
       <td>
         <span>
-          <img src={tether} className="down" />
+          <img src="/images/icon/tethericon.png" className="down" />
           Tether USDT&#41;
         </span>
       </td>
