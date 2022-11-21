@@ -26,7 +26,7 @@ import { message, Input, Menu, Dropdown, Button, Space, Tabs, Row, Col, Table, M
 import { PROVIDER_NETWORK_URL } from 'config/constants'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import TableEvent from 'components/TableEvent'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import TableTransactionDetail from 'components/TableTransactionDetail'
 import TableTransactionDetailTxn from 'components/TableTransactionDetailTxn'
 import AddressOverview from 'components/AddressOverview'
@@ -180,7 +180,7 @@ const search = (
  */
 const web3 = new Web3(PROVIDER_NETWORK_URL)
 
-const TransactionDetailTolModule = () => {
+const AddressPage = () => {
   const {
     query: { address },
   } = useRouter()
@@ -403,5 +403,5 @@ const TransactionDetailTolModule = () => {
   )
 }
 
-TransactionDetailTolModule.Layout = PublicLayoutBlock
-export default TransactionDetailTolModule
+AddressPage.Layout = PublicLayoutBlock
+export default AddressPage

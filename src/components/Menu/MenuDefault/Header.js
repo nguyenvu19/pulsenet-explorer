@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react'
 import { UserOutlined } from '@ant-design/icons'
 import { Layout } from 'antd'
 import { useRouter } from 'next/dist/client/router'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import config from '../config'
 import ContentMobile from '../ContentMobile/ContentMobile'
 import MenuCollapseIcon from 'widgets/MenuCollapseIcon'
 import { UserIcon } from 'widgets/Svg'
-import NextLink from 'components/NextLink/NextLink'
+import NextLink from 'components/Link/NextLink'
 
 const Header = ({ showMenu, toggleMenu }) => {
   const router = useRouter()

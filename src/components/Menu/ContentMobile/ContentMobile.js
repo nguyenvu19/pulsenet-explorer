@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import styled from 'styled-components'
 
 const DrawMenuContent = styled.div`

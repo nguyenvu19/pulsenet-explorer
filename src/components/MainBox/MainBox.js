@@ -3,11 +3,15 @@ import dynamic from 'next/dynamic'
 import siteConfig from '../../config/site.config'
 import { Col, Row } from 'antd'
 
+import { numberFormatter } from 'library/helpers/CommonHelper'
+import moment from 'moment-timezone'
+
 const ApexCharts = dynamic(() => import('react-apexcharts'), { ssr: false, loading: () => <p>Loading ...</p> })
 
-const MainBox = () => {
+const MainBox = ({ statistics }) => {
   const [chart, setChart] = useState({
     options: {
+      colors: ["#3C3A3A"],
       chart: {
         id: 'basic-bar',
         toolbar: {
@@ -15,8 +19,13 @@ const MainBox = () => {
         }
       },
       xaxis: {
-        categories: ['Mar 21', 'Mar 24', 'Mar 28', 'Apr 1', 'Apr 4'],
+        categories: statistics?.data?.reverse()?.map((it) => moment(it.da, 'DD/MM/YYYY').format('MMM DD YYYY')),
         tickAmount: 2,
+        labels: {
+          formatter: function (value, timestamp, opts) {
+            return moment(value, 'MMM DD YYYY').format('MMM DD')
+          }
+        }
       },
       yaxis: {
         tickAmount: 2,
@@ -36,15 +45,33 @@ const MainBox = () => {
       stroke: {
         curve: 'smooth',
         width: 1,
+      },
+      tooltip: {
+        x: {
+          show: true,
+          formatter: function (value, { dataPointIndex }) {
+            return moment(statistics?.data?.reverse()?.[dataPointIndex]?.da, 'DD/MM/YYYY').format('MMM DD, YYYY')
+          }
+        },
       }
     },
     series: [
       {
-        name: 'Price',
-        data: [2500, 3000, 500, 3500, 2000],
+        name: 'Transactions',
+        data: statistics?.data?.reverse()?.map((it) => it?.tt || 0),
       },
     ],
   })
+
+  const latestStatistic = statistics?.data?.[0] || {};
+
+  const percentPrice = () => {
+    let percent = 0;
+    if (statistics?.data?.[0]?.tp && statistics?.data?.[1]?.tp) {
+      percent = ((statistics?.data?.[0]?.tp * 1 - statistics?.data?.[1]?.tp * 1) / 100);
+    }
+    return percent > 0 ? ` +${numberFormatter(percent, 2)}%` : ` ${numberFormatter(percent, 2)}%`;
+  }
 
   return (
     <Row gutter={[32, 32]} className="row-body">
@@ -56,8 +83,8 @@ const MainBox = () => {
           <div className="body-content">
             <h2 className="body-content-text-below">{siteConfig.nativeCurrency.symbol} PRICE</h2>
             <a className="body-content-text-under">
-              <span className="text-secondary">$0.008</span>
-              <span className="text-secondary small"> +0.50%</span>
+              <span className="text-secondary">${latestStatistic?.tp ? numberFormatter(latestStatistic?.tp * 1, latestStatistic?.tp * 1 > 1 ? 2 : 5) : "--"}</span>
+              <span className="text-secondary small">{percentPrice()}</span>
             </a>
           </div>
         </div>
@@ -70,7 +97,7 @@ const MainBox = () => {
               MARKET CAP
             </h2>
             <a className="body-content-text-under">
-              $803,850.00
+              ${numberFormatter(latestStatistic?.mc * 1, 2)}
             </a>
           </div>
         </div>
@@ -84,14 +111,14 @@ const MainBox = () => {
             <div className="body-content">
               <h2 className="body-content-text-below">TRANSACTIONS</h2>
               <a className="body-content-text-under">
-                464
+                {latestStatistic?.tt}
               </a>
             </div>
           </div>
           <div className="body-right">
             <h2>MED GAS PRICE</h2>
-            <a href="/">5 Gwei</a>
-            <span> ($0,001)</span>
+            <a href="/">{latestStatistic?.gp?.cur} Gwei</a>
+            <span> (${latestStatistic?.gp?.cur / 1e9})</span>
           </div>
         </div>
         <div className="col-left-1 col-center-2">
@@ -101,7 +128,7 @@ const MainBox = () => {
           <div className="body-content">
             <h2 className="body-content-text-below">LAST FINALIZED BLOCK</h2>
             <a className="body-content-text-under">
-              15793060
+              {latestStatistic?.sb}
             </a>
           </div>
         </div>
@@ -113,7 +140,7 @@ const MainBox = () => {
             className="mixed-chart-item"
             options={chart.options}
             series={chart.series}
-            height="150px"
+            height="180px"
             type="line"
           />
         </div>

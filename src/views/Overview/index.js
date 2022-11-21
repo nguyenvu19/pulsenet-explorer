@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import { Button, Layout } from 'antd'
 import AccountOverview from './components/AccountOverview'
@@ -7,16 +7,33 @@ import PulsescanConnect from './components/PulsescanConnect'
 import WatchList from './components/WatchList'
 import PrivateNameTags from './components/AddressPrivateTags'
 import TnxPrivateNotes from './components/TnxPrivateNotes'
-import APIkey from './components/ApiKey'
+import APIkey from './components/Api'
 import VerifiedAddresses from './components/VerifiedAddresses'
 import CustomABIst from './components/ConnectCustomABI'
 import TokenIgnoreList from './components/TokenIgnorelist'
+import Sidebar from './components/Sidebar'
 
 const Overview = () => {
   const [activeTab, setActiveTab] = useState('overview')
+  const [breakCum, setBreakcum] = useState('Account Overview')
+  // const [breakCum, setBreakcum] = useState('Account Overview')
 
   const handleClick = (value) => {
+    console.log('value', value)
     setActiveTab(value)
+    switch (value) {
+      case 'overview': {
+        setBreakcum('Account Overview')
+        break
+      }
+      case 'settings': {
+        setBreakcum('Account settings')
+        break
+      }
+
+      default:
+        return null
+    }
   }
 
   const renderTabRight = () => {
@@ -72,117 +89,16 @@ const Overview = () => {
           <p style={{ fontWeight: 'bold', fontSize: '14px' }}>
             Home /
             <a href="#" style={{ color: '#418143' }}>
-              Account Overview
+              {/* Account Overview */}
+              {breakCum}
             </a>
           </p>
         </div>
       </div>
 
       <div className="overview-page_content">
-        <Layout className="overview-page_content_left">
-          <div>
-            <h1>ACCOUNT</h1>
-            <ul>
-              <li
-                onClick={() => handleClick('overview')}
-                className={`${activeTab === 'overview' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/overview.png" />
-                  <span>Account Overview</span>
-                </a>
-              </li>
-              <li
-                onClick={() => handleClick('settings')}
-                className={`${activeTab === 'settings' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/accountsetting.png" />
-                  <span> Account Settings</span>
-                </a>
-              </li>
-              <li
-                onClick={() => handleClick('pulsescan')}
-                className={`${activeTab === 'pulsescan' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/pulsescanconnect.png" />
-                  <span>PULSESCAN Connect</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h1>WATCH LIST & NOTES</h1>
-            <ul>
-              <li
-                onClick={() => handleClick('watchlist')}
-                className={`${activeTab === 'watchlist' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/watchlist.png" />
-                  <span>Watch List</span>
-                </a>
-              </li>
-              <li
-                onClick={() => handleClick('privatenametags')}
-                className={`${activeTab === 'privatenametags' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/privatenametags.png" />
-                  <span>Private Name Tags</span>
-                </a>
-              </li>
-              <li
-                onClick={() => handleClick('privatenotes')}
-                className={`${activeTab === 'privatenotes' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/privatenotes.png" />
-                  <span>Txn Private Notes</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h1>OTHERS</h1>
-            <ul>
-              <li onClick={() => handleClick('apikey')} className={`${activeTab === 'apikey' ? 'account-active' : ''}`}>
-                <a href="#">
-                  <img src="/images/account/api.png" />
-                  <span> API Keys</span>
-                </a>
-              </li>
-              <li
-                onClick={() => handleClick('verifiedaddresses')}
-                className={`${activeTab === 'verifiedaddresses' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/verifiedaddresses.png" />
-                  <span>Verified Addresses</span>
-                </a>
-              </li>
-              <li
-                onClick={() => handleClick('customabist')}
-                className={`${activeTab === 'customabist' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/ABIs.png" />
-                  <span>Custom ABIst</span>
-                </a>
-              </li>
-              <li
-                onClick={() => handleClick('tokenignore')}
-                className={`${activeTab === 'tokenignore' ? 'account-active' : ''}`}
-              >
-                <a href="#">
-                  <img src="/images/account/ignorelist.png" />
-                  <span>Token Ignore List</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </Layout>
+        <Sidebar activeTab={activeTab} handleClick={(value) => handleClick(value)} />
+
         <Layout className="overview-page_content_right">
           {/* Personal Info */}
           {renderTabRight()}

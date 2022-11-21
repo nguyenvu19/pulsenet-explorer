@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table } from 'antd'
 import { AppstoreOutlined, ContainerOutlined, EyeOutlined, LinkOutlined } from '@ant-design/icons'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import siteConfig from '../../config/site.config'
 
 const columns = [

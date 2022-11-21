@@ -1,8 +1,6 @@
 @import 'assets/css/variables.scss';
 @import 'assets/css/animation.scss';
-@import 'assets/css/base-class.scss';
-@import 'assets/css/customs-class.scss';
-@import 'assets/css/card.scss';
+@import 'assets/css/EmbedResponsive.css';
 
 * {
   font-family: Yantramanav;
@@ -17,6 +15,7 @@
   --red: #de4437;
   --green: green;
   --orange: #b47d00;
+  --white: #ffffff;
   --orange-bg: #db9a0433;
   --green-stick: #00c9a7;
   --border-color: #e7eaf3;
@@ -27,7 +26,7 @@
   --primary: #418143;
   --primary-bg-hover: #651fda;
   --primary-border-hover: #601dcf;
-  --secondary: #fff;
+  --secondary: #3c3a3a;
   --tertiary: #eeeeee;
 
   --text: #3c3a3a;
@@ -43,7 +42,7 @@
   --background-color-padding: rgba(130, 71, 229, 0.1);
   --background-color-padding-light: #3498db1a;
   --background-rgba: rgba(248, 249, 250, 0.4);
-  --background-span: #77838f1a;
+  --background-span: #eeeeee;
   --background-slogan: #77838f0d;
   --background-button-dark: hsla(0, 0%, 100%, 0.2);
   --background-item: rgba(52, 152, 219, 0.1);
@@ -61,6 +60,8 @@
   --color-shadow2: 0 4px 11px rgba(248, 249, 250, 35%);
   --color-shadow-account: 0 4px 11px rgba(130, 71, 229, 35%);
   --color-shadow-header-li: 0 8px 20px rgba(130, 71, 229, 8%);
+
+  --link-color: #418143;
 }
 
 *::after,
@@ -89,6 +90,17 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  color: var(--text);
+  font-weight: 400;
+}
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  background-color: $secondary;
+}
+
 /* prettier-ignore */
 article,
 aside,
@@ -113,22 +125,48 @@ h6 {
   margin: 0;
 }
 
-body {
-  color: --text;
-  font-weight: 400;
-}
-
-#root {
-  width: 100%;
-  min-height: 100%;
-  background-color: $secondary;
-}
-
 p {
   margin: 0;
   padding: 0;
 }
 
+a {
+  color: var(--link-color);
+  transition: all 0.3s;
+}
+
 ul {
   list-style: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/////////////////////////////////////////
+.container {
+  width: 100%;
+  max-width: calc(1290px + 30px);
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hr-alt-01 {
+  width: 100%;
+  border-bottom: 0.5px solid $border-color;
+}
+
+.card {
+  height: 100%;
+  position: relative;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e7eaf3;
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1.2rem rgb(189, 197, 209, 20%);
 }

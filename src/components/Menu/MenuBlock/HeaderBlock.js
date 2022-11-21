@@ -1,12 +1,14 @@
 import React from 'react'
 import { useRouter } from 'next/dist/client/router'
-import Link from 'components/NextLink/NextLink'
+import Link from 'components/Link/NextLink'
 import SearchInput from 'components/SearchInput'
 import MenuCollapseIcon from 'widgets/MenuCollapseIcon'
 import useMatchBreakpoints from 'hooks/useMatchBreakpoints'
 import config from '../config'
 import ContentMobile from '../ContentMobile/ContentMobile'
 import Account from '../Account'
+
+import siteConfig from 'config/site.config'
 
 const HeaderBlock = ({ showMenu, toggleMenu }) => {
   const router = useRouter()
@@ -32,7 +34,8 @@ const HeaderBlock = ({ showMenu, toggleMenu }) => {
         </div>
         <div className="nav-bottom container">
           <div className="nav-bottom-left">
-            Eth: $1.234.97(<span style={{ color: 'green' }}>+2,03%</span>)
+            {siteConfig.nativeCurrency.symbol}: $1.234.97(<span style={{ color: 'var(--primary)' }}>+2,03%</span>)
+            <img src="/images/icon/gas.svg" alt="" /> 11 Gwei
           </div>
           <div className="nav-bottom-right">
             <ul>
