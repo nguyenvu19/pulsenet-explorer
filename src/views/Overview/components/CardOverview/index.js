@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardOverview = ({ title, rightNode, className, isRender, children }) => {
+const CardOverview = ({ title, rightNode, className, children }) => {
   return (
     <div className={`overview_info ${className}`}>
       <div className="overview_info_title">
