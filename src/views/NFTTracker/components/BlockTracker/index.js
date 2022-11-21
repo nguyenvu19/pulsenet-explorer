@@ -1,6 +1,5 @@
 import Pagination from 'components/Pagination'
 import React from 'react'
-import crypto from '../../../../../public/images/icon/cryptocurrency_eth.png'
 
 const BlockTracker = ({ data }) => {
   return (
@@ -8,7 +7,7 @@ const BlockTracker = ({ data }) => {
       <td>{data.number}</td>
       <td>
         <span>
-          <img src={crypto} className="down" />
+          <img src="images/icon/cryptocurrency_eth.png" className="down" />
           {data.token1}
         </span>
         <span>{data.token2}</span>
