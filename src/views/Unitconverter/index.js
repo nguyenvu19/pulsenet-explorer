@@ -1,6 +1,6 @@
 import React from 'react'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import BlockContent from './components/block-content'
+import BlockUnitconverter from './components/BlockUnitconverter'
 
 const Unitconverter = () => {
   return (
@@ -15,13 +15,13 @@ const Unitconverter = () => {
         <div className="block">
           <a href="#">[Reset]</a>
 
-          <BlockContent />
-          <BlockContent />
-          <BlockContent />
-          <BlockContent />
-          <BlockContent />
-          <BlockContent />
-          <BlockContent />
+          <BlockUnitconverter />
+          <BlockUnitconverter />
+          <BlockUnitconverter />
+          <BlockUnitconverter />
+          <BlockUnitconverter />
+          <BlockUnitconverter />
+          <BlockUnitconverter />
         </div>
       </div>
     </div>
