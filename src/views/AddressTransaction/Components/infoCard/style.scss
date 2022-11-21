@@ -1,0 +1,189 @@
+.ovr-container {
+    flex: 1;
+    //background-color: red;
+    //height: 220px;
+    border: 0.5px solid #3C3A3A;
+    border-radius: 12px;
+    .ant-row {
+        display: flex;
+    }
+    position:relative;
+    .ovr-header-icon {
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        Button:nth-child(1) {
+            background-color: #418143;
+            border: 0.5px solid #3C3A3A;
+            border-radius: 4px;
+            color: white;
+        }
+        Button:nth-child(2) {
+            width: 100px;
+            background-color: #418143;
+            border: 0.5px solid #3C3A3A;
+            border-radius: 4px;
+            color: white;
+        }
+    }
+    .ovr-header-info {
+        //text-align: center;
+        border-bottom: 0.5px solid #3C3A3A;
+        border-radius: 12px 12px 0px 0px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        padding: 10px 24px;
+        background: #EEEEEE;
+        // &.flex {
+        //     //width: 100%;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: space-between;
+        // }
+    }
+    .ovr-content {
+        padding: 16px 0px;
+        border-bottom: 0.5px solid #3C3A3A;
+        margin: 0 24px;
+        font-size: 16px;
+        color: #3C3A3A;
+        font-weight: 500;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        .col-flex {
+            display: flex;
+            align-items: center;
+            position: relative;
+            .dropdown-container {
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 100%;
+                border: 0.5px solid #3C3A3A;
+                border-radius: 4px;
+                padding: 16px;
+                &_title {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 29px;
+                    background: #EEEEEE;
+                    border-radius: 4px;
+                    margin: 8px 0;
+                    span {
+                        font-weight: 500;
+                        font-size: 12px;
+                        //line-height: 16px;
+                        color: #3C3A3A;
+                        margin-left: 8px;
+                    }
+                    img {
+                        width: 6px;
+                        height: 6px;
+                        margin-right: 8px;
+                        cursor: pointer;
+                    }
+                }
+                .search-input {
+                    width: 100%;
+                    &_input {
+                        border: 0.5px solid #3C3A3A;
+                        border-radius: 4px;
+                        height: 29px;
+                    }
+                }
+                .dropdown-item {
+                    &_div {
+                        display: flex;
+                        align-items: center;
+                        &_content {
+                            width: 100%;
+                            margin-left: 8px;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
+        .ant-col {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            color: #3C3A3A;
+            // display: flex;
+            // align-items: center;
+        }
+        .menu-dropdown {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            background-color: aliceblue;
+            border: 0.5px solid #3C3A3A;
+            border-radius: 4px;
+            position: relative;
+            width: 100%;
+            &:hover {
+                cursor: pointer;
+            }
+            .down-icon {
+                position: absolute;
+                color: #3C3A3A;
+                right: 10px;
+                svg {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            .token-contract {
+                width: 9px;
+                height: 9px;
+                background: #418143;
+                text-align: center;
+                font-size: 4px;
+                display: flex;
+                font-size: 9px;
+                align-items: center;
+                justify-content: center;
+                margin: 6px 8px;
+                border-radius: 2px;
+                color: #fff;
+            }
+            &_text {
+                display: flex;
+                //font-size: 9px;
+                align-items: center;
+                justify-content: center;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 21px;
+                /* identical to box height */
+                text-align: center;
+                /* secondary color */
+                color: #3C3A3A;
+            }
+        }
+    }
+    .wallet-icon {
+        width: 29px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5.9px 0;
+        border-radius: 4px;
+        border: 0.5px solid #3C3A3A;
+        margin-left: 6px;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+        &_hover {
+            cursor: pointer;
+        }
+    }
+}

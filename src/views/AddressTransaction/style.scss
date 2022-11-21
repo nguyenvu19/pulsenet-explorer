@@ -1,0 +1,44 @@
+@import './Components/addressTop/style.scss';
+@import './Components/adText/style.scss';
+@import './Components/overviewCard/style.scss';
+@import './Components/infoCard//style.scss';
+.addr-container {
+    margin: 16px 75px 244px;
+    //background-color: rgb(123, 179, 228);
+    display: flex;
+    flex-direction: column;
+    .block-ovrview-info {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin-top: 24px;
+        @media(max-width: 430px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .ad-img {
+        img {
+            width: 1140px;
+            height: 90px;
+            margin: 24px 75px;
+            @media(min-width: 768px) {
+                width: 700px;
+                height: 100px;
+            }
+            @media(min-width: 500px) and (max-width: 768px) {
+                width: 500px;
+            }
+            @media(max-width: 430px) {
+                width: 380px;
+                margin: 24px 14px;
+            }
+            @media(min-width: 380px) {}
+        }
+    }
+    @media(min-width: 768px) {}
+    @media(max-width: 430px) {
+        margin: 16px 6px;
+    }
+}
