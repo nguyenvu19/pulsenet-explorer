@@ -128,9 +128,9 @@ const Sidebar = ({ activeTab, handleClick }) => {
           </div>
           <div onClick={handleSidebar}>
             {showSideBar ? (
-              <CloseOutlined style={{ fontSize: '20px' }} />
+              <CloseOutlined style={{ fontSize: '20px', cursor: 'pointer' }} />
             ) : (
-              <MenuOutlined style={{ fontSize: '20px' }} />
+              <MenuOutlined style={{ fontSize: '20px', cursor: 'pointer' }} />
             )}
           </div>
         </WrapSidebar>

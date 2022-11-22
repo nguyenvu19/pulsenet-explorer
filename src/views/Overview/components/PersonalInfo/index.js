@@ -2,11 +2,7 @@ import React from 'react'
 import { Button, Layout } from 'antd'
 import CardOverview from '../CardOverview'
 
-const { Sider, Content } = Layout
-
 const PersonalInfo = (props) => {
-  const { activeTab } = props
-  // console.log('activeTab', activeTab)
   return (
     <CardOverview title="Personal Info">
       <div className="personal_info">

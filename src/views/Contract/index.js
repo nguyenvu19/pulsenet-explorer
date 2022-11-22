@@ -1,6 +1,7 @@
-import React from 'react'
+import { SearchOutlined } from '@ant-design/icons'
+import { Button } from 'antd'
+import CardTabs from 'components/Card/CardTabs'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
-import CardBase from 'components/Card/CardBase'
 
 const Contract = () => {
   return (
@@ -47,6 +48,7 @@ const Contract = () => {
             <div className="overview-body-1">
               <div className="left">
                 <span>PRICE</span>
+                &ensp;
                 <span>
                   $1.00 @ 0.000648 Eth <span>(-0.03%)</span>
                 </span>
@@ -149,6 +151,27 @@ const Contract = () => {
 
         <div className="banner">
           <img src="images/address/ad-img.png" />
+        </div>
+      </div>
+
+      <div className="table">
+        <div className="table-top">
+          <div className="left">
+            <CardTabs
+              tabBarExtraContent={<SearchOutlined />}
+              defaultActiveKey="5"
+              tabs={[
+                { title: 'Transfers', key: '1', content: '' },
+                { title: 'Holders', key: '2', content: '' },
+                { title: 'Info', key: '3', content: '' },
+                { title: 'DEX Trades', key: '4', content: '' },
+                { title: 'Contract', key: '5', content: '' },
+                { title: 'Analytics', key: '6', content: '' },
+                { title: 'Comments', key: '7', content: '' },
+              ]}
+            />
+          </div>
+          <div className="right"></div>
         </div>
       </div>
     </div>
