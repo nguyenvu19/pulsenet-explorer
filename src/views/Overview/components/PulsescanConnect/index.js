@@ -8,6 +8,7 @@ const { TextArea } = Input
 const UserSettingTitle = styled.div`
   margin-top: 24px;
   margin-left: 24px;
+  margin-right: 24px;
   font-size: 16px;
 `
 const PulsescanConnect = () => {
