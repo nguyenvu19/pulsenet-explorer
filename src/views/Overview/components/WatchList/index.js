@@ -4,7 +4,10 @@ import styled from 'styled-components'
 import CardOverview from '../CardOverview'
 
 const WatchListTitle = styled.div`
-  padding-left: 24px;
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+  font-size: 16px;
 `
 const WatchList = () => {
   return (

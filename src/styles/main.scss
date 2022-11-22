@@ -49,7 +49,9 @@
 @import "../views/Register/style.scss";
 @import "../views/Forgot/style.scss";
 @import "../views/Overview/style.scss";
+@import "../views/Overview/components/AccountOverview/styles.scss";
 @import "../views/Overview/components/AccountSetting/styles.scss";
+@import "../views/Overview/components/PulsescanConnect/styles.scss";
 @import "../views/Overview/components/watchList/styles.scss";
 @import "../views/Overview/components/AddressPrivateTags/styles.scss";
 @import "../views/Overview/components/TnxPrivateNotes/styles.scss";
