@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import CardOverview from '../CardOverview'
 import InputOverview from 'components/InputOverview'
 
-const WatchListTitle = styled.div`
+const PasswordTitle = styled.div`
   margin-top: 24px;
   padding-left: 24px;
 `
@@ -12,7 +12,7 @@ const Password = () => {
   return (
     <>
       <CardOverview className="password" title={'Password'}>
-        <WatchListTitle>Edit the fields below to update your password.</WatchListTitle>
+        <PasswordTitle>Edit the fields below to update your password.</PasswordTitle>
         <div className="overview_info_content password_content">
           <div className="password_content_top">
             <div className="password_content_top_username">

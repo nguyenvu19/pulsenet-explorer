@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import CardOverview from '../CardOverview'
 import InputOverview from 'components/InputOverview'
 
-const WatchListTitle = styled.div`
+const UserSettingTitle = styled.div`
   margin-top: 24px;
   margin-left: 24px;
   font-size: 16px;
@@ -13,7 +13,7 @@ const UserSetting = () => {
   return (
     <>
       <CardOverview className="user_settings" title={'User Settings'}>
-        <WatchListTitle>Below are the username, email and overview information for your account.</WatchListTitle>
+        <UserSettingTitle>Below are the username, email and overview information for your account.</UserSettingTitle>
         <div className="overview_info_content user_settings_content">
           <div className="user_settings_content_top">
             <div className="user_settings_content_top_username">
