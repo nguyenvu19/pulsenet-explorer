@@ -16,10 +16,8 @@ import Sidebar from './components/Sidebar'
 const Overview = () => {
   const [activeTab, setActiveTab] = useState('overview')
   const [breakCum, setBreakcum] = useState('Account Overview')
-  // const [breakCum, setBreakcum] = useState('Account Overview')
 
   const handleClick = (value) => {
-    console.log('value', value)
     setActiveTab(value)
     switch (value) {
       case 'overview': {

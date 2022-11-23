@@ -21,41 +21,33 @@
             }
         }
     }
-    p {
-        margin-left: 0px !important;
-    }
+
     &_content {
+        margin: 0px 24px;
         &_top {
             margin-bottom: 24px;
             border-bottom: 1px solid #3c3a3a;
 
             &_username {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
                 background-color: #eeeeee;
                 margin: 24px 0px;
                 p {
                     font-size: 16px;
                     font-weight: 700;
                 }
-                &:first-child {
-                    background-color: #ffffff;
-                    img {
-                        width: 24px;
-                    }
-                }
+
                 &:nth-child(2) {
+                    margin-top: 0;
+                    padding: 8px 0px;
                     border-radius: 8px;
                     background-color: #eeeeee;
+
                     img {
                         width: 16px;
                     }
 
                     p {
                         font-size: 16px;
-                        margin: 8px 0px;
-                        padding-left: 16px;
                     }
                 }
                 &:last-child {
@@ -68,7 +60,7 @@
                 }
                 p.center {
                     width: 100%;
-                    margin: 8px 0px;
+                    padding: 8px 0px;
                     text-align: center;
                     font-weight: 400;
                     font-size: 16px;
@@ -78,18 +70,16 @@
         &_bottom {
             display: flex;
             justify-content: flex-end;
-            .flex-end {
-                a,
-                span {
-                    font-size: 14px;
-                    color: #3c3a3a;
-                    margin: 0px 8px;
-                    padding: 4px 10px;
-                    background-color: #eeeeee;
-                    border-radius: 4px;
-                    font-weight: 500;
-                }
-            }
+        }
+    }
+    @media (min-width: 768px) {
+        .search {
+            text-align: right;
+        }
+    }
+    @media (max-width: 767px) {
+        .search {
+            text-align: left;
         }
     }
 }
