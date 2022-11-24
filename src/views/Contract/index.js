@@ -1,7 +1,7 @@
 import { SearchOutlined } from '@ant-design/icons'
-import { Button } from 'antd'
 import CardTabs from 'components/Card/CardTabs'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
+import TabsContract from './components/Tabs'
 
 const Contract = () => {
   return (
@@ -156,22 +156,19 @@ const Contract = () => {
 
       <div className="table">
         <div className="table-top">
-          <div className="left">
-            <CardTabs
-              tabBarExtraContent={<SearchOutlined />}
-              defaultActiveKey="5"
-              tabs={[
-                { title: 'Transfers', key: '1', content: '' },
-                { title: 'Holders', key: '2', content: '' },
-                { title: 'Info', key: '3', content: '' },
-                { title: 'DEX Trades', key: '4', content: '' },
-                { title: 'Contract', key: '5', content: '' },
-                { title: 'Analytics', key: '6', content: '' },
-                { title: 'Comments', key: '7', content: '' },
-              ]}
-            />
-          </div>
-          <div className="right"></div>
+          <CardTabs
+            tabBarExtraContent={<SearchOutlined />}
+            defaultActiveKey="5"
+            tabs={[
+              { title: 'Transfers', key: '1', content: '' },
+              { title: 'Holders', key: '2', content: '' },
+              { title: 'Info', key: '3', content: '' },
+              { title: 'DEX Trades', key: '4', content: '' },
+              { title: 'Contract', key: '5', content: <TabsContract /> },
+              { title: 'Analytics', key: '6', content: '' },
+              { title: 'Comments', key: '7', content: '' },
+            ]}
+          />
         </div>
       </div>
     </div>

@@ -1,0 +1,31 @@
+.contract-page .top {
+  border: none;
+}
+
+.read-contract {
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .top {
+    align-items: center;
+    margin-bottom: 8px;
+
+    .left {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      p {
+        padding-left: 8px;
+      }
+    }
+
+    .right {
+      a {
+        margin-left: 8px;
+      }
+    }
+  }
+}

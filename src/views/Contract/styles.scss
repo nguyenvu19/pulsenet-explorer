@@ -438,10 +438,11 @@
 
   .table {
     .table-top {
-      .left {
-        .ant-tabs-ink-bar .ant-tabs-ink-bar-animated {
-          display: none;
-        }
+      // For border line
+      .ant-tabs-ink-bar {
+        position: absolute;
+        background: none;
+        pointer-events: none;
       }
     }
   }

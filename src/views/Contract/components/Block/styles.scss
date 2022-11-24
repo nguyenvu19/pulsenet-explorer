@@ -1,0 +1,21 @@
+.block-contract {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #3c3a3a;
+
+  background: #eeeeee;
+
+  border: 0.5px solid #3c3a3a;
+  border-radius: 4px;
+
+  padding: 8px 24px;
+
+  img {
+    margin-left: 16px;
+  }
+}
