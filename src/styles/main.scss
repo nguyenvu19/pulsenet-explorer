@@ -9,7 +9,6 @@
 @import "../widgets/SelectWithImage/styles.scss";
 @import "../widgets/Svg/styles.scss";
 @import "../widgets/TypeNumber/styles.scss";
-
 // Components
 @import "../components/Card/CardBase/style.scss";
 @import "../components/Card/CardTabs/style.scss";
@@ -28,7 +27,7 @@
 @import "../components/TableTransactions/TableTransactions.scss";
 @import "../components/Pagination/styles.scss";
 @import "../components/TablePagination/TablePagination.scss";
-
+@import "../components/Table/TableBase/style.scss";
 // View
 @import "../views/account/styles.scss";
 @import "../views/auth/pages/ForgotPassword/styles.scss";
@@ -63,3 +62,4 @@
 @import "../views/NFTTransfers/styles.scss";
 @import "../views/NFTTransfers/components/block-transfers/styles.scss";
 @import "../views/Verify/style.scss";
+@import "../views/AddressTransaction/style.scss"

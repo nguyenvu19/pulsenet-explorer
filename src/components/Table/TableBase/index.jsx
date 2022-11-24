@@ -2,6 +2,7 @@ import React from 'react'
 import { Table } from 'antd'
 import CardBase from 'components/Card/CardBase'
 import BlockTransfers from 'views/NFTTransfers/components/BlockTransfers'
+import Pagination from 'components/Pagination'
 
 const titleABC = [
   {
@@ -149,8 +150,15 @@ const data = [
 //   console.log('params', pagination, filters, sorter, extra)
 // }
 
-const TableBase = ({columns,dataSource , ...props}) => {
-  return <Table columns={columns} dataSource={dataSource} {...props}  />
+const TableBase = ({ columns, dataSource, ...props }) => {
+  return (
+    <div className="table-base-container">
+      <Table className="table-base" columns={columns} dataSource={dataSource} {...props} pagination={false} />
+      <div className="pagination-bottom">
+        <Pagination />
+      </div>
+    </div>
+  )
 }
 
 export default TableBase

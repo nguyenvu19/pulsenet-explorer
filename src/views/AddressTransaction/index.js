@@ -10,15 +10,442 @@ import InfoCard from './Components/infoCard'
 import TableBase from 'components/Table/TableBase'
 import { InfoCircleOutlined } from '@ant-design/icons'
 import CardTabs from 'components/Card/CardTabs'
-import { dataPhaKe, dataPhaKe2, dataTbl, dataTblTest, dataTblTest2, dataTblTest3 } from './fakeeeData'
-import TitleAndTbl from './Components/titleAndTable'
+import TitleAndTbl from './Components/addressTable'
+import { Tooltip } from 'antd'
 
-const MethodHeader = ({ name }) => (
-  <div className="header-tbl">
-    <span>{name}</span>
-    <InfoCircleOutlined />
-  </div>
-)
+
+
+const dataFake = [
+  {
+    key: '1',
+    TxnHash: '0xb41824b8729...',
+    method: 'tranfer',
+    block: '1512315',
+    age: '10 secs ago',
+    from: '0x473780dea4a...',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+    TxnFee: '0.000215485',
+  },
+  {
+    key: '2',
+    TxnHash: '0xb41824b8729...',
+    method: 'tranfer',
+    block: '1512315',
+    age: '10 secs ago',
+    from: '0x473780dea4a...',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+    TxnFee: '0.000215485',
+  },
+  {
+    key: '3',
+    TxnHash: '0xb41824b8729...',
+    method: 'tranfer',
+    block: '1512315',
+    age: '10 secs ago',
+    from: '0x473780dea4a...',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+    TxnFee: '0.000215485',
+  },
+  {
+    key: '4',
+    TxnHash: '0xb41824b8729...',
+    method: 'tranfer',
+    block: '1512315',
+    age: '10 secs ago',
+    from: '0x473780dea4a...',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+    TxnFee: '0.000215485',
+  },
+  {
+    key: '5',
+    TxnHash: '0xb41824b8729...',
+    method: 'tranfer',
+    block: '1512315',
+    age: '10 secs ago',
+    from: '0x473780dea4a...',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+    TxnFee: '0.000215485',
+  },
+]
+const columns = [
+  {
+    title: 'Txn Hash',
+    dataIndex: 'TxnHash',
+    render: (text) => (
+      <div className="tbl-col-1">
+        <img src="/images/address/emo-eye.png" className="down" />
+        {text}
+      </div>
+    ),
+  },
+  {
+    title: (
+      <div className="title-head title-header-table">
+        <span>
+          Method <InfoCircleOutlined />
+        </span>
+      </div>
+    ),
+    dataIndex: 'method',
+    render: (text) => (
+      <div className="tbl-col-2">
+        <Tooltip title={text}>
+          <div className="col-2-txt">{text}</div>
+        </Tooltip>
+      </div>
+    ),
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Block</span>
+      </div>
+    ),
+    dataIndex: 'block',
+    filters: [
+      {
+        text: 'London',
+        value: 'London',
+      },
+      {
+        text: 'New York',
+        value: 'New York',
+      },
+    ],
+    render: (text) => <div className="tbl-col block-col">{text}</div>,
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Age</span>
+      </div>
+    ),
+    dataIndex: 'age',
+    filters: [
+      {
+        text: 'London',
+        value: 'London',
+      },
+      {
+        text: 'New York',
+        value: 'New York',
+      },
+    ],
+    render: (text) => <div className="tbl-col age-col ">{text}</div>,
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>From</span>
+      </div>
+    ),
+    dataIndex: 'from',
+    filters: [
+      {
+        text: 'London',
+        value: 'London',
+      },
+      {
+        text: 'New York',
+        value: 'New York',
+      },
+    ],
+    render: (text) => <div className="tbl-col from-col ">{text}</div>,
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>To</span>
+      </div>
+    ),
+    dataIndex: 'to',
+    filters: [
+      {
+        text: 'London',
+        value: 'London',
+      },
+      {
+        text: 'New York',
+        value: 'New York',
+      },
+    ],
+    render: (text) => (
+      <div className="tbl-col">
+        <div className="to-column">
+          <img src="/images/icon/arrow-right.png" alt="" />
+          <span>{text}</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Value</span>
+      </div>
+    ),
+    dataIndex: 'value',
+    filters: [
+      {
+        text: 'London',
+        value: 'London',
+      },
+      {
+        text: 'New York',
+        value: 'New York',
+      },
+    ],
+    render: (text) => <div className="tbl-col">{text}</div>,
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Txn Fee</span>
+      </div>
+    ),
+    dataIndex: 'TxnFee',
+    filters: [
+      {
+        text: 'London',
+        value: 'London',
+      },
+      {
+        text: 'New York',
+        value: 'New York',
+      },
+    ],
+    render: (text) => (
+      <div className="tbl-col">
+        <div className="txn-column">
+          <span>{text}</span>
+          <img src="/images/address/lamp-charge.png" alt="" />
+        </div>
+      </div>
+    ),
+  },
+]
+
+const dataFake_2 = [
+  {
+    key: '1',
+    ParentTxnHash: '0xf075bca9ac4aa16b86a2...',
+
+    block: '1512315',
+    age: '109 days 57 mins ago',
+    from: 'Uniswap V3: Router 2',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+  },
+  {
+    key: '2',
+    ParentTxnHash: '0xf075bca9ac4aa16b86a2...',
+
+    block: '1512315',
+    age: '109 days 57 mins ago',
+    from: 'Uniswap V3: Router 2',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+  },
+  {
+    key: '3',
+    ParentTxnHash: '0xf075bca9ac4aa16b86a2...',
+
+    block: '1512315',
+    age: '109 days 57 mins ago',
+    from: 'Uniswap V3: Router 2',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+  },
+  {
+    key: '4',
+    ParentTxnHash: '0xf075bca9ac4aa16b86a2...',
+
+    block: '1512315',
+    age: '109 days 57 mins ago',
+    from: 'Uniswap V3: Router 2',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+  },
+  {
+    key: '5',
+    ParentTxnHash: '0xf075bca9ac4aa16b86a2...',
+
+    block: '1512315',
+    age: '109 days 57 mins ago',
+    from: 'Uniswap V3: Router 2',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+  },
+]
+
+const columns_2 = [
+  {
+    title: 'Parent Txn Hash',
+    dataIndex: 'ParentTxnHash',
+    render: (text) => <div className="tbl-col-1">{text}</div>,
+  },
+
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Block</span>
+      </div>
+    ),
+    dataIndex: 'block',
+
+    render: (text) => <div className="tbl-col block-col">{text}</div>,
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Age</span>
+      </div>
+    ),
+    dataIndex: 'age',
+
+    render: (text) => <div className="tbl-col age-col ">{text}</div>,
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>From</span>
+      </div>
+    ),
+    dataIndex: 'from',
+
+    render: (text) => (
+      <div className="tbl-col from-col ">
+        <div className="from-col-img">
+          <img src="images/address/uniswap.png" alt="" />
+          {text}
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>To</span>
+      </div>
+    ),
+    dataIndex: 'to',
+
+    render: (text) => (
+      <div className="tbl-col">
+        <div className="to-column">
+          <img src="/images/icon/arrow-right.png" alt="" />
+          <span>{text}</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Value</span>
+      </div>
+    ),
+    dataIndex: 'value',
+
+    render: (text) => <div className="tbl-col">{text}</div>,
+  },
+]
+const SuccessLabel = ({ text }) => {
+  return(<div className={`success-label ${text==="IN"?"in":"out"}`}>{text}</div>)
+}
+const dataFake_3 = [
+  {
+    key: '1',
+    TxnHash: '0xf075bca9ac4aa16b86a2...',
+
+    age: '109 days 57 mins ago',
+    from: '0x473780dea4a...',
+    to: '212asdb12s15asd',
+    value: '0 Pulse',
+    token: '0.000215485',
+  },
+]
+
+const columns_3 = [
+  {
+    title: 'Txn Hash',
+    dataIndex: 'TxnHash',
+    render: (text) => <div className="tbl-col-1">{text}</div>,
+  },
+
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Age</span>
+      </div>
+    ),
+    dataIndex: 'age',
+
+    render: (text) => <div className="tbl-col block-col">{text}</div>,
+  },
+
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>From</span>
+      </div>
+    ),
+    dataIndex: 'from',
+
+    render: (text) => (
+      <div className="tbl-col from-col ">
+        <div className="from-col-img">
+          <img src="images/address/uniswap.png" alt="" />
+          {text}
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        
+        <span>To</span>
+      </div>
+    ),
+    dataIndex: 'to',
+
+    render: (text) => (
+      <div className="tbl-col">
+        <div className="to-column">
+          {/* <img src="/images/icon/arrow-right.png" alt="" /> */}
+          <SuccessLabel text="IN" />
+          <span>{text}</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Value</span>
+      </div>
+    ),
+    dataIndex: 'value',
+
+    render: (text) => <div className="tbl-col">{text}</div>,
+  },
+  {
+    title: (
+      <div className="title-head title-header-table-2">
+        <span>Token</span>
+      </div>
+    ),
+    dataIndex: 'token',
+
+    render: (text) => <div className="tbl-col">{text}</div>,
+  },
+]
 
 const AddressTransaction = () => {
   return (
@@ -37,30 +464,31 @@ const AddressTransaction = () => {
         tabs={[
           {
             key: '1',
-            title: 'Transfers',
-            content: <TitleAndTbl />,
+            title: 'Transactions',
+            content: <TitleAndTbl columns={columns} dataSource={dataFake} />,
           },
           {
             key: '2',
-            title: 'Holders',
-            content: <TitleAndTbl />,
+            title: 'Intenal Txns',
+            content: <TitleAndTbl columns={columns_2} dataSource={dataFake_2} swt="yes" />,
           },
           {
             key: '3',
-            title: 'Inventory',
-            content: <TitleAndTbl />,
+            title: 'Erc20 Token Txns',
+            content: <TitleAndTbl columns={columns_3} dataSource={dataFake_3} />,
           },
           {
             key: '4',
-            title: 'Info',
+            title: 'Analytics',
             content: <TitleAndTbl />,
           },
           {
             key: '5',
-            title: 'Contract',
+            title: 'Comments',
             content: <TitleAndTbl />,
           },
         ]}
+        
       />
     </div>
   )

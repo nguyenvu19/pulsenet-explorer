@@ -1,8 +1,8 @@
 @import './Components/addressTop/style.scss';
 @import './Components/adText/style.scss';
 @import './Components/overviewCard/style.scss';
-@import './Components/infoCard//style.scss';
-@import './Components//titleAndTable//style.scss';
+@import './Components/infoCard/style.scss';
+@import './Components/addressTable/style.scss';
 @import 'assets/css/variables.scss';
 .addr-container {
     margin: 16px 75px 244px;
@@ -27,10 +27,10 @@
     }
     .ad-img {
         img {
-            width: 1140px;
+            width: 80%;
             height: 90px;
-            margin: 24px 80px;
-            @media (min-width: 768px) {
+            margin: 24px 87.5px;
+            @media (max-width: 768px) {
                 width: 700px;
                 height: 100px;
             }
@@ -42,12 +42,12 @@
                 width: 80%;
                 margin: 24px 38px;
             }
-            @include media-down(xm) {
-                margin: 24px 0;
-            }
             @include media-down(sm) {
                 width: 80%;
-                margin: 24px 50px;
+                margin: 24px 38px;
+            }
+            @include media-down(xm) {
+                margin: 24px 40px;
             }
         }
     }

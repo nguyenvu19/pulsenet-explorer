@@ -1,0 +1,107 @@
+.TitleAndTbl-container {
+    display: flex;
+    flex-direction: column;
+    .tab-title {
+        span {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            color: #3c3a3a;
+            margin-right: 8px;
+        }
+    }
+    .title-head {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        color: #3c3a3a;
+        &.title-header-table {
+            display: flex;
+            align-items: center;
+        }
+        &.title-header-table-2 {
+            text-align: center;
+        }
+    }
+    .tbl-col-1 {
+        display: flex;
+        color: #418143;
+        align-items: center;
+        >img {
+            margin-right: 8.5px;
+            color: #418143;
+            height: 15px;
+            width: 15px;
+        }
+    }
+    .tbl-col-2 {
+        .col-2-txt {
+            width: 126px;
+            height: 26px;
+            padding: 4px;
+            background: #eeeeee;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            color: #787a91;
+        }
+    }
+    .success-label {
+        width: 29px;
+        height: 20px;
+        border-radius: 4px;
+        padding: 2px 4px;
+        &.in {
+            background-color: #27a17c;
+        }
+        &.out {
+            background-color: #b47d00;
+        }
+    }
+    .tbl-col {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        white-space: nowrap;
+        /* Button & Link color */
+        .from-col-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &.block-col,
+        &.from-col {
+            color: #418143;
+            img {
+                width: 12px;
+                height: 12px;
+                margin-right: 10px;
+            }
+        }
+        &.age-col {
+            color: #3c3a3a;
+        }
+        .to-column {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+        }
+        .txn-column {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 8px;
+            img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
