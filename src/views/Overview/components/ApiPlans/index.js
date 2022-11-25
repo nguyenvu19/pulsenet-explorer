@@ -1,10 +1,13 @@
 import React from 'react'
-import { Button } from 'antd'
+import { Button, Row, Col } from 'antd'
 import styled from 'styled-components'
 import CardOverview from '../CardOverview'
 
 const ApiTitle = styled.div`
-  padding-left: 24px;
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+  font-size: 16px;
 `
 const ApiKeys = () => {
   return (
@@ -22,25 +25,33 @@ const ApiKeys = () => {
         }
       >
         <ApiTitle>
-          <p>All API plan accounts are FREE by default. You may upgrade your plan to API Pro at any time.</p>
+          All API plan accounts are FREE by default. You may upgrade your plan to API Pro at any time.
         </ApiTitle>
         <div className="overview_info_content api_plans_content">
           <div className="api_plans_content_top">
             <div className="api_plans_content_top_username">
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '50%' }}>
-                <p style={{ fontWeight: 400 }}>My API Plan:</p>
-                <p>FREE API PLAN</p>
-              </div>
-              <Button className="btn_upgrade">
-                Upgrade Plan &nbsp;
-                <img src="/images/account/arrow.png" />
-              </Button>
+              <Row>
+                <Col xs={24} md={8}>
+                  <span style={{ fontWeight: 400, fontSize: '16px' }}>My API Plan:</span>
+                </Col>
+                <Col xs={24} md={16} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <p>FREE API PLAN</p>
+                  <Button className="btn_upgrade">
+                    Upgrade Plan &nbsp;
+                    <img src="/images/account/arrow.png" />
+                  </Button>
+                </Col>
+              </Row>
             </div>
             <div className="api_plans_content_top_username">
-              <div className="span_item">
-                <span>API calls per second:</span>
-                <span style={{ fontWeight: 700 }}>5 calls</span>
-              </div>
+              <Row>
+                <Col xs={24} md={8}>
+                  <span>API calls per second:</span>
+                </Col>
+                <Col xs={24} md={16} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ fontWeight: 700 }}>5 calls</span>
+                </Col>
+              </Row>
             </div>
           </div>
         </div>

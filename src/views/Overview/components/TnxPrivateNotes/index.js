@@ -1,10 +1,23 @@
 import React from 'react'
-import { Button } from 'antd'
+import { Button, Row, Col } from 'antd'
 import styled from 'styled-components'
 import CardOverview from '../CardOverview'
+import Pagination from 'components/Pagination'
 
 const TnxNotesTitle = styled.div`
-  padding-left: 24px;
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+  font-size: 16px;
+`
+const ContentTitle = styled.div`
+  margin: 27px 0px 11px;
+  font-size: 14px;
+  font-weight: 500;
+
+  img {
+    width: 24px;
+  }
 `
 const TnxPrivateNotes = () => {
   return (
@@ -22,34 +35,35 @@ const TnxPrivateNotes = () => {
         }
       >
         <TnxNotesTitle>
-          <p>A private transaction note (up to 100 characters) can be saved and is useful for transaction tracking.</p>
+          A private transaction note (up to 100 characters) can be saved and is useful for transaction tracking.
         </TnxNotesTitle>
         <div className="overview_info_content tnx_notes_content">
           <div className="tnx_notes_content_top">
-            <div className="tnx_notes_content_top_username ">
-              <span style={{ fontSize: '14px', fontWeight: 400 }}> 0 notes added (out of 2000 max limit)</span>
-              <div>
-                <img src="/images/account/search.png" />
-              </div>
-            </div>
+            <ContentTitle>
+              <Row>
+                <Col xs={24} md={12}>
+                  <span style={{ fontSize: '14px', fontWeight: 400 }}> 0 notes added (out of 2000 max limit)</span>
+                </Col>
+                <Col xs={24} md={12} className="search">
+                  <Button>
+                    <img src="/images/account/search.png" />
+                  </Button>
+                </Col>
+              </Row>
+            </ContentTitle>
             <div className="tnx_notes_content_top_username">
               <p>Transaction</p>
             </div>
             <div className="tnx_notes_content_top_username">
               <p className="center">
-                <img src="/images/account/matching.png" /> There are no private tags found
+                <img src="/images/account/matching.png" />
+                &nbsp; There are no private tags found
               </p>
             </div>
           </div>
 
           <div className="tnx_notes_content_bottom">
-            <div className="flex-end">
-              <a href="#">First</a>
-              <a href="#">&lt;</a>
-              <span>Page 1 of 632679</span>
-              <a href="#">&gt;</a>
-              <a href="#">Last</a>
-            </div>
+            <Pagination page={9} limit={10} />
           </div>
         </div>
       </CardOverview>
