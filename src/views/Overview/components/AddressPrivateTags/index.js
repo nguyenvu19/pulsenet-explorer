@@ -1,7 +1,8 @@
 import React from 'react'
-import { Button } from 'antd'
+import { Button, Col, Row } from 'antd'
 import styled from 'styled-components'
 import CardOverview from '../CardOverview'
+import Pagination from 'components/Pagination'
 
 const NameTagsTitle = styled.div`
   margin-top: 24px;
@@ -9,6 +10,16 @@ const NameTagsTitle = styled.div`
   margin-right: 24px;
   font-size: 16px;
 `
+const ContentTitle = styled.div`
+  margin: 27px 0px 11px;
+  font-size: 14px;
+  font-weight: 500;
+
+  img {
+    width: 24px;
+  }
+`
+
 const PrivateNameTags = () => {
   return (
     <>
@@ -25,43 +36,46 @@ const PrivateNameTags = () => {
         }
       >
         <NameTagsTitle>
-          <p>
-            A private name tag (up to 35 chars) and memo (up to 500 chars) for individual addresses can be saved and is
-            useful for labelling addresses of interest.
-          </p>
+          A private name tag (up to 35 chars) and memo (up to 500 chars) for individual addresses can be saved and is
+          useful for labelling addresses of interest.
         </NameTagsTitle>
         <div className="overview_info_content name_tags_content">
           <div className="name_tags_content_top">
-            <div className="name_tags_content_top_username ">
-              <span style={{ fontSize: '14px', fontWeight: 400 }}>0 address tagged (out of 1000 max limit)</span>
-              <div>
-                <img src="/images/account/search.png" />
-              </div>
-            </div>
+            <ContentTitle>
+              <Row>
+                <Col xs={24} md={12}>
+                  <span style={{ fontSize: '14px', fontWeight: 400 }}>0 address tagged (out of 1000 max limit)</span>
+                </Col>
+                <Col xs={24} md={12} className="search">
+                  <Button>
+                    <img src="/images/account/search.png" />
+                  </Button>
+                </Col>
+              </Row>
+            </ContentTitle>
             <div className="name_tags_content_top_username">
-              <p>
-                <img src="/images/account/matching.png" />
-                &nbsp;&nbsp;&nbsp; Address
-              </p>
-              <p>Private Nametag</p>
-              <p></p>
-              <p></p>
+              <Row>
+                <Col span={8}>
+                  <p>
+                    <img src="/images/account/matching.png" />
+                    &nbsp;&nbsp; <span>Address</span>
+                  </p>
+                </Col>
+                <Col span={16}>
+                  <p>Private Nametag</p>
+                </Col>
+              </Row>
             </div>
             <div className="name_tags_content_top_username">
               <p className="center">
-                <img src="/images/account/matching.png" /> There are no private tags found
+                <img src="/images/account/matching.png" />
+                &nbsp; There are no private tags found
               </p>
             </div>
           </div>
 
           <div className="name_tags_content_bottom">
-            <div className="flex-end">
-              <a href="#">First</a>
-              <a href="#">&lt;</a>
-              <span>Page 1 of 632679</span>
-              <a href="#">&gt;</a>
-              <a href="#">Last</a>
-            </div>
+            <Pagination page={9} limit={10} />
           </div>
         </div>
       </CardOverview>

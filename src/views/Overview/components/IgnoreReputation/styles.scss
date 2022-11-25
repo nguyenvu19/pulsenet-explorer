@@ -21,17 +21,14 @@
             }
         }
     }
-    p {
-        margin-left: 0px !important;
-    }
+
     &_content {
+        margin: 0px 24px;
+
         &_top {
             // margin-bottom: 24px;
 
             &_username {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
                 margin-top: 24px;
                 p {
                     font-size: 16px;
