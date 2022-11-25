@@ -1,0 +1,19 @@
+.unitconverter-page {
+  .block-content {
+    button {
+      cursor: pointer;
+      border: none;
+      background: #fff;
+    }
+
+    input {
+      border: none;
+      width: 100%;
+    }
+
+    textarea:focus,
+    input:focus {
+      outline: none;
+    }
+  }
+}
