@@ -1,19 +1,35 @@
 import React from 'react'
 import { BsFolder } from 'react-icons/bs'
+import BigNumber from 'bignumber.js'
+import toLocaleString from '../../../../utils/index'
+const BlockUnitconverter = ({ code, name, wei, handleChange }) => {
+  const handleClick = () => {
+    navigator.clipboard.writeText(new BigNumber(code).shiftedBy(wei).toLocaleString())
+    alert('Already copied')
+  }
 
-const BlockUnitconverter = () => {
   return (
     <div className="block-content">
       <div className="left">
-        <div className="icon">
+        <button className="icon" onClick={handleClick}>
           <BsFolder />
-        </div>
-        <p className="code">100000000000000000</p>
+        </button>
+        <input
+          className="code"
+          value={new BigNumber(code).shiftedBy(wei).toLocaleString()}
+          onChange={(e) => handleChange(e.target.value, wei)}
+        />
       </div>
       <div className="price right">
-        <p>
-          Wei (10<sup>-18</sup>)
-        </p>
+        {wei > 0 ? (
+          <p>
+            {name} (10<sup>-{wei}</sup>)
+          </p>
+        ) : (
+          <p>
+            {name} (10<sup>{Math.abs(wei)}</sup>)
+          </p>
+        )}
       </div>
     </div>
   )
