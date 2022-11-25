@@ -1,3 +1,5 @@
+@import 'assets/css/variables.scss';
+
 .contract-page .top {
   border: none;
 }
@@ -9,8 +11,16 @@
   }
 
   .top {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+
+    @include media-down(sm) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
 
     .left {
       display: flex;
@@ -25,6 +35,12 @@
     .right {
       a {
         margin-left: 8px;
+      }
+
+      a:first-child {
+        @include media-down(sm) {
+          margin-left: 0;
+        }
       }
     }
   }

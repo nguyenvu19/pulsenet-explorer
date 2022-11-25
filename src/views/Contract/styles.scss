@@ -10,15 +10,23 @@
   flex-direction: column;
   padding: 0 15px;
 
-  .top {
+  .top-page {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #000;
     padding-bottom: 8px;
 
+    @include media-down(md) {
+      flex-direction: column;
+    }
+
     .left {
       display: flex;
       flex-direction: column;
+
+      @include media-down(md) {
+        margin-bottom: 8px;
+      }
 
       .title {
         display: flex;
@@ -97,12 +105,21 @@
     flex-wrap: wrap;
     margin-bottom: 24px;
 
+    @include media-down(md) {
+      flex-direction: column;
+    }
+
     .overview {
       width: calc(50% - 12px);
       border: 1px solid #000;
       border-radius: 12px;
       margin-right: 12px;
       margin-bottom: 48px;
+
+      @include media-down(md) {
+        width: 100%;
+        margin-bottom: 16px;
+      }
 
       .overview-head {
         display: flex;
@@ -143,6 +160,13 @@
           margin: 0 24px;
           border-bottom: 1px solid #000;
 
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
+
           .left {
             display: flex;
             align-items: center;
@@ -150,10 +174,18 @@
 
             margin-right: 40px;
 
+            @include media-down(xl) {
+              min-width: calc(48% - 40px);
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: space-around;
+            }
+
             span:first-child {
               font-weight: 400;
               font-size: 16px;
               line-height: 21px;
+              margin-right: 8px;
             }
 
             span:last-child {
@@ -195,11 +227,25 @@
           margin: 0 24px;
           border-bottom: 1px solid #000;
 
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
+
           .left {
             display: flex;
             align-items: center;
             min-width: 214px;
             margin-right: 40px;
+
+            @include media-down(xl) {
+              min-width: calc(48% - 40px);
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: space-around;
+            }
 
             span {
               font-weight: 400;
@@ -225,11 +271,25 @@
           margin: 0 24px;
           border-bottom: 1px solid #000;
 
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
+
           .left {
             display: flex;
             align-items: center;
             min-width: 214px;
             margin-right: 40px;
+
+            @include media-down(xl) {
+              min-width: calc(48% - 40px);
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: space-around;
+            }
 
             span {
               font-weight: 400;
@@ -265,11 +325,25 @@
           height: 56px;
           margin: 0 24px;
 
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
+
           .left {
             display: flex;
             align-items: center;
             min-width: 214px;
             margin-right: 40px;
+
+            @include media-down(xl) {
+              min-width: calc(48% - 40px);
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: space-around;
+            }
 
             span {
               font-weight: 400;
@@ -296,6 +370,11 @@
       margin-left: 12px;
       margin-bottom: 48px;
 
+      @include media-down(md) {
+        width: 100%;
+        margin: 0 0 16px 0;
+      }
+
       span {
         font-weight: 400;
         font-size: 16px;
@@ -306,8 +385,13 @@
         display: flex;
         align-items: center;
         min-width: 214px;
-
         margin-right: 40px;
+
+        @include media-down(xxl) {
+          min-width: calc(48% - 80px);
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
       }
 
       .contract-head {
@@ -371,11 +455,21 @@
           margin: 0 24px;
           border-bottom: 1px solid #000;
 
-          .left {
-            display: flex;
-            align-items: center;
-            min-width: 214px;
-            margin-right: 40px;
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
+
+          .right {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include media-down(sm) {
+              width: 100%;
+            }
           }
         }
 
@@ -386,6 +480,13 @@
           height: 56px;
           margin: 0 24px;
           border-bottom: 1px solid #000;
+
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
         }
 
         .contract-body-3 {
@@ -395,6 +496,13 @@
           height: 56px;
           margin: 0 24px;
           border-bottom: 1px solid #000;
+
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
 
           .left {
             span {
@@ -417,6 +525,13 @@
           height: 56px;
           margin: 0 24px;
 
+          @include media-down(sm) {
+            flex-direction: column;
+            height: 100%;
+            align-items: flex-start;
+            padding: 8px 0;
+          }
+
           img:nth-child(2),
           img:nth-child(3),
           img:nth-child(4),
@@ -432,6 +547,10 @@
       img {
         height: 90px;
         padding: 0 75px;
+
+        @include media-down(md) {
+          padding: 0 15px 0 0;
+        }
       }
     }
   }

@@ -6,7 +6,7 @@ import TabsContract from './components/Tabs'
 const Contract = () => {
   return (
     <div className="contract-page">
-      <div className="top">
+      <div className="top-page">
         <div className="left">
           <div className="title">
             <img src="images/icon/tethericon.png" className="tethericon" />
@@ -48,7 +48,6 @@ const Contract = () => {
             <div className="overview-body-1">
               <div className="left">
                 <span>PRICE</span>
-                &ensp;
                 <span>
                   $1.00 @ 0.000648 Eth <span>(-0.03%)</span>
                 </span>

@@ -160,8 +160,10 @@ const ContractCode = () => {
             </div>
 
             <div className="head-2">
-              <img src="/images/icon/Ellipse 1108.png" alt="" />
-              <button>No Contract Security Audit Submitted</button>
+              <div>
+                <img src="/images/icon/Ellipse 1108.png" alt="" />
+                <button>No Contract Security Audit Submitted</button>
+              </div>
               <p>- Submit Audit Here</p>
             </div>
 
@@ -257,8 +259,10 @@ const ContractCode = () => {
 
         <div className="arguments">
           <div className="head">
-            <img src="/images/icon/bezier.png" />
-            <p>Constructor Arguments</p>
+            <div className="top">
+              <img src="/images/icon/bezier.png" />
+              <p>Constructor Arguments</p>
+            </div>
             <span>(ABI-Encoded and is the last bytes of the Contract Creation Code above)</span>
           </div>
 
