@@ -305,6 +305,65 @@
           }
         }
       }
+
+      .arguments {
+        margin-bottom: 16px;
+
+        .head {
+          font-size: 16px;
+          line-height: 21px;
+          color: #3c3a3a;
+          display: flex;
+          align-items: center;
+          margin-bottom: 16px;
+
+          img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+          }
+
+          p {
+            font-weight: 700;
+          }
+
+          span {
+            font-weight: 400;
+          }
+        }
+      }
+
+      .source {
+        margin-bottom: 16px;
+
+        .head {
+          display: flex;
+          align-items: center;
+          margin-bottom: 16px;
+
+          img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+          }
+
+          p {
+            font-weight: 700;
+          }
+        }
+
+        .content {
+          padding: 8px 10px;
+          height: 37px;
+          background: #eeeeee;
+          border-radius: 4px;
+
+          p {
+            font-weight: 400;
+            line-height: 21px;
+          }
+        }
+      }
     }
   }
 }

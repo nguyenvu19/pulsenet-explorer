@@ -12,6 +12,7 @@ import 'ace-builds/src-noconflict/ext-language_tools'
 import { dataCode } from './dataCode'
 import { securityCode } from './securityCode'
 import { auditCode } from './auditCode'
+import { argumentsCode } from './argumentsCode'
 
 const items = [
   {
@@ -251,6 +252,48 @@ const ContractCode = () => {
               height="300px"
               showPrintMargin={false}
             />
+          </div>
+        </div>
+
+        <div className="arguments">
+          <div className="head">
+            <img src="/images/icon/bezier.png" />
+            <p>Constructor Arguments</p>
+            <span>(ABI-Encoded and is the last bytes of the Contract Creation Code above)</span>
+          </div>
+
+          <div className="content">
+            <AceEditor
+              placeholder="Placeholder Text"
+              mode="json"
+              theme="kuroir"
+              name="blah2"
+              fontSize={12}
+              showGutter={false}
+              highlightActiveLine={true}
+              value={argumentsCode}
+              readOnly={true}
+              setOptions={{
+                enableBasicAutocompletion: false,
+                enableLiveAutocompletion: false,
+                enableSnippets: false,
+                showLineNumbers: false,
+                tabSize: 10,
+              }}
+              width="100%"
+              height="300px"
+              showPrintMargin={false}
+            />
+          </div>
+        </div>
+
+        <div className="source">
+          <div className="head">
+            <img src="/images/icon/grid-1.png" />
+            <p>Swarm Source</p>
+          </div>
+          <div className="content">
+            <p>bzzr://645ee12d73db47fd78ba77fa1f824c3c8f9184061b3b10386beb4dc9236abb28</p>
           </div>
         </div>
       </div>
