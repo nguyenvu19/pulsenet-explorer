@@ -16,6 +16,7 @@
         line-height: 18px;
         color: #3c3a3a;
         &.title-header-table {
+            margin-left: 10px;
             display: flex;
             align-items: center;
         }
@@ -86,7 +87,7 @@
         }
         .to-column {
             display: flex;
-            gap: 16px;
+            gap: 8px;
             align-items: center;
             justify-content: center;
         }

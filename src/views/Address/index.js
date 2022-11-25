@@ -384,7 +384,7 @@ const columns_3 = [
     ),
     dataIndex: 'age',
 
-    render: (text) => <div className="tbl-col block-col">{text}</div>,
+    render: (text) => <div className="tbl-col age-col">{text}</div>,
   },
 
   {
