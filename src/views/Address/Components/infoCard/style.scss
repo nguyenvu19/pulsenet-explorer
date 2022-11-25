@@ -36,12 +36,9 @@
         line-height: 21px;
         padding: 10px 24px;
         background: #EEEEEE;
-        // &.flex {
-        //     //width: 100%;
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: space-between;
-        // }
+        @include media-down(sm) {
+            padding: 16px 12px;
+        }
     }
     .ovr-content {
         padding: 16px 0px;
@@ -53,6 +50,9 @@
         line-height: 21px;
         display: flex;
         align-items: center;
+        @include media-down(sm) {
+            margin: 0 12px;
+        }
         .col-flex {
             display: flex;
             align-items: center;
