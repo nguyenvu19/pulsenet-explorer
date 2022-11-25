@@ -9,13 +9,13 @@
             margin-left: 60%;
         }
         @include media-down(sm) {
-            margin-left: 50%;
-        }
-        @include media-down(xm) {
             margin-left: 40%;
         }
-        @media (max-width: 380px) {
+        @include media-down(xm) {
             margin-left: 30%;
+        }
+        @media (max-width: 380px) {
+            margin-left: 20%;
         }
     }
     .table-base {
