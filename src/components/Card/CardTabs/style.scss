@@ -1,3 +1,5 @@
+@import 'assets/css/variables.scss';
+
 .card-tabs {
   width: 100%;
   border: 1px solid #c1c1c1;
@@ -7,6 +9,10 @@
   & > .ant-tabs-nav {
     padding: 0 24px;
     margin: 0;
+
+    @include media-down(sm) {
+      padding: 0 8px;
+    }
 
     // left
     .ant-tabs-tab .ant-tabs-tab-btn {
@@ -28,6 +34,10 @@
   & > .ant-tabs-content-holder {
     .ant-tabs-content {
       padding: 16px 24px;
+
+      @include media-down(sm) {
+        padding: 16px 8px;
+      }
     }
   }
 }

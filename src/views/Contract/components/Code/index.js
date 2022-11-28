@@ -64,7 +64,7 @@ const ContractCode = () => {
 
           <div className="compiler">
             <div className="left">
-              <p>Compiler Version</p>
+              <p>Compiler<br/> Version</p>
               <span>v0.4.18+commit.9cf6e910</span>
             </div>
 
