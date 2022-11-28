@@ -10,23 +10,13 @@
     padding-right: 15px;
     margin-right: auto;
     margin-left: auto;
-    // width: 90%;
-    // margin: 16px auto 244px;
-    // //background-color: rgb(123, 179, 228);
-    // display: flex;
-    // flex-direction: column;
     .block-ovrview-info {
         display: flex;
         flex-direction: row;
         gap: 30px;
         margin-top: 24px;
-        @media (max-width: 430px) {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        @include media-down(sm) {
-            width: 100%;
+        @include media-down(md) {
+            //width: 100%;
             display: flex;
             flex-direction: column;
         }
