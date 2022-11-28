@@ -1,7 +1,6 @@
 @import 'assets/css/variables.scss';
 
 .card-tabs {
-<<<<<<< HEAD
   width: 100%;
   border: 1px solid #c1c1c1;
   border-radius: 12px;
@@ -13,6 +12,30 @@
 
     @include media-down(sm) {
       padding: 0 8px;
+
+      @include media-down(sm) {
+        flex-direction: column;
+      }
+
+      .ant-tabs-extra-content {
+        @include media-down(sm) {
+          justify-content: flex-start;
+          width: 100%;
+          margin-bottom: 8px;
+        }
+      }
+
+      .ant-tabs-nav-operations {
+        display: none;
+      }
+
+      .ant-tabs-nav-wrap::before {
+        display: none;
+      }
+
+      .ant-tabs-nav-wrap::after {
+        display: none;
+      }
     }
 
     // left
@@ -22,31 +45,24 @@
       &:hover {
         color: #418143;
       }
-=======
-    width: 100%;
-    border: 1px solid #c1c1c1;
-    border-radius: 12px;
-    overflow: hidden;
-    .ant-tabs-tab::before {
-        border: none;
->>>>>>> 59b335ff880360a872b4be8cd61e42970eca003e
     }
-    &>.ant-tabs-nav {
-        padding: 0 24px;
-        margin: 0;
-        // left
-        .ant-tabs-tab .ant-tabs-tab-btn {
-            color: #3c3a3a;
-            font-weight: 700;
-            &:hover {
-                color: #418143;
-            }
+
+    & > .ant-tabs-nav {
+      padding: 0 24px;
+      margin: 0;
+
+      // left
+      .ant-tabs-tab .ant-tabs-tab-btn {
+        color: #3c3a3a;
+        font-weight: 700;
+        &:hover {
+          color: #418143;
         }
-        .ant-tabs-tab-active .ant-tabs-tab-btn {
-            color: #418143;
-        }
+      }
+      .ant-tabs-tab-active .ant-tabs-tab-btn {
+        color: #418143;
+      }
     }
-<<<<<<< HEAD
   }
 
   & > .ant-tabs-nav::before {
@@ -60,17 +76,24 @@
       @include media-down(sm) {
         padding: 16px 8px;
       }
-=======
-    &>.ant-tabs-nav::before {
-        border-bottom: 1px solid #c1c1c1;
->>>>>>> 59b335ff880360a872b4be8cd61e42970eca003e
     }
-    &>.ant-tabs-content-holder {
-        .ant-tabs-content {
-            padding: 16px 24px;
-        }
+    & > .ant-tabs-content-holder {
+      .ant-tabs-content {
+        padding: 16px 24px;
+      }
     }
     .ant-tabs-ink-bar {
-        background: none;
+      background: none;
     }
+  }
+
+  .ant-tabs-nav-list {
+    display: flex;
+    flex-flow: row wrap;
+    transform: none !important;
+  }
+
+  .ant-tabs-tab {
+    margin: 0 32px 0 0;
+  }
 }
