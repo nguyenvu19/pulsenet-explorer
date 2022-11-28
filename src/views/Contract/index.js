@@ -1,4 +1,3 @@
-import { SearchOutlined } from '@ant-design/icons'
 import CardTabs from 'components/Card/CardTabs'
 import PublicLayoutBlock from 'layouts/PublicLayoutBlock'
 import TabsContract from './components/Tabs'
@@ -156,7 +155,7 @@ const Contract = () => {
       <div className="table">
         <div className="table-top">
           <CardTabs
-            tabBarExtraContent={<SearchOutlined />}
+            tabBarExtraContent={<img src="/images/icon/search.png" />}
             defaultActiveKey="5"
             tabs={[
               { title: 'Transfers', key: '1', content: '' },
