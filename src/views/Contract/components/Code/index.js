@@ -1,5 +1,4 @@
 import React from 'react'
-import { DownOutlined } from '@ant-design/icons'
 import { Dropdown, Space } from 'antd'
 
 import { render } from 'react-dom'
@@ -99,7 +98,7 @@ const ContractCode = () => {
                   <a onClick={(e) => e.preventDefault()}>
                     <Space>
                       Outline
-                      <DownOutlined />
+                      <img src="/images/icon/arrow-square-down-white.png" alt="" />
                     </Space>
                   </a>
                 </Dropdown>
@@ -113,7 +112,7 @@ const ContractCode = () => {
                   <a onClick={(e) => e.preventDefault()}>
                     <Space>
                       More Options
-                      <DownOutlined />
+                      <img src="/images/icon/arrow-square-down-white.png" alt="" />
                     </Space>
                   </a>
                 </Dropdown>
@@ -182,7 +181,7 @@ const ContractCode = () => {
                   <a onClick={(e) => e.preventDefault()}>
                     <Space>
                       Export ABI
-                      <DownOutlined />
+                      <img src="/images/icon/arrow-square-down-white.png" alt="" />
                     </Space>
                   </a>
                 </Dropdown>

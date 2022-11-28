@@ -10,6 +10,14 @@
   flex-direction: column;
   padding: 0 15px;
 
+  .ace_content {
+    background: #eeeeee;
+  }
+
+  .ace_scrollbar-h {
+    display: none;
+  }
+
   .top-page {
     display: flex;
     justify-content: space-between;
