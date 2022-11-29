@@ -47,21 +47,25 @@
       }
     }
 
+    .ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: #418143 !important;
+    }
+
     & > .ant-tabs-nav {
       padding: 0 24px;
       margin: 0;
 
-      // left
-      .ant-tabs-tab .ant-tabs-tab-btn {
+      left .ant-tabs-tab .ant-tabs-tab-btn {
         color: #3c3a3a;
         font-weight: 700;
         &:hover {
           color: #418143;
         }
       }
-      .ant-tabs-tab-active .ant-tabs-tab-btn {
-        color: #418143;
-      }
+
+      // .ant-tabs-tab-active .ant-tabs-tab-btn {
+      //   color: #418143;
+      // }
     }
   }
 

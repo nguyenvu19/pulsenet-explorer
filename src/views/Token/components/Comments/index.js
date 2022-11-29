@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Comments = () => {
-  return <div className="comments-div">Comments</div>
+const CommentsToken = () => {
+  return <div className="comments-token-page">Comments</div>
 }
 
-export default Comments
+export default CommentsToken
