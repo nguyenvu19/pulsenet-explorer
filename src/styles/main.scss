@@ -126,6 +126,7 @@
 @import '../views/NFTTransfers/components/BlockTransfers/styles.scss';
 //verify page
 @import '../views/Verify/style.scss';
+
 // Token
 @import '../views/Token/styles.scss';
 @import '../views/Token/components/Analytics/styles.scss';
@@ -137,8 +138,10 @@
 @import '../views/Token/components/Contract/components/Write/index.scss';
 @import '../views/Token/components/DexTrades/styles.scss';
 @import '../views/Token/components/Holders/styles.scss';
+@import '../views/Token/components/Holders/components/BlockHoldersToken/styles.scss';
 @import '../views/Token/components/Info/styles.scss';
 @import '../views/Token/components/Transfers/styles.scss';
+@import '../views/Token/components/Transfers/components/BlockTransfersToken/styles.scss';
 
 @import '../views/account/styles.scss';
 @import '../views/auth/pages/ForgotPassword/styles.scss';

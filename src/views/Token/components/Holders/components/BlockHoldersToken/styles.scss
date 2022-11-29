@@ -1,0 +1,56 @@
+@import 'assets/css/variables.scss';
+
+.block-holders-token {
+  max-width: 821px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #000;
+
+  td {
+    padding: 16px 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    @include media-down(lg) {
+      margin: 0 8px;
+    }
+  }
+
+  td:nth-child(1) {
+    width: 8.3%;
+  }
+
+  td:nth-child(2) {
+    width: 22.8%;
+
+    text-align: center;
+    color: #418143;
+  }
+
+  td:nth-child(3) {
+    width: 19.4%;
+    text-align: center;
+  }
+
+  td:nth-child(4) {
+    width: 147px;
+    padding: 16px 63px;
+    text-align: start;
+  }
+
+  td:nth-child(5) {
+    width: 17.4%;
+    text-align: center;
+  }
+
+  td:nth-child(6) {
+    text-align: center;
+    vertical-align: middle;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

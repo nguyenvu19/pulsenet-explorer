@@ -8,17 +8,17 @@ import { FAKE_DATA } from 'views/NFTTracker/fakeData'
 import { useRouter } from 'next/router'
 
 const NFTTracker = () => {
-  const [limit, setLimit] = useState(10)
+  const [pageSize, setPageSize] = useState(10)
 
   const router = useRouter()
   const { query, pathname } = router
 
   const pageLength = FAKE_DATA.length
 
-  const handlePerPage = (limitNumber) => {
-    router.replace(`?page=${1}&limit=${limitNumber}`)
-    setLimit(limitNumber)
-    console.log(limitNumber)
+  const handlePerPage = (pageSizeNumber) => {
+    router.replace(`?page=${1}&pageSize=${pageSizeNumber}`)
+    setPageSize(pageSizeNumber)
+    console.log(pageSizeNumber)
   }
 
   return (
@@ -73,7 +73,7 @@ const NFTTracker = () => {
           <div className="left">
             <div className="show">Show</div>
 
-            <div className="numberPage" value={limit} onChange={(e) => handlePerPage(e.target.value)}>
+            <div className="numberPage" value={pageSize} onChange={(e) => handlePerPage(e.target.value)}>
               <select>
                 <option value="10">10</option>
                 <option value="15">15</option>
@@ -86,7 +86,7 @@ const NFTTracker = () => {
           </div>
 
           <div className="right">
-            <Pagination page={pageLength} limit={limit} />
+            <Pagination page={pageLength} pageSize={pageSize} />
           </div>
         </div>
       </div>

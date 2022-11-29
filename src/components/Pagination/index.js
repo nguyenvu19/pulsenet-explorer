@@ -8,8 +8,8 @@ const Pagination = ({ page }) => {
   const router = useRouter()
   const { query, pathname } = router
 
-  // Get limit from url
-  const { limit } = useQueryUrl()
+  // Get page_size from url
+  const { page_size } = useQueryUrl()
 
   useEffect(() => {
     // Check page change
@@ -23,26 +23,26 @@ const Pagination = ({ page }) => {
 
   // Handle button first
   const handleFirst = (pageIndex) => {
-    router.replace(`?page=${pageIndex}&limit=${limit}`)
+    router.replace(`?page=${pageIndex}&page_size=${page_size}`)
   }
 
   // Handler button decrease
   const handleDecrement = (pageIndex) => {
     let p = pageIndex >= 1 ? pageIndex : 1
 
-    router.replace(`?page=${p}&limit=${limit}`)
+    router.replace(`?page=${p}&page_size=${page_size}`)
   }
 
   // Handler button increase
   const handleIncrement = (pageIndex) => {
     let p = pageIndex > page ? page : pageIndex
 
-    router.replace(`?page=${p}&limit=${limit}`)
+    router.replace(`?page=${p}&page_size=${page_size}`)
   }
 
   // Handler button last
   const handleLast = (pageIndex) => {
-    router.replace(`?page=${pageIndex}&limit=${limit}`)
+    router.replace(`?page=${pageIndex}&page_size=${page_size}`)
   }
 
   return (
