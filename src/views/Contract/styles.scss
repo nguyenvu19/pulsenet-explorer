@@ -75,6 +75,10 @@
     }
 
     .right {
+      display: flex;
+      row-gap: 8px;
+      flex-flow: row wrap;
+
       button {
         width: 100px;
         height: 21px;
@@ -140,6 +144,10 @@
         height: 53px;
         border-bottom: 1px solid #000;
 
+        @include media-down(sm) {
+          padding: 0 8px;
+        }
+
         .overview-head-left {
           font-size: 16px;
           font-weight: 700;
@@ -173,6 +181,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
 
           .left {
@@ -240,6 +250,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
 
           .left {
@@ -284,6 +296,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
 
           .left {
@@ -338,6 +352,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
 
           .left {
@@ -413,6 +429,10 @@
         height: 53px;
         border-bottom: 1px solid #000;
 
+        @include media-down(sm) {
+          padding: 0 8px;
+        }
+
         img {
           width: 21px;
           height: 21px;
@@ -468,6 +488,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
 
           .right {
@@ -494,6 +516,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
         }
 
@@ -510,6 +534,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
 
           .left {
@@ -538,6 +564,8 @@
             height: 100%;
             align-items: flex-start;
             padding: 8px 0;
+            margin: 0 8px;
+            width: calc(100% - 16px);
           }
 
           img:nth-child(2),
@@ -553,7 +581,6 @@
 
     .banner {
       img {
-        height: 90px;
         padding: 0 75px;
 
         @include media-down(md) {

@@ -8,7 +8,13 @@
     line-height: 21px;
     color: #3c3a3a;
 
+    .ace_editor {
+      border-radius: 12px;
+    }
+
     .code-top {
+      margin-bottom: 16px;
+
       .top {
         border-bottom: none;
         display: flex;
@@ -44,6 +50,10 @@
           img {
             width: 32px;
             height: 32px;
+
+            @include media-down(sm) {
+              display: none;
+            }
           }
         }
       }
@@ -78,7 +88,6 @@
             }
 
             p {
-              padding-right: 93px;
               font-weight: 400;
 
               @include media-down(md) {
@@ -88,6 +97,7 @@
 
             span {
               font-weight: 700;
+              padding-right: 93px;
             }
           }
 
@@ -115,6 +125,10 @@
 
               @include media-down(md) {
                 min-width: 50%;
+              }
+
+              @include media-down(xm) {
+                max-width: 50%;
               }
             }
 
@@ -155,6 +169,9 @@
 
             span {
               font-weight: 700;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
 
             p {
@@ -244,7 +261,10 @@
             }
 
             .top {
-              margin-bottom: 8px;
+              // row-gap: 11px;
+              display: flex;
+              flex-flow: row wrap;
+
               @include media-down(md) {
                 justify-content: flex-start;
               }
@@ -256,27 +276,30 @@
                 font-size: 16px;
                 line-height: 21px;
                 color: #eeeeee;
-                margin-left: 16px;
+                margin-right: 16px;
                 padding: 4px 8px;
                 margin-bottom: 16px;
 
                 @include media-down(md) {
-                  margin-left: 0;
+                  margin: 0 16px 16px 0;
+                }
+
+                @include media-down(sm) {
+                  margin: 0 16px 16px 0;
                 }
               }
 
               .ant-dropdown-trigger:last-child {
-                margin-left: 16px;
+                margin: 0 0 16px 0;
               }
             }
 
             .down {
               display: flex;
-              margin-top: 16px;
               justify-content: flex-end;
 
               @include media-down(sm) {
-                justify-content: flex-start;
+                justify-content: flex-end;
               }
 
               img {
@@ -356,6 +379,10 @@
 
                 @include media-down(sm) {
                   margin: 0;
+                }
+
+                @include media-down(xm) {
+                  padding: 4px 12px;
                 }
               }
             }
