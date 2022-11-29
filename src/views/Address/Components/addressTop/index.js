@@ -9,7 +9,7 @@ const AddressTop = () => {
     <div className="addr-top-container">
       <div className="address-details">
         <h1>Address</h1>
-        <span style={{ fontSize: '16px' }}>0x02Fe...a30035</span>
+        <span style={{ fontSize: '16px', wordBreak: 'break-word', overflowWrap: 'break-word' }}>0x02Fe...a30035</span>
         <span className="address-details_icon">
           <span className="adr-icon icon-copy">
             <CopyOutlined />
